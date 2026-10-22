@@ -13,6 +13,7 @@ const modules = {
   'hero-fx': '[data-fx]',
   consent: '[data-consent]',
   'dot-nav': '[data-dots]',
+  motion: 'body',
 };
 
 for (const [name, selector] of Object.entries(modules)) {

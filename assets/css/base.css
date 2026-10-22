@@ -24,6 +24,7 @@ h1, h2, h3, h4, p, ul, ol, figure { margin: 0; }
 ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 a { color: var(--primary); text-underline-offset: .18em; }
 a:hover { text-decoration-color: var(--signature); }
+.ca-on-dark a:hover { text-decoration-color: currentColor; } /* orange stays on light backdrops */
 ::selection { background: var(--action); color: var(--text-on-dark); }
 button { font: inherit; color: inherit; cursor: pointer; }
 a, button, input, label { touch-action: manipulation; }

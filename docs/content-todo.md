@@ -11,7 +11,7 @@ Open the page with `?placeholders` in the URL to outline them all with a dashed 
 | 7.3 About | Director-General portrait (currently the CA Centre photo is used, as the brief allows) plus name for the caption "[Name], Director-General" | 4:5 portrait, ≥ 900×1125, AVIF/WebP | CA Corporate Communications |
 | 7.6 Highlight | Universal Service Fund logo for the badge chip (`[USF logo]`) | SVG, square-safe | USF / CA Corporate Communications |
 | 7.6 Highlight | Optional dedicated USF image (the "120,000 Kenyans" news image is reused for now) | 4:5, ≥ 960×1200 | USF programme photography |
-| 7.8 Projects | Photos for **Computerisation of Health Centres**, **ICT for Persons with Disabilities** and **Community Telecentres** (icon tiles for now). E-Justice, Education Broadband and Voice Infrastructure use CA's own portfolio photos from ca.go.ke | 4:3, ≥ 1200×900, AVIF/WebP; keep the lower third calm (title sits there over a scrim) | USF programme photography. None exists on ca.go.ke or the staging site; external libraries (Wikimedia, Openverse, Unsplash) were rate-limited or required keys from the build environment |
+| 7.8 Projects | All six tiles have photos. E-Justice, Education Broadband and Voice Infrastructure use CA's own ca.go.ke portfolio photos. **Computerisation of Health Centres, ICT for Persons with Disabilities and Community Telecentres use illustrative CC0 photos from nappy.co** (credits below), not photos of the projects; replace them with CA project photography when available | 4:3, ≥ 1200×900, AVIF/WebP; keep the lower third calm | USF programme photography |
 | 8 Footer | Certification marks (`[ISO certification mark — to be supplied]`, `[Certification mark — to be supplied]`) as white monochrome lockups | SVG, white | CA Quality / ISMS office |
 | Higher-resolution photos | The Broadband project photo is only 382px tall at source; the hero photo is 1600px wide | Broadband ≥ 1200×900; hero ≥ 2880px wide | CA Corporate Communications |
 | Head (SEO) | Open Graph / Twitter image (`assets/img/og-placeholder.png` is a navy placeholder) | 1200×630 PNG/JPG | CA Corporate Communications |
@@ -52,3 +52,9 @@ All requested CA assets downloaded with HTTP 200 and were optimised into `assets
 - The four homepage news images → `news-*-320/640.{avif,webp}`
 - Favicons (32, 180, 192) from the current site
 - Fonts: identical files from Fontsource (`@fontsource-variable/inter` 5.3.0, `@fontsource/maitree` 5.3.0, Latin subset); both return HTTP 200 locally
+
+## Image credits (CC0, credit not required)
+
+- `project-health-*`: "Doctor office examination" by @c0fbf559 on nappy.co
+- `project-pwd-*`: "Person with a hand splint holding a phone" by @MetaLab on nappy.co
+- `project-telecentres-*`: "Friends working on a computer" by @antoinedigital on nappy.co

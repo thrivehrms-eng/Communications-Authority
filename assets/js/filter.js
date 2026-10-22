@@ -19,7 +19,9 @@ export default function (roots) {
       items.forEach((li) => li.classList.add('is-fading'));
       setTimeout(() => {
         items.forEach((li) => li.classList.toggle('is-hidden', !shown.includes(li)));
+        shown.forEach((li, i) => li.style.setProperty('--filter-delay', `${i * 60}ms`));
         requestAnimationFrame(() => requestAnimationFrame(() => shown.forEach((li) => li.classList.remove('is-fading'))));
+        setTimeout(() => items.forEach((li) => li.style.removeProperty('--filter-delay')), 700);
         empty.hidden = shown.length > 0;
         status.textContent = shown.length ? `Showing ${shown.length} project${shown.length === 1 ? '' : 's'}` : 'No projects in this category.';
       }, reduceMotion() ? 0 : 200);

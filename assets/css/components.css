@@ -32,7 +32,7 @@
 }
 .ca-link:hover { text-decoration: underline; }
 .ca-link .ca-icon { width: 20px; height: 20px; color: var(--action); transition: transform var(--dur-1) var(--ease-std); }
-.ca-on-dark .ca-link .ca-icon { color: var(--signature); }
+.ca-on-dark .ca-link .ca-icon { color: currentColor; }
 .ca-on-dark .ca-link { color: var(--text-on-dark); }
 .ca-ext { display: inline-block; width: 1em; height: 1em; margin-left: .25em; vertical-align: -.1em; }
 
@@ -46,8 +46,9 @@
 }
 .ca-card:hover, .ca-card:focus-within { background: var(--primary-hover); transform: translateY(-2px); }
 .ca-card:active { transform: scale(.99); }
-/* orange icon badge (service cards, commitments, stay safe) */
-.ca-icon-badge { display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 14px; background: var(--signature); color: var(--text-on-dark); }
+/* icon badge (service cards, commitments, stay safe) */
+/* used on dark surfaces: a glass chip with a cyan icon (orange is kept for light backdrops) */
+.ca-icon-badge { display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 14px; background: rgb(255 255 255 / .12); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .16); color: var(--accent); }
 .ca-icon-badge .ca-icon { width: 22px; height: 22px; }
 @media (max-width: 639px) { .ca-icon-badge { width: 40px; height: 40px; border-radius: 12px; } .ca-icon-badge .ca-icon { width: 20px; height: 20px; } }
 .ca-card__icon { margin-bottom: 4px; }

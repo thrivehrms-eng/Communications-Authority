@@ -1,4 +1,4 @@
-# UX review — homepage v2 to v5
+# UX review — homepage v2 to v6
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -90,3 +90,16 @@ Also fixed: after dismissing the cookie banner on a first visit, focus now conti
 | Orange under-used | Orange now marks **actions** and **signature details** (rules in README, "Using CA orange"): every "File a complaint" button and the help button are orange (white text 5.3:1); a short orange bar leads every eyebrow; orange icon badges on service cards; orange task, contact and FAQ icons; orange news dates; orange slider progress bar; orange top edge on the footer; orange hover underlines on text links; orange text selection. Contrast was checked for every pairing before use; orange never sits directly on the primary blue |
 
 Also: the "Our commitments" eyebrow is white on the blue panel (cyan is only 3.8:1 there at 14px). Icon badges are one shared component (`.ca-icon-badge`). Decorative backdrop blurs were removed (`blur-purpose`), and the footer CSS was consolidated, keeping CSS within the 50 KB budget (49.99 KB minified).
+
+## v6 — client feedback
+
+| Feedback | Change |
+|---|---|
+| No dotted styling on the USF image | Dot-grid overlay removed |
+| Footer social icons on one row | Contact column has a 256px minimum and the five 44px buttons sit on one row with 6px gaps (fits down to 320px) |
+| Orange is overkill; use it sparingly, mostly on light backdrops | No orange on navy or blue panels: icon badges are glass chips with cyan icons; eyebrow bars are cyan/white on dark; slider progress is white; the footer's orange edge is gone; complaint buttons on dark backdrops (hero slide 3, closing panel) are white. Orange remains on white/light-blue surfaces only (rules in README) |
+| Make the page come alive with micro-interactions and animations | See README → Motion. Skill guidance applied: transform/opacity only (`transform-performance`), hover only on hover-capable pointers, press feedback (`scale-feedback`), staggered entrances (`stagger-sequence`), final states set by classes rather than animation events (`cancellable-state-transitions`), and `prefers-reduced-motion` respected throughout |
+| Every project needs an image | Three CC0 illustrative photos added from nappy.co (Wikimedia, Openverse, Unsplash, Pexels and Pixabay were blocked or rate-limited from the build environment) |
+| Ignore budget limits | CSS is now 56.9 KB minified (was capped at 50 KB) |
+
+Fix found while testing: the curtain reveal first clipped the observed element itself, which makes the browser treat it as off-screen so it never revealed. The clip now sits on the inner `<picture>`.

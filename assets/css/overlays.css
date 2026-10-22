@@ -90,10 +90,10 @@
 .ca-fab { position: fixed; right: calc(var(--gutter) + 16px); bottom: calc(var(--gutter) + 16px); z-index: var(--z-fab); }
 .ca-fab__btn {
   display: grid; place-items: center; width: 56px; height: 56px; padding: 0;
-  border: 0; border-radius: 50%; background: var(--action); color: var(--text-on-dark); box-shadow: var(--shadow-card);
-  transition: filter var(--dur-1) var(--ease-std);
+  position: relative; border: 1px solid var(--border); border-radius: 50%; background: var(--surface); color: var(--action); box-shadow: var(--shadow-card);
+  transition: background-color var(--dur-1) var(--ease-std);
 }
-.ca-fab__btn:hover { filter: brightness(.88); }
+.ca-fab__btn:hover { background: var(--surface-tint); }
 .ca-fab__close, .ca-fab__btn[aria-expanded="true"] .ca-fab__open { display: none; }
 .ca-fab__btn[aria-expanded="true"] .ca-fab__close { display: block; }
 .ca-fab__card {

@@ -26,6 +26,7 @@ assets/css/
   components.css            buttons, links, service card, accordion, project tile, news card, chips, social, logo tile
   sections.css              header bar + dropdowns, each homepage section, footer
   overlays.css              menu overlay, search panel, help FAB, cookie banner, dot nav, reveal
+  motion.css                entrances, reveal variants and hover micro-interactions
 assets/js/
   main.js                   entry: imports a module only if its root element exists
   util.js                   focus trap, reduced-motion check, "one overlay at a time" events
@@ -39,6 +40,7 @@ assets/js/
   filter.js                 project filter chips + live status
   truncate.js               character limits (data-max-chars): word-boundary cut + ellipsis, full text kept for screen readers
   reveal.js                 scroll reveal (only below-the-fold content starts hidden)
+  motion.js                 header scroll progress, hero parallax, pointer spotlights, rotating search hints, help-button hello
   hero-fx.js                canvas light curves + dots (≤30fps, pausable, < 4 KB); data-fx-static draws one still frame
   consent.js                cookie banner; exposes window.caConsent.get('analytics')
   dot-nav.js                page section dots (≥1280px)
@@ -65,14 +67,30 @@ All content is visible: footer sub-lists expanded, every project tile shown (fil
 
 ## Using CA orange
 
-Two tokens, chosen by contrast (see `tokens.css`):
+Orange is used sparingly and **only on light backdrops** (white, light blue). On navy and blue panels the accent is cyan or white. Two tokens, chosen by contrast (see `tokens.css`):
 
-| Token | Value | Use for | Never |
-|---|---|---|---|
-| `--action` | `--ca-secondary-600` `#BD4400` | Orange buttons (white text 5.3:1): every "File a complaint" button and the help button. Orange **text** on white/tint (5.3:1 / 4.9:1): news dates, FAQ numbers. Icons in tasks, contact and help lists | — |
-| `--signature` | `--ca-secondary-500` `#EC5B13` | Decoration only: the bar before every eyebrow, icon badges (`.ca-icon-badge`, white icon), the slider progress bar, the active page dot, the footer's top edge, dropdown/menu top borders, hover underlines and card borders | Text on white (3.5:1); anything on the primary blue (2.2:1) |
+| Token | Value | Use for |
+|---|---|---|
+| `--action` | `--ca-secondary-600` `#BD4400` | "File a complaint" buttons on white surfaces (header, menu, help card: white text 5.3:1), the help button's icon, news dates and FAQ numbers (text 5.3:1 on white), small icons in Popular tasks and the contact list, text selection |
+| `--signature` | `--ca-secondary-500` `#EC5B13` | Decorative details on light surfaces only: the bar before eyebrows on light panels, the header's scroll-progress line, dropdown/menu top borders, the active page dot, logo-tile hover borders, link hover underlines, and the small welcome dot in the hero (CA's signature mark) |
 
-Text selection also uses `--action`. Keep orange to accents and actions; blue stays the main colour.
+Never: orange text on white in `#EC5B13` (3.5:1); orange on the primary blue (2.2:1); orange elements on navy panels (use cyan `--accent` or white).
+
+## Motion
+
+All motion lives in `assets/css/motion.css` and `assets/js/motion.js` (plus the slider in `carousel.js`). It uses transform, opacity and clip-path only; hover effects apply only on pointer devices; `prefers-reduced-motion` reduces everything to instant state changes and turns off the JavaScript effects.
+
+| Where | What |
+|---|---|
+| Hero | Welcome line, title, highlighted second line, text and button rise in sequence on load and on every slide change; the photo slowly settles from a 1.08 zoom (paused with the slider); gentle scroll parallax |
+| Header | Thin orange line shows how far down the page you are |
+| Sections | Softer, longer scroll reveals; About text slides in from the left and USF text from the right; photos open like a curtain; eyebrow bars draw in; icon badges pop in after their cards |
+| Cards and tiles | A soft light follows the pointer over service cards, stay-safe cards and project tiles; icon badges tilt and grow; project photos zoom while titles lift |
+| Buttons and links | Lift on hover, a light sweep across filled buttons, press-down on click; news titles underline from left to right |
+| Menus | Dropdown, menu, search and help items stagger in |
+| Search | The placeholder cycles through example searches (IMEI, type approval, licence fees…) until you focus it |
+| Filter | Project tiles return one after another |
+| Help button | Pulses twice, once, 2.5s after load |
 
 ## Accessibility notes
 
@@ -87,5 +105,5 @@ Text selection also uses `--action`. Keep orange to accents and actions; blue st
 
 - axe-core 4.10: 0 violations at 1440, 390 and 320px (reduced motion), and with the dropdown, menu and mobile menu open.
 - No console errors; no horizontal scroll or clipped content at 320 / 390 / 768 / 1024 / 1100 / 1280 / 1440; works with JS disabled and with reduced motion.
-- Budgets (esbuild minified): CSS 46.1 KB, JS 12.8 KB; `hero-fx.js` 3.0 KB.
+- Size (esbuild minified): CSS 56.9 KB, JS 16.1 KB. The original 50 KB CSS budget was lifted by the client in v6 in favour of richer motion.
 - Lighthouse was not run in this environment.

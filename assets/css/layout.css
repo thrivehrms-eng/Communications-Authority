@@ -44,7 +44,8 @@
 /* CA orange signature: a short bar leads every eyebrow */
 .ca-eyebrow::before { content: ""; width: 22px; height: 2px; flex: none; border-radius: 2px; background: var(--signature); }
 .ca-on-dark .ca-eyebrow { color: var(--accent); }
-.ca-panel--primary .ca-eyebrow { color: var(--text-on-dark); } /* cyan is large-text only on primary blue (3.8:1) */
+.ca-panel--primary .ca-eyebrow { color: var(--text-on-dark); }
+.ca-on-dark .ca-eyebrow::before { background: currentColor; } /* no orange on dark panels */ /* cyan is large-text only on primary blue (3.8:1) */
 
 .ca-split { display: grid; gap: clamp(32px, 5vw, 72px); align-items: center; }
 .ca-actions { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; }

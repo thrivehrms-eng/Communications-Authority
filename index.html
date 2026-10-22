@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/sections.css">
   <link rel="stylesheet" href="assets/css/overlays.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
   <script type="module" src="assets/js/main.js"></script>
 
   <script type="application/ld+json">
@@ -107,6 +108,7 @@
 <!-- ═════════ Header ═════════ -->
 <header class="ca-header" data-header>
   <div class="ca-header__bar">
+    <span class="ca-header__progress" aria-hidden="true" data-scroll-progress></span>
     <a class="ca-header__logo" href="/"><img src="assets/img/ca-logo.svg" alt="Communications Authority of Kenya, home" width="196" height="78"></a>
 
     <nav class="ca-nav" aria-label="Main" data-nav>
@@ -436,7 +438,7 @@
           <div class="ca-slide" role="group" aria-roledescription="slide" aria-label="3 of 4: Complaints">
             <h2 class="ca-slide__title">A problem with your <span class="ca-hl">service provider?</span></h2>
             <p class="ca-slide__text">If your provider hasn’t resolved your complaint, tell us. We’ll guide you through the next steps.</p>
-            <a class="ca-btn ca-btn--accent" href="/consumer-complaint/">File a complaint<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
+            <a class="ca-btn ca-btn--white" href="/consumer-complaint/">File a complaint<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
           </div>
           <div class="ca-slide" role="group" aria-roledescription="slide" aria-label="4 of 4: Universal access">
             <h2 class="ca-slide__title">Connecting every county. <span class="ca-hl">No one left behind.</span></h2>
@@ -470,14 +472,14 @@
           <label class="ca-find-search__label" for="find-search">Search for a service, licence or document</label>
           <div class="ca-find-search__box">
             <svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#search"/></svg>
-            <input id="find-search" type="search" name="s" placeholder="Try “IMEI” or “tenders”" autocomplete="off" enterkeyhint="search" required>
+            <input id="find-search" type="search" name="s" placeholder="Try “IMEI” or “tenders”" data-placeholder-cycle="Try “IMEI” or “tenders”|Try “type approval”|Try “licence fees”|Try “consumer complaint”|Try “numbering”" autocomplete="off" enterkeyhint="search" required>
             <button class="ca-btn ca-btn--primary" type="submit">Search</button>
           </div>
         </form>
       </div>
       <div class="ca-find__tasks">
         <h3 class="ca-find__label" id="tasks-title">Popular tasks</h3>
-        <ul class="ca-tasks" role="list" aria-labelledby="tasks-title">
+        <ul class="ca-tasks" role="list" aria-labelledby="tasks-title" data-reveal-stagger>
             <li><a class="ca-task" href="/consumer-complaint/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#complaint"/></svg><span>File a complaint</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
             <li><a class="ca-task" href="/imei-checker/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#smartphone"/></svg><span>Check a phone (IMEI)</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
             <li><a class="ca-task" href="/licensee-register/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#register"/></svg><span>Licensee register</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
@@ -498,37 +500,37 @@
         <p>The Authority provides regulatory, licensing, consumer protection and industry support services across Kenya's communications and digital ecosystem.</p>
       </div>
       <ul class="ca-services" id="services-grid" role="list" data-reveal-stagger>
-        <li class="ca-card">
+        <li class="ca-card" data-spotlight>
           <span class="ca-icon-badge ca-card__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#licence"/></svg></span>
           <h3><a href="/licensing-procedures/">Licensing</a></h3>
           <p>The Authority has a number of procedures that apply to the various licences it issues.</p>
           <span class="ca-card__more" aria-hidden="true">More about licensing<svg class="ca-icon"><use href="assets/icons/sprite.svg#arrow-right"/></svg></span>
         </li>
-        <li class="ca-card">
+        <li class="ca-card" data-spotlight>
           <span class="ca-icon-badge ca-card__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#router"/></svg></span>
           <h3><a href="/type-approval/">Type approval</a></h3>
           <p>Phones, routers and other equipment must be type-approved before sale or use in Kenya.</p>
           <span class="ca-card__more" aria-hidden="true">More about type approval<svg class="ca-icon"><use href="assets/icons/sprite.svg#arrow-right"/></svg></span>
         </li>
-        <li class="ca-card">
+        <li class="ca-card" data-spotlight>
           <span class="ca-icon-badge ca-card__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#shield-user"/></svg></span>
           <h3><a href="/our-role-in-your-protection/">Consumer protection</a></h3>
           <p>File complaints, check devices and learn how CA protects users of communications services.</p>
           <span class="ca-card__more" aria-hidden="true">More about consumer protection<svg class="ca-icon"><use href="assets/icons/sprite.svg#arrow-right"/></svg></span>
         </li>
-        <li class="ca-card">
+        <li class="ca-card" data-spotlight>
           <span class="ca-icon-badge ca-card__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#shield-lock"/></svg></span>
           <h3><a href="/cybersecurity/">Cybersecurity</a></h3>
           <p>The National KE-CIRT/CC was established to mitigate cyber threats.</p>
           <span class="ca-card__more" aria-hidden="true">More about cybersecurity<svg class="ca-icon"><use href="assets/icons/sprite.svg#arrow-right"/></svg></span>
         </li>
-        <li class="ca-card">
+        <li class="ca-card" data-spotlight>
           <span class="ca-icon-badge ca-card__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#book"/></svg></span>
           <h3><a href="/guidelines/">Guidelines &amp; regulation</a></h3>
           <p>The Authority issues guidelines for the ICT sector on the implementation of specific regulatory matters.</p>
           <span class="ca-card__more" aria-hidden="true">More about guidelines<svg class="ca-icon"><use href="assets/icons/sprite.svg#arrow-right"/></svg></span>
         </li>
-        <li class="ca-card">
+        <li class="ca-card" data-spotlight>
           <span class="ca-icon-badge ca-card__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#monitor"/></svg></span>
           <h3><a href="/portals/">Online portals</a></h3>
           <p>The Authority runs online portals for licensing, spectrum and other regulatory services.</p>
@@ -553,19 +555,19 @@
         <p>Simple checks and clear routes to help, whether you’re buying a phone, protecting a child online or responding to a cyber incident.</p>
       </div>
       <ul class="ca-actions-grid" role="list" data-reveal-stagger>
-        <li class="ca-action">
+        <li class="ca-action" data-spotlight>
           <span class="ca-icon-badge ca-action__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#smartphone"/></svg></span>
           <h3><a href="/imei-checker/">Check a phone before you buy</a></h3>
           <p>Use the IMEI checker to confirm a device is genuine and type-approved.</p>
           <svg class="ca-icon ca-action__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg>
         </li>
-        <li class="ca-action">
+        <li class="ca-action" data-spotlight>
           <span class="ca-icon-badge ca-action__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#child"/></svg></span>
           <h3><a href="/child-online-protection/">Protect children online</a></h3>
           <p>Guidance for parents, guardians and schools on keeping children safe online.</p>
           <svg class="ca-icon ca-action__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg>
         </li>
-        <li class="ca-action">
+        <li class="ca-action" data-spotlight>
           <span class="ca-icon-badge ca-action__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#alert"/></svg></span>
           <h3><a href="https://ke-cirt.go.ke/report-an-incident/">Report a cyber incident<span class="ca-vh">(external site)</span></a></h3>
           <p>The National KE-CIRT/CC coordinates the response to cyber threats in Kenya.</p>
@@ -631,7 +633,7 @@
   <!-- 7.6 Highlight teaser -->
   <section class="ca-panel ca-panel--dark ca-on-dark" id="universal-access" aria-labelledby="usf-title">
     <div class="ca-container ca-split ca-highlight">
-      <div class="ca-highlight__media" data-reveal>
+      <div class="ca-highlight__media" data-reveal="curtain">
         <picture>
           <source type="image/avif" srcset="assets/img/news-digital-skills-320.avif 320w, assets/img/news-digital-skills-640.avif 640w" sizes="(min-width: 768px) 40vw, 90vw">
           <img src="assets/img/news-digital-skills-640.webp" srcset="assets/img/news-digital-skills-320.webp 320w, assets/img/news-digital-skills-640.webp 640w" sizes="(min-width: 768px) 40vw, 90vw" alt="Stakeholders at the Universal Service Fund workshop on the Digital Skilling Project for 120,000 Kenyans" width="640" height="400" loading="lazy" decoding="async">
@@ -641,7 +643,7 @@
           <span>Universal Service Fund</span>
         </div>
       </div>
-      <div class="ca-stack ca-highlight__text" data-reveal>
+      <div class="ca-stack ca-highlight__text" data-reveal="right">
         <p class="ca-eyebrow">Universal access</p>
         <h2 id="usf-title">Connecting every county. <span class="ca-hl">No one left behind.</span></h2>
         <p>Through the Universal Service Fund, the Authority extends communications services to underserved areas — from voice infrastructure and education broadband to community telecentres and ICT access for persons with disabilities.</p>
@@ -671,48 +673,45 @@
       <p class="ca-vh" role="status" data-filter-status></p>
       <ul class="ca-projects" role="list" data-reveal-stagger>
         <li data-tags="justice infrastructure">
-          <a class="ca-tile ca-tile--photo" href="/e-justice/">
+          <a class="ca-tile ca-tile--photo" data-spotlight href="/e-justice/">
             <span class="ca-tile__title ca-title">E-Justice</span>
             <span class="ca-tile__media"><picture><source type="image/avif" srcset="assets/img/project-e-justice-480.avif 480w, assets/img/project-e-justice-960.avif 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw"><img src="assets/img/project-e-justice-960.webp" srcset="assets/img/project-e-justice-480.webp 480w, assets/img/project-e-justice-960.webp 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw" alt="" width="960" height="720" loading="lazy" decoding="async"></picture></span>
             <span class="ca-tile__tags"><span class="ca-vh">Categories:</span><span class="ca-tag">Justice</span><span class="ca-tag">Infrastructure</span></span>
           </a>
         </li>
         <li data-tags="education infrastructure">
-          <a class="ca-tile ca-tile--photo" href="/education-broadband-connectivity/">
+          <a class="ca-tile ca-tile--photo" data-spotlight href="/education-broadband-connectivity/">
             <span class="ca-tile__title ca-title">Education Broadband Connectivity</span>
             <span class="ca-tile__media"><picture><source type="image/avif" srcset="assets/img/project-broadband-480.avif 480w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw"><img src="assets/img/project-broadband-480.webp" srcset="assets/img/project-broadband-480.webp 480w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw" alt="" width="480" height="360" loading="lazy" decoding="async"></picture></span>
             <span class="ca-tile__tags"><span class="ca-vh">Categories:</span><span class="ca-tag">Education</span><span class="ca-tag">Infrastructure</span></span>
           </a>
         </li>
         <li data-tags="health">
-          <a class="ca-tile" href="/computerization-of-health-centres/">
+          <a class="ca-tile ca-tile--photo" data-spotlight href="/computerization-of-health-centres/">
             <span class="ca-tile__title ca-title">Computerisation of Health Centres</span>
-            <span class="ca-tile__media" data-placeholder="true"><span aria-hidden="true">[Project image — to be supplied]</span></span>
+            <span class="ca-tile__media"><picture><source type="image/avif" srcset="assets/img/project-health-480.avif 480w, assets/img/project-health-960.avif 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw"><img src="assets/img/project-health-960.webp" srcset="assets/img/project-health-480.webp 480w, assets/img/project-health-960.webp 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw" alt="" width="960" height="720" loading="lazy" decoding="async"></picture></span>
             <span class="ca-tile__tags"><span class="ca-vh">Category:</span><span class="ca-tag">Health</span></span>
-            <svg class="ca-icon ca-tile__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#health"/></svg>
           </a>
         </li>
         <li data-tags="inclusion">
-          <a class="ca-tile" href="/ict-for-persons-with-disabilities/">
+          <a class="ca-tile ca-tile--photo" data-spotlight href="/ict-for-persons-with-disabilities/">
             <span class="ca-tile__title ca-title">ICT for Persons with Disabilities</span>
-            <span class="ca-tile__media" data-placeholder="true"><span aria-hidden="true">[Project image — to be supplied]</span></span>
+            <span class="ca-tile__media"><picture><source type="image/avif" srcset="assets/img/project-pwd-480.avif 480w, assets/img/project-pwd-960.avif 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw"><img src="assets/img/project-pwd-960.webp" srcset="assets/img/project-pwd-480.webp 480w, assets/img/project-pwd-960.webp 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw" alt="" width="960" height="720" loading="lazy" decoding="async"></picture></span>
             <span class="ca-tile__tags"><span class="ca-vh">Category:</span><span class="ca-tag">Inclusion</span></span>
-            <svg class="ca-icon ca-tile__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#access"/></svg>
           </a>
         </li>
         <li data-tags="infrastructure">
-          <a class="ca-tile ca-tile--photo" href="/voice-infrastructure-project/">
+          <a class="ca-tile ca-tile--photo" data-spotlight href="/voice-infrastructure-project/">
             <span class="ca-tile__title ca-title">Voice Infrastructure Project</span>
             <span class="ca-tile__media"><picture><source type="image/avif" srcset="assets/img/project-voice-480.avif 480w, assets/img/project-voice-960.avif 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw"><img src="assets/img/project-voice-960.webp" srcset="assets/img/project-voice-480.webp 480w, assets/img/project-voice-960.webp 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw" alt="" width="960" height="720" loading="lazy" decoding="async"></picture></span>
             <span class="ca-tile__tags"><span class="ca-vh">Category:</span><span class="ca-tag">Infrastructure</span></span>
           </a>
         </li>
         <li data-tags="inclusion education">
-          <a class="ca-tile" href="/community-telecentres/">
+          <a class="ca-tile ca-tile--photo" data-spotlight href="/community-telecentres/">
             <span class="ca-tile__title ca-title">Community Telecentres</span>
-            <span class="ca-tile__media" data-placeholder="true"><span aria-hidden="true">[Project image — to be supplied]</span></span>
+            <span class="ca-tile__media"><picture><source type="image/avif" srcset="assets/img/project-telecentres-480.avif 480w, assets/img/project-telecentres-960.avif 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw"><img src="assets/img/project-telecentres-960.webp" srcset="assets/img/project-telecentres-480.webp 480w, assets/img/project-telecentres-960.webp 960w" sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw" alt="" width="960" height="720" loading="lazy" decoding="async"></picture></span>
             <span class="ca-tile__tags"><span class="ca-vh">Categories:</span><span class="ca-tag">Inclusion</span><span class="ca-tag">Education</span></span>
-            <svg class="ca-icon ca-tile__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#users"/></svg>
           </a>
         </li>
       </ul>
@@ -726,7 +725,7 @@
   <!-- 7.3 About -->
   <section class="ca-panel ca-panel--tint" id="about" aria-labelledby="about-title">
     <div class="ca-container ca-split ca-about">
-      <div class="ca-stack" data-reveal>
+      <div class="ca-stack" data-reveal="left">
         <p class="ca-eyebrow">Who we are</p>
         <h2 id="about-title">Kenya's ICT regulator, <span class="ca-hl">in the public interest.</span></h2>
         <p class="ca-about__text">The Communications Authority of Kenya (CA) is the regulatory agency for the ICT sector in Kenya, established by the Kenya Information and Communications Act, CAP 411A (KICA). We oversee telecommunications, radio communications, broadcasting, electronic transactions, the country's numbering and frequency spectrum resources, and postal and courier services.</p>
@@ -735,7 +734,7 @@
           <a class="ca-btn ca-btn--primary" href="/about-the-authority/">Get to know the Authority<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
         </div>
       </div>
-      <figure class="ca-about__figure" data-reveal>
+      <figure class="ca-about__figure" data-reveal="curtain">
         <picture>
           <source type="image/avif" srcset="assets/img/ca-centre-625.avif">
           <img src="assets/img/ca-centre-625.webp" alt="The CA Centre building entrance with its globe fountain" width="625" height="420" loading="lazy" decoding="async">
@@ -818,7 +817,7 @@
         <p>If your service provider hasn't resolved your issue, tell us about it. A short description is enough to get started — we'll guide you through the next steps. Your submission goes directly to the Authority and is treated in confidence.</p>
         <p><a class="ca-cta__enquiry" href="/contact-us/">Or make a general enquiry.</a></p>
         <div class="ca-actions ca-actions--center ca-cta__actions">
-          <a class="ca-btn ca-btn--accent" href="/consumer-complaint/">File a complaint<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
+          <a class="ca-btn ca-btn--white" href="/consumer-complaint/">File a complaint<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
           <a class="ca-btn ca-btn--outline-light" href="/public-complaints/">Report corruption<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
         </div>
       </div>
