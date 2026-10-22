@@ -14,10 +14,10 @@ export default function ([fab]) {
     else if (returnFocus) btn.focus();
   };
 
-  // On phones the button would sit on top of the hero's popular tasks, which offer the same routes
-  const tasks = document.querySelector('.ca-hero-tasks');
-  if (tasks && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([e]) => fab.classList.toggle('is-deferred', e.isIntersecting)).observe(tasks);
+  // On phones the button would sit on top of the search and popular tasks, which offer the same routes
+  const defer = document.querySelector('[data-fab-defer]');
+  if (defer && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => fab.classList.toggle('is-deferred', e.isIntersecting)).observe(defer);
   }
 
   btn.addEventListener('click', () => set(card.hidden));

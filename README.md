@@ -3,7 +3,7 @@
 A static rebuild of the CA homepage in semantic HTML, modern CSS and vanilla ES modules: no frameworks, no build step.
 The layout and interactions follow the Media Harbour concept, while brand colours, logo and fonts (Inter + Maitree 700) come strictly from the current CA theme.
 
-Version 2 applies a UX review (see `docs/ux-review.md`): a search-led hero with popular tasks, a task-first section order, less motion, higher text contrast and an in-page cookie banner.
+Version 2 applied a UX review (see `docs/ux-review.md`): a task-first section order, less motion, higher text contrast and an in-page cookie banner. Version 3 (client feedback) gives the hero a full-width photo with just the headline, moves search and popular tasks into their own panel below it, slims the news cards with character limits, and adds real partner logos and CA project photos.
 
 ## Run locally
 
@@ -36,12 +36,14 @@ assets/js/
   accordion.js              disclosures (footer expanders)
   ticker.js                 logo marquee (duplicated list, pause/play)
   filter.js                 project filter chips + live status
+  truncate.js               character limits (data-max-chars): word-boundary cut + ellipsis, full text kept for screen readers
   reveal.js                 scroll reveal (only below-the-fold content starts hidden)
   hero-fx.js                canvas light curves + dots (≤30fps, pausable, < 4 KB); data-fx-static draws one still frame
   consent.js                cookie banner; exposes window.caConsent.get('analytics')
   dot-nav.js                page section dots (≥1280px)
 assets/fonts/               Inter variable + Maitree 700 (Latin, WOFF2)
 assets/img/                 CA logos, favicons, AVIF/WebP images
+assets/img/logos/           affiliation logos (official files from each organisation)
 assets/icons/sprite.svg     24px line icons, 1.75 stroke, round caps
 docs/content-todo.md        every placeholder still needing real content
 docs/ux-review.md           v2 UX review: findings, rules applied, departures from the brief
@@ -54,6 +56,7 @@ Naming is BEM with a `ca-` prefix. Each section is self-contained markup (`<sect
 - Asset paths are relative (`assets/...`). In a theme, prefix them with `get_template_directory_uri()`.
 - Internal links are root-relative (`/tenders/`) and the search form is `GET /?s=`, so both work as-is.
 - The menu dropdowns are plain nested lists; the mobile menu is generated from them at runtime, so only one menu needs to be rendered.
+- Character limits: news titles 80 (featured 100), summaries 140. In WordPress, enforce them server-side (e.g. `wp_html_excerpt()` / a word-boundary `mb_substr()`) and keep the full title in a visually hidden span, as `truncate.js` does.
 
 ## Behaviour without JavaScript
 
@@ -72,5 +75,5 @@ All content is visible: footer sub-lists expanded, every project tile shown (fil
 
 - axe-core 4.10: 0 violations at 1440, 390 and 320px (reduced motion), and with the dropdown, menu and mobile menu open.
 - No console errors; no horizontal scroll or clipped content at 320 / 390 / 768 / 1024 / 1100 / 1280 / 1440; works with JS disabled and with reduced motion.
-- Budgets (esbuild minified): CSS 45.6 KB, JS 12.4 KB; `hero-fx.js` 3.0 KB.
+- Budgets (esbuild minified): CSS 46.1 KB, JS 12.8 KB; `hero-fx.js` 3.0 KB.
 - Lighthouse was not run in this environment.

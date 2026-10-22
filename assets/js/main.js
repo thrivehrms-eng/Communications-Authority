@@ -7,6 +7,7 @@ const modules = {
   accordion: '[data-disclosure]',
   ticker: '[data-ticker]',
   filter: '[data-filter]',
+  truncate: '[data-max-chars]',
   reveal: '[data-reveal], [data-reveal-stagger]',
   'hero-fx': '[data-fx]',
   consent: '[data-consent]',

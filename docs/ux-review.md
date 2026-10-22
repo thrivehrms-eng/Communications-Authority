@@ -1,4 +1,4 @@
-# UX review — homepage v2
+# UX review — homepage v2 and v3
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -56,3 +56,16 @@ These change what `CA-Homepage-Build-Instructions.md` specified and should be co
 - Keyboard: Esc returns focus to the opener for dropdowns, search, menu, help and consent; menu traps Tab.
 - Budgets (esbuild minified): CSS 45.6 KB, JS 12.4 KB; `hero-fx.js` 3.0 KB.
 - Lighthouse not run in this environment.
+
+## v3 — client feedback
+
+| Feedback | Change |
+|---|---|
+| News titles too big; cards carry unnecessary info; add a character limit | Card titles 18px (featured 20–24px, was up to 32px). Cards show image, date and title only; category label, "[X] min read", excerpt and "Read more" removed (the whole card is the link). The featured card keeps a one-sentence summary. Limits via `data-max-chars`: titles 80 (featured 100), summary 140, cut at a word boundary with an ellipsis; the full title stays in the accessible name and as a tooltip (`truncation-strategy`). CSS line-clamp is the no-JS fallback |
+| Hero overcrowded; make the image shorter than the viewport and put search and popular tasks below | Hero is now the full-width satellite-dish photo at 62% of the viewport height (max 600px) with only the headline and a one-line lead over a navy scrim. Badge, FX canvas and pause button removed from the hero. Search and the six popular tasks moved into a new "What do you need to do?" panel directly below |
+| Find appropriate logos and images for affiliations and projects | Official logos for ITU, UPU, ATU, CTO, EACO and AFRALTI from each organisation's website, greyscale at rest and in colour on hover or focus, with the organisation's name as alt text. CA's own ca.go.ke portfolio photos for E-Justice, Education Broadband and Voice Infrastructure (the USF base station in West Pokot). The Ministry, PAPU and three project photos are still needed (see `content-todo.md`) |
+
+Other v3 adjustments:
+- The "Stay safe online" panel is the page's single animated area again (pausable), since the hero no longer animates (`excessive-motion` stays at one per page).
+- On phones the help button stays hidden while the search and tasks panel is on screen, so it can't cover the Search button.
+- **PAPU's link was removed**: `upap-papu.africa` now redirects to an unrelated shop site.
