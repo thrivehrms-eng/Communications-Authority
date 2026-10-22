@@ -53,13 +53,17 @@ html.js .reveal-pending .ca-icon-badge { transform: scale(.4) rotate(-20deg); }
 html.js .reveal-run .ca-icon-badge { transition-delay: calc(var(--reveal-delay, 0ms) + 220ms); }
 
 /* ── Menus open with a quick stagger ── */
-.ca-dropdown.is-open li, .ca-overlay:not([hidden]) .ca-latest > li, .ca-search-panel:not([hidden]) .ca-faq > li, .ca-fab__card:not([hidden]) .ca-fab__list > li { animation: ca-slide-in 360ms var(--ease-expo) both; }
-:is(.ca-dropdown, .ca-latest, .ca-faq, .ca-fab__list) li:nth-child(2) { animation-delay: 25ms; }
-:is(.ca-dropdown, .ca-latest, .ca-faq, .ca-fab__list) li:nth-child(3) { animation-delay: 50ms; }
-:is(.ca-dropdown, .ca-latest, .ca-faq, .ca-fab__list) li:nth-child(4) { animation-delay: 75ms; }
-:is(.ca-dropdown, .ca-latest, .ca-faq, .ca-fab__list) li:nth-child(5) { animation-delay: 100ms; }
-:is(.ca-dropdown, .ca-latest, .ca-faq, .ca-fab__list) li:nth-child(6) { animation-delay: 125ms; }
-:is(.ca-dropdown, .ca-latest, .ca-faq, .ca-fab__list) li:nth-child(n+7) { animation-delay: 150ms; }
+.ca-dropdown.is-open :is(.ca-mega__intro > *, .ca-dropdown__group, .ca-mega__quick) { animation: ca-slide-in 420ms var(--ease-expo) both; }
+.ca-dropdown.is-open .ca-mega__intro > :nth-child(2), .ca-dropdown.is-open .ca-dropdown__group:nth-child(2) { animation-delay: 40ms; }
+.ca-dropdown.is-open .ca-mega__intro > :nth-child(3), .ca-dropdown.is-open .ca-dropdown__group:nth-child(3) { animation-delay: 80ms; }
+.ca-dropdown.is-open .ca-mega__quick { animation-delay: 120ms; }
+.ca-overlay:not([hidden]) .ca-latest > li, .ca-search-panel:not([hidden]) .ca-faq > li, .ca-fab__card:not([hidden]) .ca-fab__list > li { animation: ca-slide-in 360ms var(--ease-expo) both; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(2) { animation-delay: 25ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(3) { animation-delay: 50ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(4) { animation-delay: 75ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(5) { animation-delay: 100ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(6) { animation-delay: 125ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(n+7) { animation-delay: 150ms; }
 
 /* ── Search: rotating hints fade between examples ── */
 .ca-find-search input::placeholder { transition: opacity 180ms var(--ease-std); }
@@ -97,6 +101,7 @@ html.js .reveal-run .ca-icon-badge { transition-delay: calc(var(--reveal-delay, 
   [data-spotlight]:hover::before { opacity: 1; }
 
   .ca-card:hover .ca-icon-badge, .ca-action:hover .ca-icon-badge { transform: scale(1.1) rotate(-6deg); background: rgb(255 255 255 / .2); }
+  .ca-dropdown .ca-mega__link:hover .ca-mega__icon { transform: scale(1.08) rotate(-6deg); }
   .ca-task__icon { transition: transform 300ms var(--ease-spring); }
   .ca-task:hover .ca-task__icon { transform: translateY(-2px) scale(1.15); }
 

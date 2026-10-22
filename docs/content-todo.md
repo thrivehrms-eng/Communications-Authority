@@ -28,6 +28,7 @@ Open the page with `?placeholders` in the URL to outline them all with a dashed 
 | 7.1 Hero slider | Four slides (Welcome · Licensing online · Complaints · Universal access): titles, one-line texts and buttons are proposed copy. Titles follow a two-line rhythm: a short statement + a highlighted phrase (≤ 24 characters each) | Confirm wording; confirm `https://lms.ca.go.ke/` (taken from the current ca.go.ke banner) |
 | 7.1 Hero slider images | Slides use CA's dish photo, the ca.go.ke "network globe" banner image, the staging tower-at-sunset image and the USF base station photo | Purpose-shot photography at ≥ 2880×1140 would sharpen slides 2–3 (sources are 1200–1600px wide) |
 | 7.1 Hero | Popular tasks (6) and the search label are proposed; they mirror the search FAQ | Confirm the six against contact-centre or site-search data |
+| 6.2 Main menu | Each section's one-line summary, the group names (e.g. "Policies & commitments", "Market & compliance", "Public participation") and the one-line description under every link are **proposed functional copy**; the links and their order are unchanged from the brief | Confirm wording with Corporate Communications; keep descriptions to about 30 characters so most stay on one line at 1440px |
 
 ## Links / URLs to confirm
 

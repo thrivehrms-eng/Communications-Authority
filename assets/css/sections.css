@@ -16,19 +16,23 @@
 
 .ca-nav { margin-left: auto; }
 .ca-nav__list { display: flex; align-items: center; gap: clamp(0px, .5vw, 8px); margin: 0; padding: 0; list-style: none; }
-.ca-nav__item { position: relative; }
-.ca-nav__item--wide { position: static; }
+/* .ca-nav, its list and items stay unpositioned so the pill and every menu are placed against the header bar */
 .ca-nav__trigger {
-  position: relative; display: flex; align-items: center; gap: 4px; min-height: 44px; padding: 0 8px;
-  border: 0; background: none; color: var(--primary); font-size: 1.0625rem; font-weight: 500; line-height: 1.4; white-space: nowrap;
+  position: relative; z-index: 1; display: flex; align-items: center; gap: 4px; min-height: 44px; padding: 0 8px;
+  border: 0; border-radius: var(--radius-pill); background: none; color: var(--primary);
+  font-size: 1.0625rem; font-weight: 500; line-height: 1.4; white-space: nowrap;
 }
-.ca-nav__trigger::after {
-  content: ""; position: absolute; left: 8px; right: 8px; bottom: 4px; height: 2px; background: var(--primary);
-  transform: scaleX(0); transform-origin: left; transition: transform var(--dur-2) var(--ease-std);
-}
-.ca-nav__trigger:hover::after, .ca-nav__trigger[aria-expanded="true"]::after { transform: scaleX(1); }
 .ca-nav__trigger .ca-icon { transition: transform var(--dur-2) var(--ease-std); }
 .ca-nav__trigger[aria-expanded="true"] .ca-icon { transform: rotate(180deg); }
+html:not(.js) .ca-nav__trigger:hover { background: var(--surface-tint); }
+/* a soft pill glides behind the section under the pointer (header.js) */
+.ca-nav__pill {
+  position: absolute; z-index: 0; top: calc((var(--header-h) - 40px) / 2); left: 0; width: var(--pill-w, 0); height: 40px;
+  border-radius: var(--radius-pill); background: var(--surface-tint); translate: var(--pill-x, 0) 0; opacity: 0; pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease-std), translate 380ms var(--ease-expo), width 380ms var(--ease-expo);
+}
+.ca-nav.has-pill .ca-nav__pill { opacity: 1; }
+.ca-nav.pill-jump .ca-nav__pill { transition: opacity var(--dur-2) var(--ease-std); }
 
 .ca-iconbtn, .ca-burger, .ca-roundbtn {
   display: grid; place-items: center; width: 44px; height: 44px; flex: none; padding: 0;
@@ -59,33 +63,85 @@
 .ca-header.is-search .ca-search { display: flex; }
 .ca-header.is-search .ca-nav, .ca-header.is-search .ca-header__cta { display: none; }
 
-/* ── Dropdowns ── */
-.ca-dropdown {
-  position: absolute; z-index: 2; left: 0; top: calc(100% + 12px + (var(--header-h) - 44px) / 2);
-  min-width: 300px; max-height: calc(100vh - var(--header-h) - 64px); overflow: auto;
-  border-top: 3px solid var(--signature); border-radius: var(--radius-card);
-  background: var(--surface); box-shadow: var(--shadow-card);
-  opacity: 0; visibility: hidden; transform: translateY(6px);
-  transition: opacity var(--dur-1) var(--ease-std), transform var(--dur-1) var(--ease-std), visibility 0s linear var(--dur-1);
+/* ── Mega menu ──
+   One white surface resizes between sections while each section's content slides in from the side it
+   was approached from. Sections are clipped to the surface's animated height, so nothing spills out
+   mid-morph. Everything is placed against the header bar, centred under it. */
+.ca-dropdown, .ca-mega-surface { position: absolute; top: calc(100% + 10px); left: 50%; translate: -50% 0; width: min(1120px, 100% - 32px); }
+.ca-mega-surface {
+  z-index: 2; height: var(--mega-h, 0px); overflow: hidden; border-radius: var(--radius-card);
+  background: var(--surface); box-shadow: var(--shadow-card), 0 0 0 1px rgb(4 33 79 / .05);
+  opacity: 0; visibility: hidden; transform: translateY(-8px) scale(.985); transform-origin: 50% 0; pointer-events: none;
+  transition: opacity 180ms var(--ease-std), transform 180ms var(--ease-std), visibility 0s linear 180ms, height 420ms var(--ease-expo);
 }
-.ca-dropdown--wide { left: 50%; top: calc(100% + 12px); translate: -50% 0; width: min(880px, calc(100vw - var(--gutter) * 2 - 32px)); }
-.ca-dropdown.is-open,
+.ca-mega-surface::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: var(--signature); }
+.ca-nav.is-open .ca-mega-surface { opacity: 1; visibility: visible; transform: none; transition: opacity 220ms var(--ease-std), transform 420ms var(--ease-expo), visibility 0s, height 420ms var(--ease-expo); }
+.ca-dropdown {
+  z-index: 3; max-height: calc(100svh - var(--header-h) - var(--gutter) - 40px); overflow: auto; overscroll-behavior: contain;
+  border-radius: var(--radius-card); opacity: 0; visibility: hidden;
+  clip-path: inset(0 0 max(0px, 100% - var(--mega-h, 100%)) 0 round var(--radius-card));
+  transition: opacity 160ms var(--ease-std), visibility 0s linear 160ms, clip-path 420ms var(--ease-expo);
+}
+html.js .ca-dropdown:not(.is-open) { pointer-events: none; }
+.ca-dropdown.is-open { z-index: 4; opacity: 1; visibility: visible; transition: opacity 240ms var(--ease-std) 40ms, visibility 0s, clip-path 420ms var(--ease-expo); }
+.ca-nav.is-placing :is(.ca-mega-surface, .ca-dropdown) { transition: none; }
+.ca-dropdown > .ca-dropdown__inner { transform: translateX(calc(var(--dir, 0) * 28px)); transition: transform 420ms var(--ease-expo); }
+.ca-dropdown.is-open > .ca-dropdown__inner { transform: none; }
+.ca-dropdown.is-entering > .ca-dropdown__inner { transition: none; }
+/* without JavaScript each section shows on hover/focus with its own background */
+html:not(.js) .ca-mega-surface { display: none; }
+html:not(.js) .ca-dropdown { clip-path: none; background: var(--surface); box-shadow: var(--shadow-card); border-top: 3px solid var(--signature); }
 html:not(.js) .ca-nav__item:hover > .ca-dropdown,
-html:not(.js) .ca-nav__item:focus-within > .ca-dropdown { opacity: 1; visibility: visible; transform: none; transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out), visibility 0s; }
+html:not(.js) .ca-nav__item:focus-within > .ca-dropdown { opacity: 1; visibility: visible; transition: opacity var(--dur-2) var(--ease-out), visibility 0s; }
+
 .ca-dropdown ul { margin: 0; padding: 0; list-style: none; }
-.ca-dropdown a { display: block; padding: 14px 22px; border-bottom: 1px solid var(--border); color: var(--text); font-size: 1rem; line-height: 1.4; text-decoration: none; }
-.ca-dropdown a:hover { background: var(--surface-tint); color: var(--primary); }
-.ca-dropdown li:last-child a { border-bottom: 0; }
+.ca-dropdown .ca-dropdown__inner { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100%; }
+/* intro: what the section is for, and its overview page */
+.ca-dropdown .ca-mega__intro { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 31px 28px 28px; border-top: 3px solid transparent; background: var(--surface-tint) padding-box; } /* lets the surface's orange edge run across */
+.ca-dropdown .ca-mega__title { font-family: var(--font-heading); font-size: 1.375rem; font-weight: 700; line-height: 1.25; color: var(--primary); }
+.ca-dropdown .ca-mega__summary { font-size: .9375rem; line-height: 1.55; color: var(--text-muted); }
+.ca-dropdown .ca-dropdown__overview {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; margin-top: 8px; padding: 0 16px 0 18px;
+  border: 1.5px solid var(--primary); border-radius: var(--radius-pill); background: var(--surface);
+  color: var(--primary); font-size: .9375rem; font-weight: 600; text-decoration: none;
+  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std);
+}
+.ca-dropdown .ca-dropdown__overview:hover { background: var(--primary); color: var(--text-on-dark); }
+.ca-dropdown .ca-dropdown__overview .ca-icon { transition: transform var(--dur-2) var(--ease-expo); }
+.ca-dropdown .ca-dropdown__overview:is(:hover, :focus-visible) .ca-icon { transform: translateX(3px); }
+/* groups: a small heading over links that each carry an icon, a name and a short line */
+.ca-dropdown .ca-mega__body { padding: 26px 20px 18px; }
+.ca-dropdown .ca-dropdown__groups { display: grid; grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr)); gap: 12px; }
+.ca-dropdown .ca-dropdown__heading {
+  margin: 0 12px 6px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  font-size: .75rem; font-weight: 600; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted);
+}
+.ca-dropdown .ca-mega__link {
+  display: grid; grid-template-columns: 36px minmax(0, 1fr); align-items: start; gap: 12px; padding: 9px 12px;
+  border-radius: 14px; color: var(--text); text-decoration: none; transition: background-color var(--dur-1) var(--ease-std);
+}
+.ca-dropdown .ca-mega__link:hover { background: var(--surface-tint); }
 .ca-dropdown a:focus-visible { outline-offset: -3px; }
-.ca-dropdown .ca-dropdown__overview { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 600; color: var(--primary); border-bottom: 1px solid var(--border); }
-.ca-dropdown__groups { columns: var(--cols, 2); column-gap: 0; padding: 8px 0; }
-.ca-dropdown__group { break-inside: avoid; padding: 8px 0; }
-.ca-dropdown__heading { padding: 6px 22px; font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); }
-.ca-dropdown--wide a { padding-block: 10px; }
+.ca-dropdown .ca-mega__icon {
+  display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--surface-tint); color: var(--primary);
+  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std), transform 300ms var(--ease-spring);
+}
+.ca-dropdown .ca-mega__icon .ca-icon { width: 20px; height: 20px; }
+.ca-dropdown .ca-mega__link:hover .ca-mega__icon { background: var(--primary); color: var(--text-on-dark); }
+.ca-dropdown .ca-mega__text { display: grid; gap: 2px; padding-top: 1px; }
+.ca-dropdown .ca-mega__label { font-size: .9375rem; font-weight: 600; line-height: 1.35; }
+.ca-dropdown .ca-mega__link:hover .ca-mega__label { color: var(--primary); }
+.ca-dropdown .ca-mega__desc { font-size: .8125rem; line-height: 1.4; color: var(--text-muted); }
+/* quick links: long tails as plain inline links under a divider */
+.ca-dropdown .ca-mega__quick { display: grid; gap: 12px; margin: 14px 12px 0; padding-top: 16px; border-top: 1px solid var(--border); }
+.ca-dropdown .ca-mega__quick-group { display: grid; grid-template-columns: 176px minmax(0, 1fr); align-items: baseline; gap: 4px 16px; }
+.ca-dropdown .ca-mega__quick .ca-dropdown__heading { margin: 0; padding: 0; border: 0; }
+.ca-dropdown .ca-mega__quick-list { display: flex; flex-wrap: wrap; gap: 0 22px; }
+.ca-dropdown .ca-mega__quick-list a { display: inline-block; padding: 4px 0; color: var(--text); font-size: .9375rem; line-height: 1.5; text-decoration: none; }
+.ca-dropdown .ca-mega__quick-list a:hover { color: var(--primary); text-decoration: underline; text-underline-offset: .2em; }
 
 @media (max-width: 1399px) {
   .ca-nav__trigger { font-size: 1rem; padding: 0 6px; }
-  .ca-nav__trigger::after { left: 6px; right: 6px; }
 }
 @media (min-width: 1100px) and (max-width: 1319px) {
   .ca-header__bar { gap: 6px; padding-left: 16px; }
@@ -225,7 +281,8 @@ html:not(.js) .ca-nav__item:focus-within > .ca-dropdown { opacity: 1; visibility
 .ca-ticker:not(.is-ready) .ca-ticker__viewport { overflow-x: auto; mask-image: none; }
 .ca-ticker:not(.is-ready) .ca-ticker__pause { display: none; }
 .ca-ticker__track { display: flex; width: max-content; }
-.ca-ticker__list { display: flex; align-items: center; gap: 16px; margin: 0; padding: 0 16px 0 0; list-style: none; }
+/* the end padding equals the gap so the seam between the two copies matches the rest (it must beat ul[role="list"]) */
+.ca-ticker .ca-ticker__list { display: flex; align-items: center; gap: 16px; margin: 0; padding: 0 16px 0 0; list-style: none; }
 .ca-ticker.is-ready .ca-ticker__track { animation: ca-marquee 70s linear infinite; }
 .ca-ticker__track:hover, .ca-ticker__track:focus-within, .ca-ticker.is-paused .ca-ticker__track { animation-play-state: paused !important; }
 @keyframes ca-marquee { to { transform: translateX(-50%); } }

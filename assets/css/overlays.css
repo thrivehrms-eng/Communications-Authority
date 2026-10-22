@@ -58,6 +58,7 @@
 .ca-mnav__panel a:hover { color: var(--primary); text-decoration: underline; }
 .ca-mnav__panel .ca-dropdown__overview { color: var(--primary); font-weight: 600; }
 .ca-mnav__panel .ca-dropdown__groups { columns: 1; }
+.ca-mnav__panel :is(.ca-mega__title, .ca-mega__summary, .ca-mega__icon, .ca-mega__desc) { display: none; }
 .ca-mnav__panel .ca-dropdown__heading { padding: 14px 0 2px; font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); }
 
 @media (max-width: 1099px) {

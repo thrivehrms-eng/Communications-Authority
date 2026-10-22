@@ -97,6 +97,9 @@
 .ca-story:hover .ca-story__title a { color: var(--primary); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
 .ca-story__title a:focus-visible { outline: none; }
 .ca-story:has(.ca-story__title a:focus-visible) { outline: var(--focus); outline-offset: 6px; border-radius: 10px; }
+.ca-story__more { display: inline-flex; align-items: center; gap: 6px; justify-self: start; margin-top: 2px; color: var(--action); font-size: .875rem; font-weight: 600; line-height: 1.4; }
+.ca-story__more .ca-icon { width: 18px; height: 18px; transition: transform var(--dur-2) var(--ease-std); }
+.ca-story:hover .ca-story__more .ca-icon, .ca-story:has(.ca-story__title a:focus-visible) .ca-story__more .ca-icon { transform: translateX(4px); }
 .ca-story__summary { color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .ca-story--lead { display: grid; gap: 18px; align-content: start; }
 .ca-story--lead .ca-story__media { aspect-ratio: 16 / 9; }

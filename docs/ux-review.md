@@ -1,4 +1,4 @@
-# UX review — homepage v2 to v6
+# UX review — homepage v2 to v7
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -103,3 +103,23 @@ Also: the "Our commitments" eyebrow is white on the blue panel (cyan is only 3.8
 | Ignore budget limits | CSS is now 56.9 KB minified (was capped at 50 KB) |
 
 Fix found while testing: the curtain reveal first clipped the observed element itself, which makes the browser treat it as off-screen so it never revealed. The clip now sits on the inner `<picture>`.
+
+## v7 — client feedback
+
+| Feedback | Change |
+|---|---|
+| Ticker: the AFRALTI and Ministry tiles touch | The list's end padding (which makes the seam between the two looping copies match the 16px gap) was being reset by the base `ul[role="list"]` rule. The selector is now specific enough to win; the seam measures 16px, the same as every other gap |
+| News needs a "Read more" element | Each story (featured and the three rows) ends with an orange "Read more →" cue, on the white panel only. The arrow nudges forward on hover or keyboard focus. The cue is decorative: the title stays the story's single link and its click area still covers the whole card |
+| Borrow Cloudflare's dropdown practices: smooth, easy to tell sections and titles apart, not overwhelming | The five dropdowns are now one **mega menu** (below) |
+
+What was taken from Cloudflare's menu (studied from its page markup) and how it was adapted:
+
+- **One container for every section.** A single white surface opens under the header and resizes smoothly between sections instead of five separate boxes popping in and out. Each section's content is clipped to the surface while it resizes, so nothing spills out mid-move, and slides in from the side the pointer came from, so moving left or right through the menu feels spatial.
+- **A highlight that follows the pointer.** A soft light-blue pill glides behind the section button under the pointer (and under keyboard focus), so it is always clear which section a panel belongs to.
+- **Clear hierarchy inside each panel.** A tinted intro column names the section, says in one line what it is for and links to its overview. Links sit in small titled groups ("Licensing", "Universal access", "Market & compliance"…). Each link has an icon, a name and a one-line description, so people can scan by shape or by words. Long tails (Law & policy, National projects, Portals) drop into a quieter band of plain inline links under a divider, rather than adding more columns.
+- **Forgiving pointer behaviour.** Opening waits 140ms so a pointer passing over the bar doesn't flash panels (80ms when already open, so switching feels instant), and the menu stays open for 280ms after the pointer leaves the header so it can travel diagonally down into a panel.
+- **Same links, same order.** All 73 links from the previous menu (Appendix A) are unchanged. Group names, the section summaries and the link descriptions are proposed copy (see content-todo).
+
+Skill guidance applied (ui-ux-pro-max): `nav-hierarchy` (section → group → link with one-line descriptions), `progressive-disclosure` (long tails as quiet inline links), `continuity` and `shared-element-transition` (one surface that resizes, direction-aware slides), `cancellable-state-transitions` (fast switching retargets the resize instead of queueing), `hover-vs-tap` (every section also opens on click, tap and keyboard; hover only adds a short-delay shortcut), `exit-faster-than-enter` (sections fade out in 160ms, in over 240ms), `keyboard-nav` (disclosure pattern with arrow keys and Esc), and `reduced-motion` (all of it becomes instant).
+
+Mobile is unchanged in behaviour: the burger menu's accordion is still built from the same markup, showing names only (no icons, summaries or descriptions) to keep it short.
