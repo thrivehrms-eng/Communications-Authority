@@ -399,41 +399,91 @@
 <!-- ═════════ Main ═════════ -->
 <main class="ca-main" id="main" tabindex="-1">
 
-  <!-- 7.1 Hero: photo, headline, short lead -->
-  <section class="ca-panel ca-panel--dark ca-hero ca-on-dark" id="home" aria-labelledby="hero-title">
-    <picture class="ca-hero__media">
-      <source type="image/avif" srcset="assets/img/hero-wide-800.avif 800w, assets/img/hero-wide-1600.avif 1600w" sizes="100vw">
-      <img src="assets/img/hero-wide-1600.webp" srcset="assets/img/hero-wide-800.webp 800w, assets/img/hero-wide-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="634" fetchpriority="high" decoding="async">
-    </picture>
+  <!-- 7.1 Hero: auto-playing slider (pause/play, previous/next, slide buttons; stops on hover, focus and reduced motion) -->
+  <section class="ca-panel ca-panel--dark ca-hero ca-on-dark" id="home" aria-labelledby="hero-title" data-carousel>
+    <div class="ca-hero__bg" aria-hidden="true">
+      <picture class="ca-hero__img is-active" style="--pos: 72% 50%">
+        <source type="image/avif" srcset="assets/img/hero-wide-800.avif 800w, assets/img/hero-wide-1600.avif 1600w" sizes="100vw">
+        <img src="assets/img/hero-wide-1600.webp" srcset="assets/img/hero-wide-800.webp 800w, assets/img/hero-wide-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="634" fetchpriority="high" decoding="async">
+      </picture>
+      <picture class="ca-hero__img" style="--pos: 70% 50%">
+        <source type="image/avif" srcset="assets/img/slide-online-800.avif 800w, assets/img/slide-online-1200.avif 1200w" sizes="100vw">
+        <img src="assets/img/slide-online-1200.webp" srcset="assets/img/slide-online-800.webp 800w, assets/img/slide-online-1200.webp 1200w" sizes="100vw" alt="" width="1600" height="634" loading="lazy" fetchpriority="low" decoding="async">
+      </picture>
+      <picture class="ca-hero__img" style="--pos: 62% 50%">
+        <source type="image/avif" srcset="assets/img/slide-complaint-800.avif 800w, assets/img/slide-complaint-1600.avif 1600w" sizes="100vw">
+        <img src="assets/img/slide-complaint-1600.webp" srcset="assets/img/slide-complaint-800.webp 800w, assets/img/slide-complaint-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="634" loading="lazy" fetchpriority="low" decoding="async">
+      </picture>
+      <picture class="ca-hero__img" style="--pos: 62% 50%">
+        <source type="image/avif" srcset="assets/img/slide-access-800.avif 800w, assets/img/slide-access-1600.avif 1600w" sizes="100vw">
+        <img src="assets/img/slide-access-1600.webp" srcset="assets/img/slide-access-800.webp 800w, assets/img/slide-access-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="634" loading="lazy" fetchpriority="low" decoding="async">
+      </picture>
+    </div>
     <div class="ca-container ca-hero__inner">
-      <h1 id="hero-title">Connecting Kenya.<br><span class="ca-hl">Protecting</span> every user.</h1>
-      <p class="ca-lead">We license and regulate telecommunications, broadcasting, postal and courier services — and protect the people who use them.</p>
+      <h1 class="ca-hero__welcome" id="hero-title">Welcome to the Communications Authority of Kenya</h1>
+      <div class="ca-hero__carousel" role="region" aria-roledescription="carousel" aria-label="Highlights">
+        <div class="ca-hero__slides" aria-live="off" data-carousel-slides>
+          <div class="ca-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4: Welcome">
+            <h2 class="ca-slide__title">Connecting Kenya, <span class="ca-hl">protecting every user.</span></h2>
+            <p class="ca-slide__text">We license and regulate telecommunications, broadcasting, postal and courier services in the public interest.</p>
+            <a class="ca-btn ca-btn--white" href="/about-the-authority/">About the Authority<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
+          </div>
+          <div class="ca-slide" role="group" aria-roledescription="slide" aria-label="2 of 4: Licensing online">
+            <h2 class="ca-slide__title">Licence applications <span class="ca-hl">are now online.</span></h2>
+            <p class="ca-slide__text">Apply for any CA licence from anywhere, at any time, with no paper forms and no queues.</p>
+            <a class="ca-btn ca-btn--white" href="https://lms.ca.go.ke/">Apply at lms.ca.go.ke<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#external"/></svg><span class="ca-vh">(external site)</span></a>
+          </div>
+          <div class="ca-slide" role="group" aria-roledescription="slide" aria-label="3 of 4: Complaints">
+            <h2 class="ca-slide__title">A problem with your <span class="ca-hl">service provider?</span></h2>
+            <p class="ca-slide__text">If your provider hasn’t resolved your complaint, tell us. We’ll guide you through the next steps.</p>
+            <a class="ca-btn ca-btn--white" href="/consumer-complaint/">File a complaint<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
+          </div>
+          <div class="ca-slide" role="group" aria-roledescription="slide" aria-label="4 of 4: Universal access">
+            <h2 class="ca-slide__title">Connecting every county. <span class="ca-hl">No one left behind.</span></h2>
+            <p class="ca-slide__text">The Universal Service Fund extends communications services to underserved areas across Kenya.</p>
+            <a class="ca-btn ca-btn--white" href="/universal-access/">Explore universal access<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
+          </div>
+        </div>
+        <div class="ca-hero__controls" data-js-only>
+          <button class="ca-hero__ctrl" type="button" data-carousel-pause>
+            <svg class="ca-icon ca-hero__pause" aria-hidden="true"><use href="assets/icons/sprite.svg#pause"/></svg><svg class="ca-icon ca-hero__play" aria-hidden="true"><use href="assets/icons/sprite.svg#play"/></svg><span class="ca-vh">Pause slides</span>
+          </button>
+          <button class="ca-hero__ctrl" type="button" data-carousel-prev><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-left"/></svg><span class="ca-vh">Previous slide</span></button>
+          <div class="ca-hero__dots" role="group" aria-label="Choose a slide">
+            <button class="ca-hero__dot" type="button" aria-current="true" data-carousel-dot><span class="ca-vh">Slide 1: Welcome</span></button>
+            <button class="ca-hero__dot" type="button" aria-current="false" data-carousel-dot><span class="ca-vh">Slide 2: Licensing online</span></button>
+            <button class="ca-hero__dot" type="button" aria-current="false" data-carousel-dot><span class="ca-vh">Slide 3: Complaints</span></button>
+            <button class="ca-hero__dot" type="button" aria-current="false" data-carousel-dot><span class="ca-vh">Slide 4: Universal access</span></button>
+          </div>
+          <button class="ca-hero__ctrl" type="button" data-carousel-next><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg><span class="ca-vh">Next slide</span></button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Find a service: search + popular tasks -->
-  <section class="ca-panel ca-panel--white ca-find" id="find" aria-labelledby="find-title" data-fab-defer>
-    <div class="ca-container">
-      <div class="ca-section-head ca-section-head--center">
-        <h2 id="find-title">What do you <span class="ca-hl">need to do?</span></h2>
+  <!-- Find a service: search + popular tasks (compact) -->
+  <section class="ca-panel ca-panel--tint ca-find" id="find" aria-labelledby="find-title" data-fab-defer>
+    <div class="ca-container ca-find__grid">
+      <div class="ca-find__search">
+        <h2 class="ca-find__title" id="find-title">What do you <span class="ca-hl">need to do?</span></h2>
+        <form class="ca-find-search" role="search" action="/" method="get">
+          <label class="ca-find-search__label" for="find-search">Search for a service, licence or document</label>
+          <div class="ca-find-search__box">
+            <svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#search"/></svg>
+            <input id="find-search" type="search" name="s" placeholder="Try “IMEI” or “tenders”" autocomplete="off" enterkeyhint="search" required>
+            <button class="ca-btn ca-btn--primary" type="submit">Search</button>
+          </div>
+        </form>
       </div>
-      <form class="ca-find-search" role="search" action="/" method="get">
-        <label class="ca-find-search__label" for="find-search">Search for a service, licence or document</label>
-        <div class="ca-find-search__box">
-          <svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#search"/></svg>
-          <input id="find-search" type="search" name="s" placeholder="Try “IMEI” or “tenders”" autocomplete="off" enterkeyhint="search" required>
-          <button class="ca-btn ca-btn--primary" type="submit">Search</button>
-        </div>
-      </form>
       <div class="ca-find__tasks">
         <h3 class="ca-find__label" id="tasks-title">Popular tasks</h3>
-        <ul class="ca-tasks" role="list" aria-labelledby="tasks-title" data-reveal-stagger>
-          <li><a class="ca-task" href="/consumer-complaint/"><span class="ca-task__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#complaint"/></svg></span><span class="ca-task__label">File a complaint</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
-          <li><a class="ca-task" href="/imei-checker/"><span class="ca-task__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#smartphone"/></svg></span><span class="ca-task__label">Check a phone (IMEI)</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
-          <li><a class="ca-task" href="/licensee-register/"><span class="ca-task__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#register"/></svg></span><span class="ca-task__label">Search the licensee register</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
-          <li><a class="ca-task" href="/licensing-procedures/"><span class="ca-task__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#licence"/></svg></span><span class="ca-task__label">Apply for a licence</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
-          <li><a class="ca-task" href="/tenders/"><span class="ca-task__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#briefcase"/></svg></span><span class="ca-task__label">Find current tenders</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
-          <li><a class="ca-task" href="/staff-verification-portal/"><span class="ca-task__icon"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#badge-check"/></svg></span><span class="ca-task__label">Verify a CA officer</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
+        <ul class="ca-tasks" role="list" aria-labelledby="tasks-title">
+            <li><a class="ca-task" href="/consumer-complaint/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#complaint"/></svg><span>File a complaint</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
+            <li><a class="ca-task" href="/imei-checker/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#smartphone"/></svg><span>Check a phone (IMEI)</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
+            <li><a class="ca-task" href="/licensee-register/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#register"/></svg><span>Licensee register</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
+            <li><a class="ca-task" href="/licensing-procedures/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#licence"/></svg><span>Apply for a licence</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
+            <li><a class="ca-task" href="/tenders/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#briefcase"/></svg><span>Current tenders</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
+            <li><a class="ca-task" href="/staff-verification-portal/"><svg class="ca-icon ca-task__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#badge-check"/></svg><span>Verify a CA officer</span><svg class="ca-icon ca-task__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a></li>
         </ul>
       </div>
     </div>
@@ -492,7 +542,7 @@
   </section>
 
   <!-- 7.7 Feature on FX background -->
-  <section class="ca-panel ca-panel--fx ca-on-dark ca-feature" id="stay-safe" aria-labelledby="safe-title" data-fx data-fx-density="0.6">
+  <section class="ca-panel ca-panel--fx ca-on-dark ca-feature" id="stay-safe" aria-labelledby="safe-title" data-fx data-fx-density="0.5" data-fx-static>
     <canvas class="ca-fx" aria-hidden="true" data-fx-canvas></canvas>
     <div class="ca-container">
       <div class="ca-section-head" data-reveal>
@@ -524,81 +574,58 @@
         </div>
       </div>
     </div>
-    <button class="ca-fx-pause" type="button" aria-pressed="false" data-fx-pause data-js-only>
-      <svg class="ca-icon ca-fx-pause__pause" aria-hidden="true"><use href="assets/icons/sprite.svg#pause"/></svg>
-      <svg class="ca-icon ca-fx-pause__play" aria-hidden="true"><use href="assets/icons/sprite.svg#play"/></svg>
-      <span class="ca-vh">Pause background animation</span>
-    </button>
   </section>
 
-  <!-- 7.9 News -->
-  <section class="ca-panel ca-panel--white" id="news" aria-labelledby="news-title">
+  <!-- 7.9 News: lead story + list -->
+  <section class="ca-panel ca-panel--white ca-newsroom" id="news" aria-labelledby="news-title">
     <div class="ca-container">
-      <div class="ca-section-head ca-section-head--center" data-reveal>
-        <p class="ca-eyebrow">News</p>
-        <h2 id="news-title">What's happening <span class="ca-hl">at the Authority.</span></h2>
-      </div>
-      <article class="ca-news ca-news--featured ca-on-dark" data-reveal>
-        <div class="ca-news__media">
-          <picture>
-            <source type="image/avif" srcset="assets/img/news-child-online-survey-320.avif 320w, assets/img/news-child-online-survey-640.avif 640w" sizes="(min-width: 768px) 50vw, 90vw">
-            <img src="assets/img/news-child-online-survey-640.webp" srcset="assets/img/news-child-online-survey-320.webp 320w, assets/img/news-child-online-survey-640.webp 640w" sizes="(min-width: 768px) 50vw, 90vw" alt="CA and University of Nairobi officials at a session reviewing preliminary findings of the National Survey on Child Online Protection" width="640" height="400" loading="lazy" decoding="async">
-          </picture>
+      <div class="ca-newsroom__head">
+        <div class="ca-section-head">
+          <p class="ca-eyebrow">News</p>
+          <h2 id="news-title">What’s happening <span class="ca-hl">at the Authority.</span></h2>
         </div>
-        <div class="ca-news__body">
-          <p class="ca-news__meta"><time datetime="2026-09-09">9 September 2026</time></p>
-          <h3><a data-max-chars="100" href="/ca-and-uon-undertake-preliminary-review-findings-national-survey-child-online-protection-and-safety/">CA and UoN Undertake Preliminary Review of Findings of the National Survey on Child Online Protection and Safety in Kenya</a></h3>
-          <p class="ca-news__excerpt" data-placeholder="true" data-max-chars="140">[One-sentence summary — to be supplied]</p>
-        </div>
-      </article>
-      <ul class="ca-news-grid" role="list" data-reveal-stagger>
-        <li>
-          <article class="ca-news">
-            <div class="ca-news__media">
-              <picture>
-                <source type="image/avif" srcset="assets/img/news-digital-skills-320.avif 320w, assets/img/news-digital-skills-640.avif 640w" sizes="(min-width: 768px) 33vw, 90vw">
-                <img src="assets/img/news-digital-skills-640.webp" srcset="assets/img/news-digital-skills-320.webp 320w, assets/img/news-digital-skills-640.webp 640w" sizes="(min-width: 768px) 33vw, 90vw" alt="Stakeholders at the Universal Service Fund workshop on the Digital Skilling Project for 120,000 Kenyans" width="640" height="400" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="ca-news__body">
-              <p class="ca-news__meta"><time datetime="2026-08-19">19 August 2026</time></p>
-              <h3><a data-max-chars="80" href="/120000-kenyans-gain-digital-skills-drive-meaningful-digital-inclusion/">120,000 Kenyans to Gain Digital Skills to Drive Meaningful Digital Inclusion</a></h3>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class="ca-news">
-            <div class="ca-news__media">
-              <picture>
-                <source type="image/avif" srcset="assets/img/news-cyber-cafe-320.avif 320w, assets/img/news-cyber-cafe-640.avif 640w" sizes="(min-width: 768px) 33vw, 90vw">
-                <img src="assets/img/news-cyber-cafe-640.webp" srcset="assets/img/news-cyber-cafe-320.webp 320w, assets/img/news-cyber-cafe-640.webp 640w" sizes="(min-width: 768px) 33vw, 90vw" alt="Rows of computers in a public cyber cafe" width="640" height="400" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="ca-news__body">
-              <p class="ca-news__meta"><time datetime="2026-08-13">13 August 2026</time></p>
-              <h3><a data-max-chars="80" href="/ca-clarifies-new-cyber-cafe-license-rules-and-says-no-browsing-history-will-be-required/">CA clarifies new cyber cafe licence rules and says no browsing history will be required</a></h3>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class="ca-news">
-            <div class="ca-news__media">
-              <picture>
-                <source type="image/avif" srcset="assets/img/news-music-festivals-320.avif 320w, assets/img/news-music-festivals-640.avif 640w" sizes="(min-width: 768px) 33vw, 90vw">
-                <img src="assets/img/news-music-festivals-640.webp" srcset="assets/img/news-music-festivals-320.webp 320w, assets/img/news-music-festivals-640.webp 640w" sizes="(min-width: 768px) 33vw, 90vw" alt="Kenya Music Festival branding graphic" width="640" height="400" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="ca-news__body">
-              <p class="ca-news__meta"><time datetime="2026-08-10">10 August 2026</time></p>
-              <h3><a data-max-chars="80" href="/ca-celebrates-creativity-and-digital-safety-kenya-music-festivals/">CA Celebrates Creativity and Digital Safety at the Kenya Music Festivals</a></h3>
-            </div>
-          </article>
-        </li>
-      </ul>
-      <div class="ca-actions ca-actions--center ca-section-foot">
-        <a class="ca-btn ca-btn--primary" href="/news/">All news<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
+        <a class="ca-btn ca-btn--outline ca-btn--sm" href="/news/">All news<svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"/></svg></a>
       </div>
-      <p class="ca-news__watch"><a class="ca-link" href="https://www.youtube.com/@CAoKenya"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#youtube"/></svg>Watch our videos on YouTube<svg class="ca-icon ca-ext" aria-hidden="true"><use href="assets/icons/sprite.svg#external"/></svg><span class="ca-vh">(external site)</span></a></p>
+      <div class="ca-newsroom__grid" data-reveal>
+        <article class="ca-story ca-story--lead">
+          <div class="ca-story__media"><picture><source type="image/avif" srcset="assets/img/news-child-online-survey-320.avif 320w, assets/img/news-child-online-survey-640.avif 640w" sizes="(min-width: 1100px) 640px, 92vw"><img src="assets/img/news-child-online-survey-640.webp" srcset="assets/img/news-child-online-survey-320.webp 320w, assets/img/news-child-online-survey-640.webp 640w" sizes="(min-width: 1100px) 640px, 92vw" alt="CA and University of Nairobi officials at a session reviewing preliminary findings of the National Survey on Child Online Protection" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+          <div class="ca-story__body">
+            <p class="ca-story__date"><time datetime="2026-09-09">9 September 2026</time></p>
+            <h3 class="ca-story__title"><a data-max-chars="100" href="/ca-and-uon-undertake-preliminary-review-findings-national-survey-child-online-protection-and-safety/">CA and UoN Undertake Preliminary Review of Findings of the National Survey on Child Online Protection and Safety in Kenya</a></h3>
+            <p class="ca-story__summary" data-placeholder="true" data-max-chars="140">[One-sentence summary — to be supplied]</p>
+          </div>
+        </article>
+        <ul class="ca-story-list" role="list">
+          <li>
+            <article class="ca-story ca-story--row">
+              <div class="ca-story__media"><picture><source type="image/avif" srcset="assets/img/news-digital-skills-320.avif 320w, assets/img/news-digital-skills-640.avif 640w" sizes="(min-width: 1100px) 160px, 120px"><img src="assets/img/news-digital-skills-640.webp" srcset="assets/img/news-digital-skills-320.webp 320w, assets/img/news-digital-skills-640.webp 640w" sizes="(min-width: 1100px) 160px, 120px" alt="Stakeholders at the Universal Service Fund workshop on the Digital Skilling Project for 120,000 Kenyans" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+              <div class="ca-story__body">
+                <p class="ca-story__date"><time datetime="2026-08-19">19 August 2026</time></p>
+                <h3 class="ca-story__title"><a data-max-chars="80" href="/120000-kenyans-gain-digital-skills-drive-meaningful-digital-inclusion/">120,000 Kenyans to Gain Digital Skills to Drive Meaningful Digital Inclusion</a></h3>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="ca-story ca-story--row">
+              <div class="ca-story__media"><picture><source type="image/avif" srcset="assets/img/news-cyber-cafe-320.avif 320w, assets/img/news-cyber-cafe-640.avif 640w" sizes="(min-width: 1100px) 160px, 120px"><img src="assets/img/news-cyber-cafe-640.webp" srcset="assets/img/news-cyber-cafe-320.webp 320w, assets/img/news-cyber-cafe-640.webp 640w" sizes="(min-width: 1100px) 160px, 120px" alt="Rows of computers in a public cyber cafe" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+              <div class="ca-story__body">
+                <p class="ca-story__date"><time datetime="2026-08-13">13 August 2026</time></p>
+                <h3 class="ca-story__title"><a data-max-chars="80" href="/ca-clarifies-new-cyber-cafe-license-rules-and-says-no-browsing-history-will-be-required/">CA clarifies new cyber cafe licence rules and says no browsing history will be required</a></h3>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="ca-story ca-story--row">
+              <div class="ca-story__media"><picture><source type="image/avif" srcset="assets/img/news-music-festivals-320.avif 320w, assets/img/news-music-festivals-640.avif 640w" sizes="(min-width: 1100px) 160px, 120px"><img src="assets/img/news-music-festivals-640.webp" srcset="assets/img/news-music-festivals-320.webp 320w, assets/img/news-music-festivals-640.webp 640w" sizes="(min-width: 1100px) 160px, 120px" alt="Kenya Music Festival branding graphic" width="640" height="400" loading="lazy" decoding="async"></picture></div>
+              <div class="ca-story__body">
+                <p class="ca-story__date"><time datetime="2026-08-10">10 August 2026</time></p>
+                <h3 class="ca-story__title"><a data-max-chars="80" href="/ca-celebrates-creativity-and-digital-safety-kenya-music-festivals/">CA Celebrates Creativity and Digital Safety at the Kenya Music Festivals</a></h3>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+      <p class="ca-newsroom__watch"><a class="ca-link" href="https://www.youtube.com/@CAoKenya"><svg class="ca-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#youtube"/></svg>Watch our videos on YouTube<svg class="ca-icon ca-ext" aria-hidden="true"><use href="assets/icons/sprite.svg#external"/></svg><span class="ca-vh">(external site)</span></a></p>
     </div>
   </section>
 

@@ -51,7 +51,7 @@ p { max-width: 62ch; }
   background: var(--primary); color: var(--text-on-dark); font-weight: 600; text-decoration: none;
   transform: translateY(-200%);
 }
-.ca-skip:focus { transform: none; }
+.ca-skip:focus-visible { transform: none; }
 .ca-icon { width: 24px; height: 24px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
 .ca-icon--sm { width: 18px; height: 18px; }
 [hidden], html:not(.js) [data-js-only] { display: none !important; }

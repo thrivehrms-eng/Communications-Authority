@@ -1,4 +1,4 @@
-# UX review — homepage v2 and v3
+# UX review — homepage v2 to v4
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -69,3 +69,14 @@ Other v3 adjustments:
 - The "Stay safe online" panel is the page's single animated area again (pausable), since the hero no longer animates (`excessive-motion` stays at one per page).
 - On phones the help button stays hidden while the search and tasks panel is on screen, so it can't cover the Search button.
 - **PAPU's link was removed**: `upap-papu.africa` now redirects to an unrelated shop site.
+
+## v4 — client feedback
+
+| Feedback | Change |
+|---|---|
+| Hero text unbalanced and unwelcoming | One persistent welcome line ("Welcome to the Communications Authority of Kenya", the page's H1, with the orange signature dot), then per slide: a two-line title (statement + highlighted phrase on its own line), a one-sentence text (≤ 44ch) and a single white button, all on one left edge with a fixed rhythm (16–22px gaps) |
+| Hero should be an auto-playing slider | Four slides with CA imagery: Welcome (dish), Licensing online (lms.ca.go.ke, from CA's live banner), Complaints (tower at sunset), Universal access (USF base station). 7s auto-play with a progress bar on the active slide button; pause/play, previous/next, slide buttons and touch swipe. Per the skill's `auto-rotation-controls` rule: holds on hover, off-screen and hidden tabs, stops when keyboard focus enters (until Play), never auto-plays under reduced motion; inactive slides are hidden from tab order and screen readers; `aria-live` is off while playing, polite once paused. Crossfade only, with no slide-in motion. The "Stay safe online" panel is a still frame again, so the slider is the page's one moving element |
+| "What do you need to do?" too big | Compact tint strip (about 170px tall on desktop, was about 400): heading + search on the left, six popular tasks as a two-column list of icon links on the right |
+| News could be better | Skill match for news is "Minimalism & Swiss Style + Flat Design", led by a featured story. News is now a lead story (16:9 photo, date, title, one-line summary) beside a list of three rows (thumbnail, date, title) that share the lead's height; "All news" sits beside the heading. No card borders or shadows; hover underlines the title and gently zooms the image |
+
+Also fixed: after dismissing the cookie banner on a first visit, focus now continues from the skip link (shown only to keyboard users) instead of being dropped on the page body.

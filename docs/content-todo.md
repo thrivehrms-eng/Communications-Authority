@@ -25,7 +25,8 @@ Open the page with `?placeholders` in the URL to outline them all with a dashed 
 | 6.3 Menu overlay "Latest" and 7.9 News | One-sentence summary for the featured story and for each overlay item (`[One-sentence summary — to be supplied]`) | **≤ 140 characters** (longer text is shortened at a word boundary). News **titles ≤ 80 characters** on cards and in the overlay, **≤ 100** for the featured story |
 | 7.4 Commitments | Confirm the five one-line descriptions against the Service Charter | Currently marked `data-placeholder` |
 | 7.6 Highlight | Second paragraph: `[One-paragraph USF highlight — e.g. latest digital skilling programme — to be supplied]` | 1 paragraph, ≤ 60 words |
-| 7.1 Hero | H1 is proposed copy ("Connecting Kenya. / Protecting every user.") | Confirm or replace; keep two short lines |
+| 7.1 Hero slider | Four slides (Welcome · Licensing online · Complaints · Universal access): titles, one-line texts and buttons are proposed copy. Titles follow a two-line rhythm: a short statement + a highlighted phrase (≤ 24 characters each) | Confirm wording; confirm `https://lms.ca.go.ke/` (taken from the current ca.go.ke banner) |
+| 7.1 Hero slider images | Slides use CA's dish photo, the ca.go.ke "network globe" banner image, the staging tower-at-sunset image and the USF base station photo | Purpose-shot photography at ≥ 2880×1140 would sharpen slides 2–3 (sources are 1200–1600px wide) |
 | 7.1 Hero | Popular tasks (6) and the search label are proposed; they mirror the search FAQ | Confirm the six against contact-centre or site-search data |
 
 ## Links / URLs to confirm

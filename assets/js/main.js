@@ -1,6 +1,7 @@
 // Entry point: initialise each module only if its root element exists
 const modules = {
   header: '[data-header]',
+  carousel: '[data-carousel]',
   'overlay-menu': '[data-overlay]',
   search: '[data-search-panel]',
   fab: '[data-fab]',

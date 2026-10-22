@@ -21,7 +21,8 @@ export default function ([box]) {
   };
   const hide = () => {
     box.hidden = true;
-    opener?.focus();
+    // return focus to whatever opened the banner; on a first visit, continue from the skip link
+    (opener || document.querySelector('.ca-skip'))?.focus();
     opener = null;
   };
   const save = (choice) => {

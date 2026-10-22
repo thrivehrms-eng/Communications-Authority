@@ -3,7 +3,7 @@
 A static rebuild of the CA homepage in semantic HTML, modern CSS and vanilla ES modules: no frameworks, no build step.
 The layout and interactions follow the Media Harbour concept, while brand colours, logo and fonts (Inter + Maitree 700) come strictly from the current CA theme.
 
-Version 2 applied a UX review (see `docs/ux-review.md`): a task-first section order, less motion, higher text contrast and an in-page cookie banner. Version 3 (client feedback) gives the hero a full-width photo with just the headline, moves search and popular tasks into their own panel below it, slims the news cards with character limits, and adds real partner logos and CA project photos.
+Version 2 applied a UX review (see `docs/ux-review.md`): a task-first section order, less motion, higher text contrast and an in-page cookie banner. Version 3 (client feedback) moved search and popular tasks into their own panel, slimmed the news with character limits, and added real partner logos and CA project photos. Version 4 turns the hero into an auto-playing slider with a consistent two-line headline rhythm, compacts the find panel into a single strip, and rebuilds News as a lead story plus a list.
 
 ## Run locally
 
@@ -29,6 +29,7 @@ assets/css/
 assets/js/
   main.js                   entry: imports a module only if its root element exists
   util.js                   focus trap, reduced-motion check, "one overlay at a time" events
+  carousel.js               hero slider: 7s auto-play, pause/play, previous/next, slide buttons, swipe; holds on hover/off-screen, stops on focus and reduced motion
   header.js                 scrolled state, dropdowns (click/Enter/Space, 120ms hover intent, Esc, click outside)
   overlay-menu.js           burger overlay (Latest pager + Contact; mobile nav accordion built from the dropdowns)
   search.js                 search mode, live FAQ filter, GET /?s=
@@ -66,7 +67,7 @@ All content is visible: footer sub-lists expanded, every project tile shown (fil
 
 - Skip link, labelled landmarks, exactly one H1, no skipped heading levels.
 - Every overlay (menu, search, FAB) moves focus in, closes on Esc and returns focus to its opener; the menu traps Tab. The cookie banner sits in the page flow, so it never covers content or focus.
-- Only the hero canvas and the ticker move; both have a visible pause control and stop under `prefers-reduced-motion`.
+- Only the hero slider and the ticker move; both have a visible pause control, stop on hover/focus and do not auto-play under `prefers-reduced-motion`. The slider's live region is silent while it auto-plays and polite once the user takes control.
 - Text contrast targets 7:1 where the CA palette allows (body on white 10.4:1, white on primary 7.6:1, muted white on navy ≥ 9:1).
 - External links carry an icon plus visually hidden "(external site)".
 - Under 380px wide the language links shrink to 36px wide so the header fits at 320px (still above the WCAG 2.2 AA 24px minimum).
