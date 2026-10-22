@@ -4,12 +4,11 @@ const modules = {
   'overlay-menu': '[data-overlay]',
   search: '[data-search-panel]',
   fab: '[data-fab]',
-  accordion: '[data-accordion], [data-disclosure], [data-services]',
+  accordion: '[data-disclosure]',
   ticker: '[data-ticker]',
   filter: '[data-filter]',
   reveal: '[data-reveal], [data-reveal-stagger]',
   'hero-fx': '[data-fx]',
-  cursor: '[data-cursor]',
   consent: '[data-consent]',
   'dot-nav': '[data-dots]',
 };

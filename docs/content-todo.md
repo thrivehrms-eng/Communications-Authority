@@ -26,6 +26,7 @@ Open the page with `?placeholders` in the URL to outline them all with a dashed 
 | 7.4 Commitments | Confirm the five one-line descriptions against the Service Charter | Currently marked `data-placeholder` |
 | 7.6 Highlight | Second paragraph: `[One-paragraph USF highlight — e.g. latest digital skilling programme — to be supplied]` | 1 paragraph, ≤ 60 words |
 | 7.1 Hero | H1 is proposed copy ("Connecting Kenya. / Protecting every user.") | Confirm or replace; keep two short lines |
+| 7.1 Hero | Popular tasks (6) and the search label are proposed; they mirror the search FAQ | Confirm the six against contact-centre or site-search data |
 
 ## Links / URLs to confirm
 

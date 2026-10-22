@@ -57,7 +57,7 @@
   --text-muted:     var(--ca-neutral-700);
   --text-meta:      var(--ca-text-medium);
   --text-on-dark:   #FFFFFF;
-  --text-on-dark-muted: rgb(255 255 255 / .80);
+  --text-on-dark-muted: rgb(255 255 255 / .86);  /* ≥ 9:1 on --dark-2/--dark; use full white on --primary */
   --line-on-dark:   rgb(255 255 255 / .12);
   --glass-on-dark:  rgb(255 255 255 / .08);
 
@@ -82,6 +82,9 @@
   --ease-out: cubic-bezier(0, 0, .36, 1);
   --ease-std: cubic-bezier(.4, 0, .2, 1);
   --dur-1: 160ms; --dur-2: 280ms; --dur-3: 600ms;
+
+  /* Layers (z-index scale) */
+  --z-dots: 20; --z-fab: 30; --z-overlay: 40; --z-header: 50; --z-skip: 100;
 
   /* Focus */
   --focus: 3px solid var(--ca-secondary-600);

@@ -1,4 +1,5 @@
-// FX background: soft flowing light curves + drifting dots on a canvas (≤30fps, pausable)
+// FX background: soft flowing light curves + drifting dots on a canvas (≤30fps, pausable).
+// Panels with data-fx-static get a single still frame (one animated area per page is enough).
 import { reduceMotion } from './util.js';
 
 export default (panels) => panels.forEach(init);
@@ -10,7 +11,7 @@ function init(panel) {
   const css = getComputedStyle(document.documentElement);
   const cols = ['--ca-primary-500', '--ca-accent-500'].map((v) => css.getPropertyValue(v).trim());
   const k = (+panel.dataset.fxDensity || 1) * (matchMedia('(max-width: 767px)').matches ? 0.5 : 1);
-  const still = reduceMotion();
+  const still = reduceMotion() || panel.hasAttribute('data-fx-static');
   const r = (a, b) => a + Math.random() * (b - a);
   const lines = Array.from({ length: Math.max(4, Math.round(12 * k)) }, (_, i) => ({
     y: r(0.15, 0.95), amp: r(0.03, 0.12), f: r(0.5, 1.4), sp: r(0.08, 0.22), ph: r(0, 6.28),
@@ -61,8 +62,8 @@ function init(panel) {
 
   size(); draw();
   new ResizeObserver(() => { size(); draw(); }).observe(c);
+  if (still) { if (btn) btn.hidden = true; return; }
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; run(); }).observe(panel);
   document.addEventListener('visibilitychange', run);
-  if (still) btn.hidden = true;
-  else btn.addEventListener('click', () => { paused = !paused; btn.setAttribute('aria-pressed', paused); run(); });
+  btn.addEventListener('click', () => { paused = !paused; btn.setAttribute('aria-pressed', paused); run(); });
 }

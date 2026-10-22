@@ -8,8 +8,9 @@
   border: 1.5px solid var(--btn-bd); border-radius: var(--radius-pill);
   background: var(--btn-bg); color: var(--btn-fg);
   font-size: 1.0625rem; font-weight: 600; line-height: 1.2; text-decoration: none; text-align: center;
-  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std), border-color var(--dur-1) var(--ease-std);
+  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std), border-color var(--dur-1) var(--ease-std), transform var(--dur-1) var(--ease-std);
 }
+.ca-btn:active { transform: scale(.98); }
 .ca-btn .ca-icon { width: 20px; height: 20px; transition: transform var(--dur-1) var(--ease-std); }
 .ca-btn:hover .ca-icon, .ca-btn:focus-visible .ca-icon, .ca-link:hover .ca-icon, .ca-link:focus-visible .ca-icon { transform: translateX(3px); }
 .ca-btn--primary:hover { --btn-bg: var(--primary-hover); --btn-bd: var(--primary-hover); }
@@ -28,17 +29,20 @@
 }
 .ca-link:hover { text-decoration: underline; }
 .ca-link .ca-icon { width: 20px; height: 20px; transition: transform var(--dur-1) var(--ease-std); }
-.ca-on-dark .ca-link, .ca-link--light { color: var(--text-on-dark); }
+.ca-on-dark .ca-link { color: var(--text-on-dark); }
 .ca-ext { display: inline-block; width: 1em; height: 1em; margin-left: .25em; vertical-align: -.1em; }
 
 /* 3. Service card */
 .ca-card {
+  --text-on-dark-muted: var(--text-on-dark);
   position: relative; display: flex; flex-direction: column; gap: 12px;
   padding: clamp(24px, 2.2vw, 28px); border-radius: var(--radius-card);
   background: var(--primary); color: var(--text-on-dark);
   transition: background-color var(--dur-2) var(--ease-std), transform var(--dur-2) var(--ease-std);
 }
 .ca-card:hover, .ca-card:focus-within { background: var(--primary-hover); transform: translateY(-2px); }
+.ca-card:active { transform: scale(.99); }
+.ca-card__icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 4px; border-radius: 14px; background: rgb(255 255 255 / .14); }
 .ca-card h3 a { color: inherit; text-decoration: none; }
 .ca-card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .ca-card h3 a:focus-visible { outline: none; }
@@ -47,27 +51,6 @@
 .ca-card__more { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
 .ca-card:hover .ca-card__more .ca-icon { transform: translateX(3px); }
 .ca-card__more .ca-icon { width: 20px; height: 20px; transition: transform var(--dur-1) var(--ease-std); }
-
-/* 4. Accordion */
-.ca-accordion { border-top: 1px solid rgb(255 255 255 / .22); }
-.ca-acc { border-bottom: 1px solid rgb(255 255 255 / .22); }
-.ca-acc h3 { font-size: var(--fs-h3); }
-.ca-acc__btn {
-  display: flex; align-items: center; gap: 16px; width: 100%; min-height: 72px; padding: 14px 4px;
-  border: 0; background: none; color: inherit; text-align: left; font-weight: 600; letter-spacing: inherit;
-}
-.ca-acc__check { display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 50%; background: rgb(255 255 255 / .14); }
-.ca-acc__check .ca-icon { width: 20px; height: 20px; }
-.ca-acc__label { flex: 1; }
-.ca-acc__chev { transition: transform var(--dur-2) var(--ease-std); }
-.ca-acc__btn[aria-expanded="true"] .ca-acc__chev { transform: rotate(180deg); }
-.ca-acc__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur-2) var(--ease-std); }
-.ca-acc__panel > div { overflow: hidden; visibility: hidden; transition: visibility var(--dur-2); }
-.ca-acc__panel.is-open { grid-template-rows: 1fr; }
-.ca-acc__panel.is-open > div, html:not(.js) .ca-acc__panel > div { visibility: visible; }
-html:not(.js) .ca-acc__panel { grid-template-rows: 1fr; }
-.ca-acc__panel p { padding: 0 4px 22px 60px; color: var(--text-on-dark-muted); }
-.ca-acc__panel a { color: var(--text-on-dark); font-weight: 600; }
 
 /* 5. Project tile */
 .ca-tile {
@@ -86,7 +69,7 @@ html:not(.js) .ca-acc__panel { grid-template-rows: 1fr; }
 .ca-tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(4 33 79 / .92), rgb(4 33 79 / .15) 60%, transparent); }
 .ca-tile:hover .ca-tile__media, .ca-tile:focus-visible .ca-tile__media { transform: scale(1.04); }
 .ca-tile__tags { position: absolute; top: 16px; left: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
-.ca-tag { padding: 4px 12px; border-radius: var(--radius-pill); background: rgb(255 255 255 / .16); border: 1px solid rgb(255 255 255 / .24); font-size: .8125rem; font-weight: 500; line-height: 1.4; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.ca-tag { padding: 4px 12px; border-radius: var(--radius-pill); background: rgb(4 33 79 / .55); border: 1px solid rgb(255 255 255 / .28); font-size: .875rem; font-weight: 500; line-height: 1.4; }
 .ca-tile__icon { width: 64px; height: 64px; stroke-width: 1.25; opacity: .95; }
 .ca-tile__title { position: absolute; left: 24px; right: 24px; bottom: 22px; text-align: center; font-size: var(--fs-title); }
 
@@ -100,7 +83,7 @@ html:not(.js) .ca-acc__panel { grid-template-rows: 1fr; }
 .ca-news__media { aspect-ratio: 16 / 9; overflow: hidden; background: var(--surface-tint); }
 .ca-news__media picture, .ca-news__media img { width: 100%; height: 100%; object-fit: cover; }
 .ca-news__body { display: flex; flex-direction: column; gap: 10px; flex: 1; padding: 22px 24px 24px; }
-.ca-news__meta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: .875rem; font-weight: 500; line-height: 1.4; color: var(--text-meta); }
+.ca-news__meta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: .875rem; font-weight: 500; line-height: 1.4; color: var(--text-muted); }
 .ca-news__cat { color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
 .ca-news h3 { font-family: var(--font-heading); font-weight: 700; font-size: var(--fs-title); line-height: 1.25; letter-spacing: 0; }
 .ca-news h3 a { color: var(--text); text-decoration: none; }
@@ -127,11 +110,14 @@ html:not(.js) .ca-acc__panel { grid-template-rows: 1fr; }
 /* 7. Filter chips */
 .ca-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px; }
 .ca-chip {
-  min-height: 44px; padding: 0 20px; border: 1px solid var(--primary); border-radius: var(--radius-pill);
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 20px; border: 1px solid var(--primary); border-radius: var(--radius-pill);
   background: transparent; color: var(--primary); font-size: .9375rem; font-weight: 600;
   transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std);
 }
 .ca-chip:hover { background: var(--surface-tint); }
+.ca-chip:active { transform: scale(.98); }
+.ca-chip__check { display: none; width: 16px; height: 16px; stroke-width: 2.25; }
+.ca-chip[aria-pressed="true"] .ca-chip__check { display: block; }
 .ca-chip[aria-pressed="true"] { background: var(--primary); color: var(--text-on-dark); }
 
 /* 8. Social circle */
@@ -157,8 +143,16 @@ html:not(.js) .ca-acc__panel { grid-template-rows: 1fr; }
 .ca-logo-tile--long { font-size: .75rem; font-weight: 600; letter-spacing: 0; }
 .ca-logo-tile:hover, .ca-logo-tile:focus-visible { filter: none; color: var(--primary); border-color: var(--primary); }
 
-/* Image placeholder */
-.ca-ph {
-  display: grid; place-items: center; width: 100%; height: 100%; padding: 16px;
-  background: var(--surface-tint); color: var(--text-muted); font-size: .875rem; text-align: center;
+
+/* Compact mobile cards: everything stays visible, less scrolling */
+@media (max-width: 767px) {
+  .ca-card { display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: 16px; row-gap: 6px; padding: 20px; }
+  .ca-card > * { grid-column: 2; }
+  .ca-card > .ca-card__icon { grid-column: 1; grid-row: 1 / span 3; margin: 0; }
+  .ca-card__more { padding-top: 4px; }
+  .ca-news-grid .ca-news { display: grid; grid-template-columns: 104px minmax(0, 1fr); align-items: start; }
+  .ca-news-grid .ca-news__media { aspect-ratio: 1; margin: 16px 0 16px 16px; border-radius: 12px; }
+  .ca-news-grid .ca-news__body { gap: 6px; padding: 16px; }
+  .ca-news-grid .ca-news h3 { font-size: 1.0625rem; }
+  .ca-news-grid .ca-news__excerpt { -webkit-line-clamp: 2; font-size: .9375rem; }
 }

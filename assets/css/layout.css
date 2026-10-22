@@ -11,7 +11,7 @@
 }
 .ca-panel--white { background: var(--surface); }
 .ca-panel--tint { background: var(--surface-tint); }
-.ca-panel--primary { background: var(--primary); color: var(--text-on-dark); }
+.ca-panel--primary { --text-on-dark-muted: var(--text-on-dark); background: var(--primary); color: var(--text-on-dark); }
 .ca-panel--dark, .ca-panel--fx { background: linear-gradient(200deg, var(--dark-2), var(--dark)); color: var(--text-on-dark); }
 .ca-panel--primary .ca-hl, .ca-panel--dark .ca-hl, .ca-panel--fx .ca-hl { color: var(--accent); }
 .ca-panel--compact { padding-block: 28px; }
@@ -41,7 +41,6 @@
   padding: 6px 16px 6px 14px;
   border: 1px solid rgb(255 255 255 / .28); border-radius: var(--radius-pill);
   background: var(--glass-on-dark); color: var(--text-on-dark);
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
 .ca-eyebrow--badge::before {
   content: ""; width: 8px; height: 8px; border-radius: 50%;
