@@ -172,11 +172,11 @@ html:not(.js) .ca-nav__item:focus-within > .ca-dropdown { opacity: 1; visibility
 .ca-fx-pause__play, [aria-pressed="true"] > .ca-fx-pause__pause { display: none; }
 [aria-pressed="true"] > .ca-fx-pause__play { display: block; }
 
-/* ── 7.1 Hero: auto-playing slider, shorter than the viewport ── */
+/* ── 7.1 Hero: auto-playing slider, sized to the screen so the next section always shows below it ── */
 .ca-hero {
   display: flex; align-items: center;
-  min-height: clamp(480px, 68vh, 640px); min-height: clamp(480px, 68svh, 640px);
-  padding-block: clamp(48px, 6vw, 80px);
+  min-height: clamp(440px, 62vh, 640px); min-height: clamp(440px, 62svh, 640px);
+  padding-block: clamp(40px, 5vw, 72px);
 }
 .ca-hero__bg { position: absolute; inset: 0; z-index: -2; }
 .ca-hero__img { position: absolute; inset: 0; opacity: 0; transition: opacity 900ms var(--ease-std); }
@@ -225,14 +225,51 @@ html:not(.js) .ca-nav__item:focus-within > .ca-dropdown { opacity: 1; visibility
 .is-held .ca-hero__dot::after { animation-play-state: paused; }
 .is-paused .ca-hero__dot[aria-current="true"]::after { animation: none; transform: scaleX(1); }
 @keyframes ca-progress { to { transform: scaleX(1); } }
+/* tablets and small laptops: the text runs further across, so the scrim holds its depth further right */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .ca-hero::before { background: linear-gradient(90deg, rgb(4 33 79 / .95) 0%, rgb(4 33 79 / .9) 50%, rgb(4 33 79 / .5) 78%, rgb(4 33 79 / .2) 100%); }
+}
+/* phones: as tall as the content plus a strip of photo, capped at half the screen,
+   so "What do you need to do?" and its search box show below the hero */
 @media (max-width: 767px) {
-  .ca-hero { align-items: flex-end; min-height: clamp(520px, 80svh, 640px); padding-block: 32px 24px; }
-  .ca-hero::before { background: linear-gradient(0deg, rgb(4 33 79 / .96) 0%, rgb(4 33 79 / .9) 52%, rgb(4 33 79 / .35) 82%, rgb(4 33 79 / .15) 100%); }
-  .ca-hero__inner { gap: 18px; }
-  .ca-hero__welcome { padding: 0; border: 0; background: none; font-size: .875rem; }
+  .ca-hero { align-items: flex-end; min-height: min(50vh, 420px); min-height: min(50svh, 420px); padding-block: 40px 16px; }
+  /* the scrim follows the text block (whatever its height) and feathers out above it, leaving the strip of photo clear */
+  .ca-hero::before { background: linear-gradient(180deg, rgb(4 33 79 / .1), rgb(4 33 79 / .4)); }
+  .ca-hero__inner::before {
+    content: ""; position: absolute; z-index: -1; top: -56px; bottom: -40px; left: -100vw; right: -100vw; pointer-events: none;
+    background: linear-gradient(180deg, rgb(4 33 79 / 0), rgb(4 33 79 / .86) 56px, rgb(4 33 79 / .92));
+  }
+  .ca-hero__inner { gap: 10px; }
+  .ca-hero__welcome { padding: 0; border: 0; background: none; font-size: .8125rem; }
+  .ca-hero__carousel { gap: 14px; }
+  .ca-slide { gap: 10px; }
+  .ca-slide__title { font-size: clamp(1.5rem, 6.6vw, 1.875rem); line-height: 1.15; }
+  .ca-slide__text { font-size: .9375rem; line-height: 1.5; }
+  .ca-slide .ca-btn { min-height: 46px; margin-top: 4px; padding: 0 20px; font-size: 1rem; }
+}
+/* short landscape screens (phones on their side): no minimum height, tighter spacing */
+@media (min-width: 568px) and (max-height: 540px) {
+  .ca-hero { min-height: 0; padding-block: 24px 18px; }
+  .ca-hero::before { background: linear-gradient(90deg, rgb(4 33 79 / .95) 0%, rgb(4 33 79 / .9) 50%, rgb(4 33 79 / .5) 78%, rgb(4 33 79 / .2) 100%); }
+  .ca-hero__inner::before { display: none; }
+  .ca-hero__inner { gap: 12px; }
+  .ca-hero__welcome { padding: 4px 12px 4px 10px; font-size: .8125rem; }
+  .ca-hero__carousel { gap: 14px; }
+  .ca-slide { gap: 8px; }
+  .ca-slide__title { font-size: clamp(1.5rem, 3.4vw, 2rem); }
+  .ca-slide__text { font-size: .9375rem; line-height: 1.5; }
+  .ca-slide .ca-btn { min-height: 46px; margin-top: 4px; padding: 0 22px; font-size: 1rem; }
+  /* the controls move beside the slides, on their own navy backing so they read over any photo */
+  .ca-hero__carousel { grid-template-columns: minmax(0, 1fr) auto; align-items: end; column-gap: 24px; }
+  .ca-hero__controls { padding: 4px; border-radius: var(--radius-pill); background: rgb(4 33 79 / .85); }
+  .ca-hero__dot::before { background: rgb(255 255 255 / .5); }
+  .ca-hero__ctrl[data-carousel-prev], .ca-hero__ctrl[data-carousel-next] { display: none; } /* the slide buttons and swipe remain */
+}
+/* laptop-height screens (e.g. 1366×768): less air around the slides */
+@media (min-width: 768px) and (min-height: 541px) and (max-height: 820px) {
+  .ca-hero { padding-block: 36px; }
+  .ca-hero__inner { gap: 16px; }
   .ca-hero__carousel { gap: 22px; }
-  .ca-slide__title { font-size: clamp(1.75rem, 7.4vw, 2.25rem); }
-  .ca-slide__text { font-size: 1rem; }
 }
 @media (max-width: 399px) {
   .ca-hero__controls { gap: 4px; }

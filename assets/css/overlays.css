@@ -112,7 +112,7 @@
 .ca-fab__icon .ca-icon { width: 20px; height: 20px; }
 html.is-overlay .ca-fab, html.is-search .ca-fab { display: none; }
 .ca-fab { transition: opacity var(--dur-2) var(--ease-std), visibility 0s; }
-@media (max-width: 767px) {
+@media (max-width: 767px), (max-height: 540px) {
   .ca-fab.is-deferred:not(:focus-within) { opacity: 0; visibility: hidden; transition: opacity var(--dur-1) var(--ease-std), visibility 0s linear var(--dur-1); }
 }
 

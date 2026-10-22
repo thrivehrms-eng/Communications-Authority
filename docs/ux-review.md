@@ -1,4 +1,4 @@
-# UX review — homepage v2 to v7
+# UX review — homepage v2 to v8
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -123,3 +123,33 @@ What was taken from Cloudflare's menu (studied from its page markup) and how it 
 Skill guidance applied (ui-ux-pro-max): `nav-hierarchy` (section → group → link with one-line descriptions), `progressive-disclosure` (long tails as quiet inline links), `continuity` and `shared-element-transition` (one surface that resizes, direction-aware slides), `cancellable-state-transitions` (fast switching retargets the resize instead of queueing), `hover-vs-tap` (every section also opens on click, tap and keyboard; hover only adds a short-delay shortcut), `exit-faster-than-enter` (sections fade out in 160ms, in over 240ms), `keyboard-nav` (disclosure pattern with arrow keys and Esc), and `reduced-motion` (all of it becomes instant).
 
 Mobile is unchanged in behaviour: the burger menu's accordion is still built from the same markup, showing names only (no icons, summaries or descriptions) to keep it short.
+
+## v8 — client feedback
+
+| Feedback | Change |
+|---|---|
+| The hero is too tall on mobile and takes up most of the screen; make it responsive with the sections below in view | The hero is now sized to the screen (README → Hero sizing). On phones it is as tall as its content plus a strip of photo, capped at half the screen, with smaller type, a 46px button and tighter spacing. "What do you need to do?" and its search box now show without scrolling on every common phone |
+
+Where the hero ends, as a share of the screen (header included):
+
+| Screen | Before | After |
+|---|---|---|
+| 320×568 | 107% | 83% |
+| 360×640 | 95% | 69% |
+| 375×667 | 93% | 66% |
+| 390×664 (iPhone 14 with Safari's toolbars) | — | 67% |
+| 390×844 | 86% | 60% |
+| 412×915 | 80% | 56% |
+| 844×390 (phone on its side) | 146% | 95% (whole hero visible under the header) |
+| 768×1024 | 71% | 71% |
+| 1366×768 | 87% | 76% |
+| 1440×900 | 80% | 76% |
+
+Details:
+
+- **Readable over every photo.** On phones the text now covers most of the hero, so a top-to-bottom fade would leave the welcome line on a light part of the photo (measured 4.0:1 on the clouds slide). The scrim now follows the text block itself and feathers out over 56px above it; the strip above stays clear photo. Measured against the brightest pixel behind each line: welcome line, title and text are ≥ 10.9:1 on all four slides on phones, ≥ 6.8:1 on landscape phones and ≥ 5.0:1 on tablets. On 768–1099px screens the side scrim now holds its depth further right, since the text runs further across.
+- **Phones on their side.** Content-height hero; the slide controls sit beside the slides on a solid navy backing (inactive bars brighter) so they read over any photo; the previous/next arrows are dropped there, as the slide buttons and swipe remain.
+- **Help button.** On phones and short landscape screens it now also waits while the hero is on screen, as it already did for the search strip, so it never sits on the slider controls.
+- **Laptop-height screens** (≤ 820px tall, e.g. 1366×768) get less padding around the slides.
+
+Skill guidance applied (ui-ux-pro-max): `mobile-first` and `viewport-units` (`svh` so mobile browser toolbars don't push content off screen), `content-priority` (the task strip, the page's main job, is now in the first view), `color-accessible-pairs` (contrast re-measured against the photos, not assumed), and `touch-target-size` (all controls stay 44px).

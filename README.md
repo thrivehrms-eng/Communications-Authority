@@ -34,7 +34,7 @@ assets/js/
   header.js                 scrolled state, mega menu (morphing surface, sliding pill, hover intent, Enter/Space/ArrowDown/Left/Right, Esc, click outside)
   overlay-menu.js           burger overlay (Latest pager + Contact; mobile nav accordion built from the mega menu)
   search.js                 search mode, live FAQ filter, GET /?s=
-  fab.js                    "Quick help" floating button (deferred on phones while the hero tasks are visible)
+  fab.js                    "Quick help" floating button (on phones and short landscape screens it waits until the hero and the search strip have scrolled away)
   accordion.js              disclosures (footer expanders)
   ticker.js                 logo marquee (duplicated list, pause/play)
   filter.js                 project filter chips + live status
@@ -65,6 +65,18 @@ Naming is BEM with a `ca-` prefix. Each section is self-contained markup (`<sect
 ## Behaviour without JavaScript
 
 All content is visible: footer sub-lists expanded, every project tile shown (filter chips hidden), ticker as a scrollable row, and desktop menu sections open on hover or keyboard focus (each with its own white background). The hero search works (plain `GET /?s=`). Burger, header search, FAB, cookie banner and the pause buttons are hidden.
+
+## Hero sizing
+
+The hero is sized to the screen so the next section ("What do you need to do?" and its search box) always shows below it:
+
+| Screen | Hero height | Notes |
+|---|---|---|
+| Phones (< 768px wide) | Its content plus a strip of photo, at most half the screen (`min(50svh, 420px)`) | Smaller type and button; the scrim follows the text block, so text stays ≥ 10:1 on every slide while the strip above stays clear photo |
+| Phones on their side (≥ 568px wide, ≤ 540px tall) | Content only | The slide controls sit beside the slides on a navy backing; previous/next arrows are dropped (slide buttons and swipe remain) |
+| Tablets and laptops | `clamp(440px, 62svh, 640px)` | Less padding on laptop-height screens (≤ 820px tall, e.g. 1366×768); on 768–1099px the side scrim stays deep further right because the text runs further across |
+
+Measured with the header: the hero ends at 55–69% of the screen on common phones (390×844: 60%, 375×667: 66%), 83% on a 320×568 phone (was 86–107%), and 70–77% on tablets and laptops.
 
 ## Using CA orange
 
@@ -110,5 +122,5 @@ All motion lives in `assets/css/motion.css` and `assets/js/motion.js` (plus the 
 - axe-core 4.10: 0 violations at 1440, 390 and 320px (reduced motion), and with a mega-menu section, the menu overlay and the mobile menu open.
 - Mega menu checked at 1100, 1440 and 1920px for hover, switching, travelling from a section button down into its links, keyboard (ArrowDown/Left/Right, Tab through and out, Esc) and click outside; without JavaScript sections open on hover and keyboard focus.
 - No console errors; no horizontal scroll or clipped content at 320 / 390 / 768 / 1024 / 1100 / 1280 / 1440; works with JS disabled and with reduced motion.
-- Size (esbuild minified): CSS 60.3 KB, JS 17.5 KB. The original 50 KB CSS budget was lifted by the client in v6 in favour of richer motion.
+- Size (esbuild minified): CSS 61.8 KB, JS 17.6 KB. The original 50 KB CSS budget was lifted by the client in v6 in favour of richer motion.
 - Lighthouse was not run in this environment.
