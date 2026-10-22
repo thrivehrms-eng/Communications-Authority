@@ -23,6 +23,8 @@ img { height: auto; }
 h1, h2, h3, h4, p, ul, ol, figure { margin: 0; }
 ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 a { color: var(--primary); text-underline-offset: .18em; }
+a:hover { text-decoration-color: var(--signature); }
+::selection { background: var(--action); color: var(--text-on-dark); }
 button { font: inherit; color: inherit; cursor: pointer; }
 a, button, input, label { touch-action: manipulation; }
 input { font: inherit; color: inherit; }
@@ -33,7 +35,6 @@ h2 { font-size: var(--fs-h2); line-height: 1.16; letter-spacing: -.005em; }
 h3 { font-size: var(--fs-h3); font-weight: 600; line-height: 1.3; letter-spacing: -.01em; text-wrap: balance; }
 .ca-title { font-size: var(--fs-title); line-height: 1.25; }
 p { max-width: 62ch; }
-.ca-lead { font-size: var(--fs-lead); line-height: 1.65; }
 .ca-hl { color: var(--primary); }
 
 /* Focus */

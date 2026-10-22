@@ -1,4 +1,4 @@
-# UX review — homepage v2 to v4
+# UX review — homepage v2 to v5
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -80,3 +80,13 @@ Other v3 adjustments:
 | News could be better | Skill match for news is "Minimalism & Swiss Style + Flat Design", led by a featured story. News is now a lead story (16:9 photo, date, title, one-line summary) beside a list of three rows (thumbnail, date, title) that share the lead's height; "All news" sits beside the heading. No card borders or shadows; hover underlines the title and gently zooms the image |
 
 Also fixed: after dismissing the cookie banner on a first visit, focus now continues from the skip link (shown only to keyboard users) instead of being dropped on the page body.
+
+## v5 — client feedback
+
+| Feedback | Change |
+|---|---|
+| "Know before you buy" and "What you can expect from us" too big | Both use a tighter panel (`.ca-panel--tight`, 40–64px padding) and a smaller section heading. **Stay safe online**: heading + one-line intro side by side, then three clickable action cards (orange icon badge, title, one sentence, arrow) in a row; about 404px tall on desktop (was about 700). **Commitments**: the heading takes the first cell of a 3 × 2 grid and the five commitments fill the rest as icon cards; about 409px on desktop (was about 735). On phones: 584px and 751px (the stay-safe intro is hidden there because the three cards say the same thing) |
+| Add icons and colour | Each card and commitment has its own icon in an orange badge (phone, child, alert; scale, shield-user, mast, shield-lock, badge-check); cards have a subtle glass surface that gets an orange border on hover |
+| Orange under-used | Orange now marks **actions** and **signature details** (rules in README, "Using CA orange"): every "File a complaint" button and the help button are orange (white text 5.3:1); a short orange bar leads every eyebrow; orange icon badges on service cards; orange task, contact and FAQ icons; orange news dates; orange slider progress bar; orange top edge on the footer; orange hover underlines on text links; orange text selection. Contrast was checked for every pairing before use; orange never sits directly on the primary blue |
+
+Also: the "Our commitments" eyebrow is white on the blue panel (cyan is only 3.8:1 there at 14px). Icon badges are one shared component (`.ca-icon-badge`). Decorative backdrop blurs were removed (`blur-purpose`), and the footer CSS was consolidated, keeping CSS within the 50 KB budget (49.99 KB minified).

@@ -8,7 +8,7 @@
   border: 1.5px solid var(--btn-bd); border-radius: var(--radius-pill);
   background: var(--btn-bg); color: var(--btn-fg);
   font-size: 1.0625rem; font-weight: 600; line-height: 1.2; text-decoration: none; text-align: center;
-  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std), border-color var(--dur-1) var(--ease-std), transform var(--dur-1) var(--ease-std);
+  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std), border-color var(--dur-1) var(--ease-std), transform var(--dur-1) var(--ease-std), filter var(--dur-1) var(--ease-std);
 }
 .ca-btn:active { transform: scale(.98); }
 .ca-btn .ca-icon { width: 20px; height: 20px; transition: transform var(--dur-1) var(--ease-std); }
@@ -21,6 +21,9 @@
 .ca-btn--outline { --btn-bg: transparent; --btn-fg: var(--primary); --btn-bd: var(--primary); }
 .ca-btn--outline:hover { --btn-bg: var(--primary); --btn-fg: var(--text-on-dark); }
 .ca-btn--sm { min-height: 44px; padding: 0 20px; font-size: .9375rem; }
+/* orange action: "File a complaint" everywhere */
+.ca-btn--accent { --btn-bg: var(--action); --btn-fg: var(--text-on-dark); --btn-bd: var(--action); }
+.ca-btn--accent:hover { filter: brightness(.88); }
 
 /* 2. Text link with arrow */
 .ca-link {
@@ -28,7 +31,8 @@
   color: var(--primary); font-weight: 600; text-decoration: none;
 }
 .ca-link:hover { text-decoration: underline; }
-.ca-link .ca-icon { width: 20px; height: 20px; transition: transform var(--dur-1) var(--ease-std); }
+.ca-link .ca-icon { width: 20px; height: 20px; color: var(--action); transition: transform var(--dur-1) var(--ease-std); }
+.ca-on-dark .ca-link .ca-icon { color: var(--signature); }
 .ca-on-dark .ca-link { color: var(--text-on-dark); }
 .ca-ext { display: inline-block; width: 1em; height: 1em; margin-left: .25em; vertical-align: -.1em; }
 
@@ -42,7 +46,11 @@
 }
 .ca-card:hover, .ca-card:focus-within { background: var(--primary-hover); transform: translateY(-2px); }
 .ca-card:active { transform: scale(.99); }
-.ca-card__icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 4px; border-radius: 14px; background: rgb(255 255 255 / .14); }
+/* orange icon badge (service cards, commitments, stay safe) */
+.ca-icon-badge { display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 14px; background: var(--signature); color: var(--text-on-dark); }
+.ca-icon-badge .ca-icon { width: 22px; height: 22px; }
+@media (max-width: 639px) { .ca-icon-badge { width: 40px; height: 40px; border-radius: 12px; } .ca-icon-badge .ca-icon { width: 20px; height: 20px; } }
+.ca-card__icon { margin-bottom: 4px; }
 .ca-card h3 a { color: inherit; text-decoration: none; }
 .ca-card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .ca-card h3 a:focus-visible { outline: none; }
@@ -81,7 +89,7 @@
 .ca-story__media img { mix-blend-mode: multiply; } /* lets the hairline show on white graphics */
 .ca-story:hover .ca-story__media img { transform: scale(1.03); }
 .ca-story__body { display: grid; gap: 6px; align-content: start; }
-.ca-story__date { font-size: .875rem; font-weight: 500; line-height: 1.4; color: var(--text-muted); }
+.ca-story__date { font-size: .875rem; font-weight: 600; line-height: 1.4; color: var(--action); }
 .ca-story__title { font-family: var(--font-heading); font-weight: 700; line-height: 1.3; letter-spacing: 0; }
 .ca-story__title a { color: var(--text); text-decoration: none; }
 .ca-story__title a::after { content: ""; position: absolute; inset: 0; }
@@ -141,7 +149,7 @@
 .ca-logo-tile--img { filter: grayscale(1) brightness(.8) contrast(1.15); }
 .ca-logo-tile--img img { max-width: 150px; max-height: 52px; width: auto; height: auto; object-fit: contain; }
 .ca-logo-tile--img:hover, .ca-logo-tile--img:focus-visible { filter: none; }
-.ca-logo-tile:hover, .ca-logo-tile:focus-visible { filter: none; color: var(--primary); border-color: var(--primary); }
+.ca-logo-tile:hover, .ca-logo-tile:focus-visible { filter: none; color: var(--primary); border-color: var(--signature); }
 
 
 /* Compact mobile cards: everything stays visible, less scrolling */

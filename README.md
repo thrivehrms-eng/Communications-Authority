@@ -63,6 +63,17 @@ Naming is BEM with a `ca-` prefix. Each section is self-contained markup (`<sect
 
 All content is visible: footer sub-lists expanded, every project tile shown (filter chips hidden), ticker as a scrollable row, and desktop dropdowns open on hover or keyboard focus. The hero search works (plain `GET /?s=`). Burger, header search, FAB, cookie banner and the pause buttons are hidden.
 
+## Using CA orange
+
+Two tokens, chosen by contrast (see `tokens.css`):
+
+| Token | Value | Use for | Never |
+|---|---|---|---|
+| `--action` | `--ca-secondary-600` `#BD4400` | Orange buttons (white text 5.3:1): every "File a complaint" button and the help button. Orange **text** on white/tint (5.3:1 / 4.9:1): news dates, FAQ numbers. Icons in tasks, contact and help lists | — |
+| `--signature` | `--ca-secondary-500` `#EC5B13` | Decoration only: the bar before every eyebrow, icon badges (`.ca-icon-badge`, white icon), the slider progress bar, the active page dot, the footer's top edge, dropdown/menu top borders, hover underlines and card borders | Text on white (3.5:1); anything on the primary blue (2.2:1) |
+
+Text selection also uses `--action`. Keep orange to accents and actions; blue stays the main colour.
+
 ## Accessibility notes
 
 - Skip link, labelled landmarks, exactly one H1, no skipped heading levels.

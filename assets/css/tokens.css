@@ -52,14 +52,14 @@
   --dark:           var(--ca-primary-900);
   --dark-2:         var(--ca-primary-700);
   --accent:         var(--ca-accent-500);
-  --signature:      var(--ca-secondary-500);
+  --signature:      var(--ca-secondary-500);  /* decorative orange: bars, dots, icon badges, progress; never text on white */
+  --action:         var(--ca-secondary-600);  /* orange actions + orange text: white on it 5.3:1, it on white 5.3:1 */
   --text:           var(--ca-text-strong);
   --text-muted:     var(--ca-neutral-700);
   --text-meta:      var(--ca-text-medium);
   --text-on-dark:   #FFFFFF;
   --text-on-dark-muted: rgb(255 255 255 / .86);  /* ≥ 9:1 on --dark-2/--dark; use full white on --primary */
   --line-on-dark:   rgb(255 255 255 / .12);
-  --glass-on-dark:  rgb(255 255 255 / .08);
 
   /* Shape */
   --radius-panel: 28px;
@@ -97,7 +97,6 @@
   --fs-h2:    clamp(1.9rem, 3.4vw, 2.75rem);
   --fs-title: clamp(1.15rem, 1.8vw, 1.6rem);
   --fs-h3:    clamp(1.1rem, 1.5vw, 1.25rem);
-  --fs-lead:  clamp(1.05rem, 1.4vw, 1.2rem);
 
   color-scheme: light;
 }
