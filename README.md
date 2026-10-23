@@ -25,7 +25,7 @@ assets/css/
   layout.css                floating panels, container, section heads, eyebrows
   components.css            buttons, links, service card, accordion, project tile, news card, chips, social, logo tile
   sections.css              header bar + mega menu, each homepage section, footer
-  overlays.css              menu overlay, search panel, help FAB, cookie banner, dot nav, reveal
+  overlays.css              menu overlay, search panel, help FAB, cookie banner, video player, reveal
   motion.css                entrances, reveal variants and hover micro-interactions
 assets/js/
   main.js                   entry: imports a module only if its root element exists
@@ -44,7 +44,6 @@ assets/js/
   motion.js                 header scroll progress, hero parallax, pointer spotlights, rotating search hints, help-button hello
   hero-fx.js                canvas light curves + dots (≤30fps, pausable, < 4 KB); data-fx-static draws one still frame
   consent.js                cookie banner; exposes window.caConsent.get('media') and .set('media', true)
-  dot-nav.js                page section dots (≥1280px)
 assets/fonts/               Inter variable + Maitree 700 (Latin, WOFF2)
 assets/img/                 CA logos, favicons, AVIF/WebP images
 assets/img/logos/           affiliation logos (official files from each organisation)
@@ -87,7 +86,7 @@ Orange is used sparingly and **only on light backdrops** (white, light blue). On
 | Token | Value | Use for |
 |---|---|---|
 | `--action` | `--ca-secondary-600` `#BD4400` | "File a complaint" buttons on white surfaces (header, menu, help card: white text 5.3:1), the help button's icon, news dates, the news "Read more" cues and FAQ numbers (text 5.3:1 on white), small icons in Popular tasks and the contact list, text selection |
-| `--signature` | `--ca-secondary-500` `#EC5B13` | Decorative details on light surfaces only: the bar before eyebrows on light panels, the header's scroll-progress line, the top edge of the mega menu and the menu overlay, the active page dot, logo-tile hover borders, link hover underlines, and the small welcome dot in the hero (CA's signature mark) |
+| `--signature` | `--ca-secondary-500` `#EC5B13` | Decorative details on light surfaces only: the bar before eyebrows on light panels, the header's scroll-progress line, the top edge of the mega menu and the menu overlay, logo-tile hover borders, link hover underlines, and the small welcome dot in the hero (CA's signature mark) |
 
 Never: orange text on white in `#EC5B13` (3.5:1); orange on the primary blue (2.2:1); orange elements on navy panels (use cyan `--accent` or white).
 
@@ -127,5 +126,5 @@ All motion lives in `assets/css/motion.css` and `assets/js/motion.js` (plus the 
 - axe-core 4.10: 0 violations at 1440, 390 and 320px (reduced motion), and with a mega-menu section, the menu overlay and the mobile menu open.
 - Mega menu checked at 1100, 1440 and 1920px for hover, switching, travelling from a section button down into its links, keyboard (ArrowDown/Left/Right, Tab through and out, Esc) and click outside; without JavaScript sections open on hover and keyboard focus.
 - No console errors; no horizontal scroll or clipped content at 320 / 390 / 768 / 1024 / 1100 / 1280 / 1440; works with JS disabled and with reduced motion.
-- Size (esbuild minified): CSS 66.5 KB, JS 19.3 KB. The original 50 KB CSS budget was lifted by the client in v6 in favour of richer motion.
+- Size (esbuild minified): CSS 65.2 KB, JS 18.9 KB. The original 50 KB CSS budget was lifted by the client in v6 in favour of richer motion.
 - Lighthouse was not run in this environment.

@@ -13,7 +13,6 @@ const modules = {
   reveal: '[data-reveal], [data-reveal-stagger]',
   'hero-fx': '[data-fx]',
   consent: '[data-consent]',
-  'dot-nav': '[data-dots]',
   motion: 'body',
 };
 

@@ -1,4 +1,4 @@
-# UX review — homepage v2 to v9
+# UX review — homepage v2 to v10
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -170,3 +170,9 @@ How the player works:
 Heights: the panel is 492px at 1440px (heading plus one row of 16:9 stills), 408px at 1024px and 482px on a 390px phone.
 
 Skill guidance applied (ui-ux-pro-max): `content-priority` (secondary content folded: the videos sit below News and take one row on every screen), `horizontal-scroll` (the page itself never scrolls sideways, checked at 320–1440px; only the video row does, inside its panel), `modal-motion` (the player rises in from below over a dimmed, blurred backdrop), `focus-management` (focus moves in, is held, and returns to the opener), and `lazy-loading` (`videos.js` is imported only when the section exists, and the player itself only when someone presses play).
+
+## v10 — client feedback
+
+| Feedback | Change |
+|---|---|
+| Remove the floating navigation for page sections | The page dots on the right (shown from 1280px) are gone: markup, styles, `dot-nav.js` and the `--z-dots` layer token. The header menu, the skip link and the footer still cover navigation, and the right edge of every panel is clear again |

@@ -129,8 +129,6 @@ html.js .reveal-run .ca-icon-badge { transition-delay: calc(var(--reveal-delay, 
   .ca-hero__ctrl { transition: transform 250ms var(--ease-spring), background-color var(--dur-1) var(--ease-std); }
   .ca-hero__ctrl:hover { transform: scale(1.08); }
   .ca-footer__top:hover .ca-icon { animation: ca-bob 600ms var(--ease-spring); }
-  .ca-dots__label { transform: translateX(6px); transition: opacity var(--dur-1) var(--ease-std), transform var(--dur-2) var(--ease-expo); }
-  .ca-dots a:hover .ca-dots__label { transform: none; }
   .ca-latest__card { transition: background-color var(--dur-1) var(--ease-std), transform var(--dur-2) var(--ease-expo); }
   .ca-latest__card:hover { transform: translateY(-3px); }
 }

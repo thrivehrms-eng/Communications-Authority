@@ -1,4 +1,4 @@
-/* Overlays: menu overlay, search panel, FAB, cookie consent, dot nav, scroll reveal */
+/* Overlays: menu overlay, search panel, FAB, cookie consent, video player, scroll reveal */
 @keyframes ca-drop { from { opacity: 0; transform: translateY(-12px); } }
 @keyframes ca-rise { from { opacity: 0; transform: translateY(8px); } }
 
@@ -181,23 +181,6 @@ html:has(.ca-video-dialog[open]) { overflow: hidden; }
   .ca-consent__actions .ca-btn { flex: 1 1 0; padding: 0 12px; }
   .ca-consent__actions .ca-textbtn { flex-basis: 100%; text-align: left; }
 }
-
-/* ── Page dot navigation ── */
-.ca-dots { position: fixed; right: calc(var(--gutter) + 6px); top: 50%; z-index: var(--z-dots); translate: 0 -50%; display: none; }
-.ca-dots ul { margin: 0; padding: 4px 0; list-style: none; border-radius: var(--radius-pill); background: rgb(255 255 255 / .88); box-shadow: var(--shadow-header); }
-.ca-dots a { position: relative; display: grid; place-items: center; width: 44px; height: 44px; }
-.ca-dots a::before { content: ""; width: 8px; height: 8px; border-radius: 4px; background: var(--ca-neutral-500); transition: height var(--dur-2) var(--ease-std), background-color var(--dur-2) var(--ease-std); }
-.ca-dots a[aria-current]::before { height: 22px; background: var(--signature); }
-.ca-dots a:hover::before { background: var(--primary); }
-.ca-dots a:focus-visible { outline-offset: -3px; border-radius: 50%; }
-.ca-dots__label {
-  position: absolute; right: calc(100% + 10px); top: 50%; translate: 0 -50%;
-  padding: 4px 12px; border-radius: var(--radius-pill); background: var(--dark); color: var(--text-on-dark);
-  font-size: .8125rem; font-weight: 500; white-space: nowrap; pointer-events: none;
-  opacity: 0; transition: opacity var(--dur-1) var(--ease-std);
-}
-.ca-dots a:hover .ca-dots__label, .ca-dots a:focus-visible .ca-dots__label { opacity: 1; }
-@media (min-width: 1280px) { .ca-dots { display: block; } }
 
 /* ── Scroll reveal (hidden state only with JS) ── */
 html.js .reveal-run[data-reveal], html.js .reveal-run[data-reveal-stagger] > * {
