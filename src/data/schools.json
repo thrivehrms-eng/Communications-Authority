@@ -1,0 +1,4477 @@
+[
+ {
+  "school": "Kajembe High school",
+  "subcounty": "Changamwe",
+  "county": "Mombasa"
+ },
+ {
+  "school": "St. Charles Lwanga",
+  "subcounty": "Changamwe",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Shimo La Tewa",
+  "subcounty": "Kisauni",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Moi forces Academy",
+  "subcounty": "Likoni",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Star of the Sea High School",
+  "subcounty": "Mombasa",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Khamisi High School",
+  "subcounty": "Mombasa",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Allidina visram",
+  "subcounty": "Mombasa",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Mama Ngina High School",
+  "subcounty": "Mombasa",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Coast Girls High Sch.",
+  "subcounty": "Mombasa",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Mbaraki Girls",
+  "subcounty": "Mombasa",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Alfarsy Sec. Sch.",
+  "subcounty": "Mombasa",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Tudor Secondary",
+  "subcounty": "Mombasa",
+  "county": "Mombasa"
+ },
+ {
+  "school": "Kwale High School",
+  "subcounty": "Matuga",
+  "county": "Kwale"
+ },
+ {
+  "school": "Tsimba sec. School",
+  "subcounty": "Kwale",
+  "county": "Kwale"
+ },
+ {
+  "school": "Golini Sec. sch.",
+  "subcounty": "Kwale",
+  "county": "Kwale"
+ },
+ {
+  "school": "Waa Boys",
+  "subcounty": "Kwale",
+  "county": "Kwale"
+ },
+ {
+  "school": "Waa Girls sec.",
+  "subcounty": "Kwale",
+  "county": "Kwale"
+ },
+ {
+  "school": "MATUGA GIRLS",
+  "subcounty": "KWALE",
+  "county": "Kwale"
+ },
+ {
+  "school": "KINGWEDE SEC.",
+  "subcounty": "MSAMBWENI",
+  "county": "Kwale"
+ },
+ {
+  "school": "KILIFI TOWNSHIP",
+  "subcounty": "KILIFI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "BAHARI GIRLS",
+  "subcounty": "KILIFI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "CHUMANI SEC",
+  "subcounty": "KILIFI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "KP SENIOR",
+  "subcounty": "KILIFI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "BARANI",
+  "subcounty": "MALINDI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "KAKONENI GIRLS",
+  "subcounty": "MALINDI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "MALINDI HIGH",
+  "subcounty": "MALINDI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "JILORE",
+  "subcounty": "MALINDI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "NGALA MEMORIAL",
+  "subcounty": "MALINDI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "MARAFA",
+  "subcounty": "MAGARINI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "GALANA",
+  "subcounty": "MAGARINI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "MAADANI",
+  "subcounty": "KALOLENI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "ST. JOHN’S GIRLS",
+  "subcounty": "KALOLENI",
+  "county": "Kilifi"
+ },
+ {
+  "school": "TARASAA",
+  "subcounty": "TANA DELTA",
+  "county": "Tana River"
+ },
+ {
+  "school": "MADOGO",
+  "subcounty": "TANA NORTH",
+  "county": "Tana River"
+ },
+ {
+  "school": "MPEKETONI BOYS",
+  "subcounty": "LAMU WEST",
+  "county": "Lamu"
+ },
+ {
+  "school": "LAMU GIRLS",
+  "subcounty": "LAMU WEST",
+  "county": "Lamu"
+ },
+ {
+  "school": "SACRED HEART",
+  "subcounty": "LAMU WEST",
+  "county": "Lamu"
+ },
+ {
+  "school": "HONGWE SEC",
+  "subcounty": "LAMU WEST",
+  "county": "Lamu"
+ },
+ {
+  "school": "LAMU BUJRA",
+  "subcounty": "LAMU WEST",
+  "county": "Lamu"
+ },
+ {
+  "school": "Bura Girls High Sch.",
+  "subcounty": "Mwatate",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Murray Girls High",
+  "subcounty": "Mwatate",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Mwasere Girls Sec",
+  "subcounty": "Mwatate",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Kenyatta High Sch.",
+  "subcounty": "Mwatate",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "St . Mary’s High Sch.",
+  "subcounty": "Taita",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Mwakiwiwi Sec Sch.",
+  "subcounty": "Taita",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Snr. Chief Mwangeka",
+  "subcounty": "Taita",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Dr. Aggrey High Sch.",
+  "subcounty": "Taita",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Kajire Sec Sch.",
+  "subcounty": "Voi",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Marungu Sec Sch.",
+  "subcounty": "Voi",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Mwangea Sec Sch.",
+  "subcounty": "Voi",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Buguta Sec Sch.",
+  "subcounty": "Voi",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Mwakitawa Sec Sch.",
+  "subcounty": "Voi",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "Voi Sec Sch",
+  "subcounty": "Voi",
+  "county": "Taita Taveta"
+ },
+ {
+  "school": "County high school",
+  "subcounty": "Garissa",
+  "county": "Garissa"
+ },
+ {
+  "school": "Shurie secondary school",
+  "subcounty": "Ljara",
+  "county": "Garissa"
+ },
+ {
+  "school": "Boys Town",
+  "subcounty": "Garissa",
+  "county": "Garissa"
+ },
+ {
+  "school": "Wajir High",
+  "subcounty": "Wajir East",
+  "county": "Wajir"
+ },
+ {
+  "school": "Wajir girls high",
+  "subcounty": "Wajir East",
+  "county": "Wajir"
+ },
+ {
+  "school": "Sabunley high",
+  "subcounty": "Wajir East",
+  "county": "Wajir"
+ },
+ {
+  "school": "Furaha mixed",
+  "subcounty": "Wajir East",
+  "county": "Wajir"
+ },
+ {
+  "school": "LAFEY BOYS SECONDARY",
+  "subcounty": "LAFEY",
+  "county": "Mandera"
+ },
+ {
+  "school": "ELWAK DEB MIXED DAY SEC",
+  "subcounty": "MANDERA CENTRAL",
+  "county": "Mandera"
+ },
+ {
+  "school": "ELWAK GIRLS SEC SCHOOL",
+  "subcounty": "MANDERA CENTRAL",
+  "county": "Mandera"
+ },
+ {
+  "school": "ELWAK SEC SCHOOL",
+  "subcounty": "MANDERA CENTRAL",
+  "county": "Mandera"
+ },
+ {
+  "school": "BORE HOLE 11 SEC SCHOOL",
+  "subcounty": "MANDERA CENTRAL",
+  "county": "Mandera"
+ },
+ {
+  "school": "WARGADUD MIXED SEC",
+  "subcounty": "MANDERA CENTRAL",
+  "county": "Mandera"
+ },
+ {
+  "school": "CHIEF M JARI SEC",
+  "subcounty": "MANDERA CENTRAL",
+  "county": "Mandera"
+ },
+ {
+  "school": "MOI GIRLS",
+  "subcounty": "MARSABIT",
+  "county": "Marsabit"
+ },
+ {
+  "school": "MARSABIT BOYS",
+  "subcounty": "MARSABIT",
+  "county": "Marsabit"
+ },
+ {
+  "school": "DAKABARICHA",
+  "subcounty": "MARSABIT",
+  "county": "Marsabit"
+ },
+ {
+  "school": "MOYALE GIRLS",
+  "subcounty": "MOYALE",
+  "county": "Marsabit"
+ },
+ {
+  "school": "ISIOLO GIRLS",
+  "subcounty": "ISIOLO",
+  "county": "Isiolo"
+ },
+ {
+  "school": "ISIOLO BOYS",
+  "subcounty": "ISIOLO",
+  "county": "Isiolo"
+ },
+ {
+  "school": "ST PAUL MIXED",
+  "subcounty": "MERTI",
+  "county": "Isiolo"
+ },
+ {
+  "school": "GARBATULA",
+  "subcounty": "GARBATULA",
+  "county": "Isiolo"
+ },
+ {
+  "school": "KANGETA GIRLS SECONDARY",
+  "subcounty": "IGEMBE SOUTH",
+  "county": "Meru"
+ },
+ {
+  "school": "MAUA GIRLS SECONDARY",
+  "subcounty": "IGEMBE SOUTH",
+  "county": "Meru"
+ },
+ {
+  "school": "NTURUBA SECONDARY",
+  "subcounty": "IGEMBE SOUTH",
+  "county": "Meru"
+ },
+ {
+  "school": "BURIERURI BOYS SECONDARY",
+  "subcounty": "IGEMBE SOUTH",
+  "county": "Meru"
+ },
+ {
+  "school": "IGEMBE BOYS SECONDARY",
+  "subcounty": "IGEMBE SOUTH",
+  "county": "Meru"
+ },
+ {
+  "school": "AKIRANGONDU BOYS",
+  "subcounty": "IGEMBE NORTH",
+  "county": "Meru"
+ },
+ {
+  "school": "THITHA",
+  "subcounty": "IGEMBE NORTH",
+  "county": "Meru"
+ },
+ {
+  "school": "A/KIONGO",
+  "subcounty": "IGEMBE NORTH",
+  "county": "Meru"
+ },
+ {
+  "school": "KIBIRICHIA BOYS",
+  "subcounty": "BUURI",
+  "county": "Meru"
+ },
+ {
+  "school": "ONTULILI BOYS",
+  "subcounty": "BUURI",
+  "county": "Meru"
+ },
+ {
+  "school": "Kaaga girls",
+  "subcounty": "Imenti North",
+  "county": "Meru"
+ },
+ {
+  "school": "Gikumene Girls",
+  "subcounty": "Imenti North",
+  "county": "Meru"
+ },
+ {
+  "school": "Meru school",
+  "subcounty": "Imenti North",
+  "county": "Meru"
+ },
+ {
+  "school": "KEERU BOYS",
+  "subcounty": "MERU CENTRAL",
+  "county": "Meru"
+ },
+ {
+  "school": "KATHERI BOYS",
+  "subcounty": "MERU CENTRAL",
+  "county": "Meru"
+ },
+ {
+  "school": "ABOTHUGUCHI BOYS",
+  "subcounty": "MERU CENTRAL",
+  "county": "Meru"
+ },
+ {
+  "school": "KITHIRUNE GIRLS",
+  "subcounty": "MERU CENTRAL",
+  "county": "Meru"
+ },
+ {
+  "school": "Mikinduri Girls",
+  "subcounty": "Tigania East",
+  "county": "Meru"
+ },
+ {
+  "school": "St. Cyprian Boys",
+  "subcounty": "Tigania East",
+  "county": "Meru"
+ },
+ {
+  "school": "MATERI’ GIRLS",
+  "subcounty": "THARAKA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "THARAKA BOYS’",
+  "subcounty": "THARAKA SOUTH",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "GATUNGA BOYS",
+  "subcounty": "THARAKA SOUTH",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "IKUU BOYS",
+  "subcounty": "MERU SOUTH",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "CHUKA BOYS",
+  "subcounty": "MERU SOUTH",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "CHUKA GIRLS",
+  "subcounty": "MERU SOUTH",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "CHOGORIA BOYS",
+  "subcounty": "MAARA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "CHOGORIA GIRLS",
+  "subcounty": "MAARA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "MUTHAMBI GIRLS",
+  "subcounty": "MAARA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "MUTHAMBI BOYS",
+  "subcounty": "MAARA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "CHIEF MBOGORI",
+  "subcounty": "MAARA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "THIGAA",
+  "subcounty": "MAARA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "KAJIUNDUTHI",
+  "subcounty": "MAARA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "OLOM",
+  "subcounty": "MAARA",
+  "county": "Tharakanithi"
+ },
+ {
+  "school": "Moi Mbiruri",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "S.A. Kyeni Girls",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "St. Agnes Girls Kiaganari",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "Kegonge Boys",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "St. Catherine Nthagaiya Girls",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "Kanja Secondary",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "Gitare Secondary",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "St. John Kathande",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "Kyeni Girls",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "Thigingi Girls",
+  "subcounty": "Embu East",
+  "county": "Embu"
+ },
+ {
+  "school": "Muvandori Day",
+  "subcounty": "Embu North",
+  "county": "Embu"
+ },
+ {
+  "school": "Kavutiri Boys",
+  "subcounty": "Embu North",
+  "county": "Embu"
+ },
+ {
+  "school": "St. John’s Kianjuki",
+  "subcounty": "Embu North",
+  "county": "Embu"
+ },
+ {
+  "school": "St. Anne’s Kiriari Girls",
+  "subcounty": "Embu North",
+  "county": "Embu"
+ },
+ {
+  "school": "Kamama Boys",
+  "subcounty": "Embu North",
+  "county": "Embu"
+ },
+ {
+  "school": "Kangaru School",
+  "subcounty": "Embu West",
+  "county": "Embu"
+ },
+ {
+  "school": "Kangaru Girls",
+  "subcounty": "Embu West",
+  "county": "Embu"
+ },
+ {
+  "school": "St. Pauls Kevote",
+  "subcounty": "Embu West",
+  "county": "Embu"
+ },
+ {
+  "school": "Kiangima Girls",
+  "subcounty": "Embu West",
+  "county": "Embu"
+ },
+ {
+  "school": "Kirimari Boys",
+  "subcounty": "Embu West",
+  "county": "Embu"
+ },
+ {
+  "school": "Kanyuambora Sec",
+  "subcounty": "Mbeere North",
+  "county": "Embu"
+ },
+ {
+  "school": "Siakago Boys",
+  "subcounty": "Mbeere North",
+  "county": "Embu"
+ },
+ {
+  "school": "Nyangwa Boys Sec",
+  "subcounty": "Mbeere South",
+  "county": "Embu"
+ },
+ {
+  "school": "Wachoro Boys Sec",
+  "subcounty": "Mbeere South",
+  "county": "Embu"
+ },
+ {
+  "school": "IKUTHA BOYS SEC",
+  "subcounty": "IKUTHA",
+  "county": "Kitui"
+ },
+ {
+  "school": "MULANGO GIRLS",
+  "subcounty": "KATULANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "MALIKU GIRLS",
+  "subcounty": "KATULANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "YUMBISYE MIXED SECONDARY",
+  "subcounty": "KATULANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "MBITINI GIRLS",
+  "subcounty": "KISASI",
+  "county": "Kitui"
+ },
+ {
+  "school": "ST. CHARLES LWANGA",
+  "subcounty": "KITUI CENTRAL",
+  "county": "Kitui"
+ },
+ {
+  "school": "ST. ANGELAS GIRLS",
+  "subcounty": "KITUI CENTRAL",
+  "county": "Kitui"
+ },
+ {
+  "school": "KITUI SCHOOL",
+  "subcounty": "KITUI CENTRAL",
+  "county": "Kitui"
+ },
+ {
+  "school": "ST. THOMAS AQUINAS KALAWA",
+  "subcounty": "KITUI CENTRAL",
+  "county": "Kitui"
+ },
+ {
+  "school": "KYONDONI GIRLS",
+  "subcounty": "KITUI WEST",
+  "county": "Kitui"
+ },
+ {
+  "school": "MUTHALE GIRLS",
+  "subcounty": "KITUI WEST",
+  "county": "Kitui"
+ },
+ {
+  "school": "MUTONGUNI SEC",
+  "subcounty": "KITUI WEST",
+  "county": "Kitui"
+ },
+ {
+  "school": "MIVUKONI SECONDARY",
+  "subcounty": "KYUSO",
+  "county": "Kitui"
+ },
+ {
+  "school": "KYUSO BOYS",
+  "subcounty": "KYUSO",
+  "county": "Kitui"
+ },
+ {
+  "school": "LAWSON HIGH SCHOOL",
+  "subcounty": "LOWER YATTA",
+  "county": "Kitui"
+ },
+ {
+  "school": "ST. AUGUSTINE KANYANGI BOYS",
+  "subcounty": "LOWER YATTA",
+  "county": "Kitui"
+ },
+ {
+  "school": "MATINYANI SEC",
+  "subcounty": "MATINYANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "KYAANI GIRLS SEC",
+  "subcounty": "MATINYANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "KAUMA SEC",
+  "subcounty": "MATINYANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "MIGWANI BOYS",
+  "subcounty": "MIGWANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "MUSUANI SECONDARY",
+  "subcounty": "MIGWANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "THITANI GIRLS",
+  "subcounty": "MIGWANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "NZELUNI GIRLS",
+  "subcounty": "MIGWANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "AIC SOMBE GIRLS",
+  "subcounty": "MUTITU",
+  "county": "Kitui"
+ },
+ {
+  "school": "MUTOMO GIRLS",
+  "subcounty": "MUTOMO",
+  "county": "Kitui"
+ },
+ {
+  "school": "IKANGA BOYS",
+  "subcounty": "MUTOMO",
+  "county": "Kitui"
+ },
+ {
+  "school": "MWINGI SECONDARY SCHOOL",
+  "subcounty": "MWINGI CENTRAL",
+  "county": "Kitui"
+ },
+ {
+  "school": "YAMBYU GIRLS SEC. SCHOOL",
+  "subcounty": "MWINGI CENTRAL",
+  "county": "Kitui"
+ },
+ {
+  "school": "KALUVA MIXED",
+  "subcounty": "NZAMBANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "CHULUNI GIRLS",
+  "subcounty": "NZAMBANI",
+  "county": "Kitui"
+ },
+ {
+  "school": "TSEIKURU SEC",
+  "subcounty": "TSEIKURU",
+  "county": "Kitui"
+ },
+ {
+  "school": "Kinanie Sec. School",
+  "subcounty": "Athi-River",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mavoko Sec. School",
+  "subcounty": "Athi-River",
+  "county": "Machakos"
+ },
+ {
+  "school": "KANGUNDO HIGH",
+  "subcounty": "KANGUNDO",
+  "county": "Machakos"
+ },
+ {
+  "school": "MATUNGULU BOYS",
+  "subcounty": "KANGUNDO",
+  "county": "Machakos"
+ },
+ {
+  "school": "MISYANI GIRLS",
+  "subcounty": "KANGUNDO",
+  "county": "Machakos"
+ },
+ {
+  "school": "KITWII SEC",
+  "subcounty": "KANGUNDO",
+  "county": "Machakos"
+ },
+ {
+  "school": "MANYATTA SEC",
+  "subcounty": "KANGUNDO",
+  "county": "Machakos"
+ },
+ {
+  "school": "KYEVALUKI SEC",
+  "subcounty": "KANGUNDO",
+  "county": "Machakos"
+ },
+ {
+  "school": "KAWETHEI SEC",
+  "subcounty": "KANGUNDO",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mitaboni High SchOOL",
+  "subcounty": "Kathiani",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kaani Lions Sec. SchOOL",
+  "subcounty": "Kathiani",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kathiani Girls’ HIGH",
+  "subcounty": "Kathiani",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kaewa Sec. SchOOL",
+  "subcounty": "Kathiani",
+  "county": "Machakos"
+ },
+ {
+  "school": "General Mulinge Sec.",
+  "subcounty": "Kathiani",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kathiani Boys’ H. Sch.",
+  "subcounty": "Kathiani",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mitaboni ABC Girls’ Sec.",
+  "subcounty": "Kathiani",
+  "county": "Machakos"
+ },
+ {
+  "school": "Machakos School",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mumbuni Boys",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mua Girls",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Katoloni Sec.",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Ngelani Sec.",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kyanguli",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Muvuti",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kwanthanze",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mikuini",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Muindi Mbingu",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mumbuni Girls",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kyangala Girls",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Katelembo CoE",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kitonyini Sec.",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mbukuni",
+  "subcounty": "Machakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "Machakos Girls",
+  "subcounty": "Mahakos",
+  "county": "Machakos"
+ },
+ {
+  "school": "MASINGA BOYS SEC.",
+  "subcounty": "MASINGA",
+  "county": "Machakos"
+ },
+ {
+  "school": "MASINGA GIRLS SEC.",
+  "subcounty": "MASINGA",
+  "county": "Machakos"
+ },
+ {
+  "school": "KIVAA SEC. SCHOOL",
+  "subcounty": "MASINGA",
+  "county": "Machakos"
+ },
+ {
+  "school": "IKATINI SEC. SCHOOL",
+  "subcounty": "MASINGA",
+  "county": "Machakos"
+ },
+ {
+  "school": "THATHA HIGH SCHOOL",
+  "subcounty": "MASINGA",
+  "county": "Machakos"
+ },
+ {
+  "school": "TALA BOYS HIGH SCHOOL",
+  "subcounty": "MATUNGULU",
+  "county": "Machakos"
+ },
+ {
+  "school": "TALA GIRLS HIGH SCHOOL",
+  "subcounty": "MATUNGULU",
+  "county": "Machakos"
+ },
+ {
+  "school": "KINYUI BOYS HIGH SCHOOL",
+  "subcounty": "MATUNGULU",
+  "county": "Machakos"
+ },
+ {
+  "school": "MATUNGULU GIRLS HIGH",
+  "subcounty": "MATUNGULU",
+  "county": "Machakos"
+ },
+ {
+  "school": "KATULYE SECONDARY",
+  "subcounty": "MATUNGULU",
+  "county": "Machakos"
+ },
+ {
+  "school": "SENGANI GIRLS HIGH",
+  "subcounty": "MATUNGULU",
+  "county": "Machakos"
+ },
+ {
+  "school": "SA NGULUNI SECONDARY",
+  "subcounty": "MATUNGULU",
+  "county": "Machakos"
+ },
+ {
+  "school": "lukenya girls",
+  "subcounty": "mavoko",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mango sec",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Muthetheni Girls",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Bishop Ndingi",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Makutano Boys",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mbaikini Boys",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Vyulya Girls",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Masii Girls",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kithangaini sec",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kabaa Boys",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kyethivo Girls",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Masii Boys",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Lema Girls",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mwala School",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mulu Sec",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "Mbaani Sec",
+  "subcounty": "Mwala",
+  "county": "Machakos"
+ },
+ {
+  "school": "MAKIVENZI",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "KITHIMANI HGM",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "IKOMBE",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "KYUA",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "KITHENDU",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "NDALANI",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "MATUU HGM",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "KATANGI",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "KITHEUNI",
+  "subcounty": "Yatta",
+  "county": "Machakos"
+ },
+ {
+  "school": "Kitondo Boys",
+  "subcounty": "Mbooni East",
+  "county": "Makueni"
+ },
+ {
+  "school": "Kiteta Boys Sec",
+  "subcounty": "Mbooni East",
+  "county": "Makueni"
+ },
+ {
+  "school": "Mukimwani sec",
+  "subcounty": "Mbooni East",
+  "county": "Makueni"
+ },
+ {
+  "school": "Nduluku secondary",
+  "subcounty": "Mbooni East",
+  "county": "Makueni"
+ },
+ {
+  "school": "Tawa Mixed sec",
+  "subcounty": "Mbooni East",
+  "county": "Makueni"
+ },
+ {
+  "school": "Kiteta Girls",
+  "subcounty": "Mbooni East",
+  "county": "Makueni"
+ },
+ {
+  "school": "MULALA GIRLS HIGH SCHOOL",
+  "subcounty": "NZAUI",
+  "county": "Makueni"
+ },
+ {
+  "school": "BARAZANI GIRLS HIGH SCHOOL",
+  "subcounty": "NZAUI",
+  "county": "Makueni"
+ },
+ {
+  "school": "NGOTO BOYS",
+  "subcounty": "NZAUI",
+  "county": "Makueni"
+ },
+ {
+  "school": "GOOD SHEPHERD",
+  "subcounty": "NZAUI",
+  "county": "Makueni"
+ },
+ {
+  "school": "KIKUMINI",
+  "subcounty": "NZAUI",
+  "county": "Makueni"
+ },
+ {
+  "school": "MATILIKU",
+  "subcounty": "NZAUI",
+  "county": "Makueni"
+ },
+ {
+  "school": "MAKUENI BOYS",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "KAUMONI BOYS",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "MAKUENI GIRLS",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "MWAANI BOYS",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "MWAANI GIRLS",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "UKIA GIRLS",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "ST. LAWRENCE NZIU GIRLS",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "AIC MUKUYUNI SEC.",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "ST. PAUL’S KYAMUTHEI",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "KYUASINI SEC.",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "KITONYONI SEC.",
+  "subcounty": "Makueni",
+  "county": "Makueni"
+ },
+ {
+  "school": "KIANGINI GIRLS",
+  "subcounty": "KATHONZWENI",
+  "county": "Makueni"
+ },
+ {
+  "school": "KATHONZWENI BOYS",
+  "subcounty": "KATHONZWENI",
+  "county": "Makueni"
+ },
+ {
+  "school": "ST. PETER CLAVERS – KITHUKI",
+  "subcounty": "KATHONZWENI",
+  "county": "Makueni"
+ },
+ {
+  "school": "Shamata Girls",
+  "subcounty": "Nyandarua North",
+  "county": "Nyandarua"
+ },
+ {
+  "school": "Njabini Boys",
+  "subcounty": "Kinangop",
+  "county": "Nyandarua"
+ },
+ {
+  "school": "Mt. Kinangop Girls",
+  "subcounty": "Kinangop",
+  "county": "Nyandarua"
+ },
+ {
+  "school": "Karima Girls",
+  "subcounty": "Nyandarua South",
+  "county": "Nyandarua"
+ },
+ {
+  "school": "Magomano",
+  "subcounty": "Nyandarua South",
+  "county": "Nyandarua"
+ },
+ {
+  "school": "Ruthagati",
+  "subcounty": "Mathira West",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Tumutumu",
+  "subcounty": "Mathira West",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Bishop Gatimu Ngandu",
+  "subcounty": "Mathira West",
+  "county": "Nyeri"
+ },
+ {
+  "school": "St Monica Munyaka Girls",
+  "subcounty": "Kieni East",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Moi Equator Girls",
+  "subcounty": "Kieni East",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Kaheti Boys",
+  "subcounty": "Mukurweini",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Mihuti",
+  "subcounty": "Mukurweini",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Wamutitu",
+  "subcounty": "Mukurweini",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Gikondi",
+  "subcounty": "Mukurweini",
+  "county": "Nyeri"
+ },
+ {
+  "school": "South Tetu Girls",
+  "subcounty": "Mukurweini",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Giathugu",
+  "subcounty": "Mukurweini",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Nyeri High",
+  "subcounty": "Nyeri Central",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Giakanja Boy",
+  "subcounty": "Nyeri Central",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Kagumo High",
+  "subcounty": "Nyeri Central",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Muruguru",
+  "subcounty": "Nyeri Central",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Kanjuri",
+  "subcounty": "Mathira East",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Giakaibei",
+  "subcounty": "Mathira East",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Othaya Boys",
+  "subcounty": "Nyeri South",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Othaya Girls",
+  "subcounty": "Nyeri South",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Karima Boys",
+  "subcounty": "Nyeri South",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Mahiga Girls",
+  "subcounty": "Nyeri South",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Birithia Girls",
+  "subcounty": "Nyeri South",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Witima",
+  "subcounty": "Nyeri South",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Gathera",
+  "subcounty": "Nyeri South",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Iriaini Girls",
+  "subcounty": "Nyeri South",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Endarasha",
+  "subcounty": "Kieni West",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Gachatha",
+  "subcounty": "Tetu",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Gititu",
+  "subcounty": "Tetu",
+  "county": "Nyeri"
+ },
+ {
+  "school": "Ft Nyamu",
+  "subcounty": "Tetu",
+  "county": "Nyeri"
+ },
+ {
+  "school": "KIBURU SECONDARY",
+  "subcounty": "KIRINYAGA WEST",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "KIINE GIRLS",
+  "subcounty": "KIRINYAGA WEST",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "KIANGAI SECONDARY",
+  "subcounty": "KIRINYAGA WEST",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "KIARAGANA GIRLS",
+  "subcounty": "KIRINYAGA WEST",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "SAGANA SECONDARY",
+  "subcounty": "KIRINYAGA WEST",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "KIBIRIGWI GIRLS",
+  "subcounty": "KIRINYAGA WEST",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Kabare Girls High Sch",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Mutige Boys Sec",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Mugumo Girls Sec",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Kianyaga High SCh",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "ST. Bakhita Kiburia",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "St. Marks Thumaita Girls",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Ngiriambu Girls Sec.",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Kiamutugu Boys",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "St. Ann Gituba Girls",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Kiamugumo Girls",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Ngariama Sec. Sch",
+  "subcounty": "Kirinyaga East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Mutira Girls",
+  "subcounty": "Kirinyaga Central",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Kerugoya Boys",
+  "subcounty": "Kirinyaga Central",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Ngaru Girls",
+  "subcounty": "Kirinyaga Central",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Kerugoya Girls",
+  "subcounty": "Kirinyaga Central",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Wanguru girls",
+  "subcounty": "Mwea East",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "St Mary Karumandi Boys",
+  "subcounty": "Kirinyaga",
+  "county": "Kirinyaga"
+ },
+ {
+  "school": "Njumbi high school",
+  "subcounty": "Mathioya",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Gitugi girls",
+  "subcounty": "Mathioya",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kiria-ini girls",
+  "subcounty": "Mathioya",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Nginda Girls",
+  "subcounty": "Murang’a South",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kamahuha Girls",
+  "subcounty": "Murang’a South",
+  "county": "Murang’a"
+ },
+ {
+  "school": "St. Charles Lwanga",
+  "subcounty": "Kandara",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Ruchu Girls",
+  "subcounty": "Kandara",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Ngararia Girls",
+  "subcounty": "Kandara",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Mugecha Sec",
+  "subcounty": "Kandara",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kiangari",
+  "subcounty": "Kandara",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Githumu",
+  "subcounty": "Kandara",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Gituru Mixed Boarding",
+  "subcounty": "Kandara",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Murang’a High",
+  "subcounty": "Murang’a East",
+  "county": "Murang’a"
+ },
+ {
+  "school": "St. Paul’s Gathukiini",
+  "subcounty": "Murang’a East",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Mumbi Girls",
+  "subcounty": "Murang’a East",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Vidhu Ramji",
+  "subcounty": "Murang’a East",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Maragi Sec",
+  "subcounty": "Murang’a East",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Ngelelya",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kihumbuini",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Gititu",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kamunyaka Kiumu",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Gatanga Girls",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Gatura Girls",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kirwara",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Ndakaini",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "St. Paul",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Gatiguru",
+  "subcounty": "Gatanga",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Mugoiri Girls",
+  "subcounty": "Kahuro",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kiaguthu Boys",
+  "subcounty": "Kahuro",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kahuhia Girls",
+  "subcounty": "Kahuro",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Njiiri Sch",
+  "subcounty": "Kigumo",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Muguru Sec",
+  "subcounty": "Kangema",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Nyagatugu Boys",
+  "subcounty": "Kangema",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kiawambogo Sec",
+  "subcounty": "Kangema",
+  "county": "Murang’a"
+ },
+ {
+  "school": "Kibutha Girls",
+  "subcounty": "Kangema",
+  "county": "Murang’a"
+ },
+ {
+  "school": "LORETO HIGH SCHOOL LIMURU",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "LIMURU GIRLS",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "NGARARIGA GIRLS SECONDARY SCHOOL",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "ST. MARYS THIGIO GIRLS",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "MIRITHU GIRLS",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "NGENIA HIGH",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KAMANDURA GIRLS",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GICHURU HIGH",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "NDUNGU GIRLS",
+  "subcounty": "LIMURU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GITWE GIRLS",
+  "subcounty": "GITHUNGURI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "ST.JOSEPH’S HIGH SCH",
+  "subcounty": "GITHUNGURI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GIKANGA KAGECHE",
+  "subcounty": "GITHUNGURI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KIAIRIA SEC",
+  "subcounty": "GITHUNGURI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "J.G.KIEREINI",
+  "subcounty": "GITHUNGURI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GITHIGA BOYS",
+  "subcounty": "GITHUNGURI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GATHIRMU GIRLS",
+  "subcounty": "GITHUNGURI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KOMOTHAI BOYS",
+  "subcounty": "GITHUNGURI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "MUHOHO",
+  "subcounty": "GATUNDU S",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KIBIRU SEC",
+  "subcounty": "GATUNDU S",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GATITU SECONDARY",
+  "subcounty": "GATUNDU S",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KAIRI SEC.",
+  "subcounty": "GATUNDU N",
+  "county": "Kiambu"
+ },
+ {
+  "school": "ST. FRANCIS",
+  "subcounty": "GATUNDU N",
+  "county": "Kiambu"
+ },
+ {
+  "school": "O.L.F KIRIKO SEC",
+  "subcounty": "GATUNDU N",
+  "county": "Kiambu"
+ },
+ {
+  "school": "MAKWA BOYS",
+  "subcounty": "GATUNDU N",
+  "county": "Kiambu"
+ },
+ {
+  "school": "NYAMATHUMBI",
+  "subcounty": "GATUNDU N",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GATUNGURU",
+  "subcounty": "GATUNDU N",
+  "county": "Kiambu"
+ },
+ {
+  "school": "SENIOR CHIEF KOINANGE GIRLS",
+  "subcounty": "KIAMBU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KIAMBU HIGH",
+  "subcounty": "KIAMBU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "LORETO GIRLS",
+  "subcounty": "KIAMBU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KARURI HIGH SCHOOL",
+  "subcounty": "KIAMBU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "MOI GIRLS KAMANGU",
+  "subcounty": "KIKUYU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "ALLIANCE HIGH",
+  "subcounty": "KIKUYU",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GACHOIRE GIRLS",
+  "subcounty": "LARI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "PB KAGWE GIRLS",
+  "subcounty": "LARI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KIJABE GIRLS",
+  "subcounty": "LARI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KAMBAA GIRLS",
+  "subcounty": "LARI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "GATAMAIYU HIGH SCHOOL",
+  "subcounty": "LARI",
+  "county": "Kiambu"
+ },
+ {
+  "school": "THIKA HIGH",
+  "subcounty": "THIKA WEST",
+  "county": "Kiambu"
+ },
+ {
+  "school": "MANGU HIGH",
+  "subcounty": "THIKA WEST",
+  "county": "Kiambu"
+ },
+ {
+  "school": "MARYHILL GIRLS",
+  "subcounty": "THIKA WEST",
+  "county": "Kiambu"
+ },
+ {
+  "school": "CHANIA GIRLS",
+  "subcounty": "THIKA WEST",
+  "county": "Kiambu"
+ },
+ {
+  "school": "CHANIA BOYS",
+  "subcounty": "THIKA WEST",
+  "county": "Kiambu"
+ },
+ {
+  "school": "KIRANGARI HIGH SCHOOL",
+  "subcounty": "KABETE",
+  "county": "Kiambu"
+ },
+ {
+  "school": "MARY LEAKEY GIRLS’",
+  "subcounty": "KABETE",
+  "county": "Kiambu"
+ },
+ {
+  "school": "UTHIRU GIRLS’",
+  "subcounty": "KABETE",
+  "county": "Kiambu"
+ },
+ {
+  "school": "ST. KEVINS SEC. SCH.",
+  "subcounty": "TURKANA CENTRAL",
+  "county": "Turkana"
+ },
+ {
+  "school": "LODWAR BOYS NATIONAL SCHOOL",
+  "subcounty": "TURKANA CENTRAL",
+  "county": "Turkana"
+ },
+ {
+  "school": "TURKANA GIRLS NATIONAL SCHOOL",
+  "subcounty": "LOIMA",
+  "county": "Turkana"
+ },
+ {
+  "school": "AIC KANGITIT",
+  "subcounty": "TURKANA EAST",
+  "county": "Turkana"
+ },
+ {
+  "school": "St. Elizabeth Girls-Morpus",
+  "subcounty": "Pokot Central",
+  "county": "West-pokot"
+ },
+ {
+  "school": "St. Theresa’s Tartar Girls",
+  "subcounty": "West Pokot",
+  "county": "West-pokot"
+ },
+ {
+  "school": "Kapenguria Boys",
+  "subcounty": "West Pokot",
+  "county": "West-pokot"
+ },
+ {
+  "school": "St. Cecilia Chepareria",
+  "subcounty": "West Pokot",
+  "county": "West-pokot"
+ },
+ {
+  "school": "St. Comboni Amakuriat",
+  "subcounty": "North Pokot",
+  "county": "West-pokot"
+ },
+ {
+  "school": "Nasokol Girls",
+  "subcounty": "West Pokot",
+  "county": "West-pokot"
+ },
+ {
+  "school": "Holy Cross Boys",
+  "subcounty": "North Pokot",
+  "county": "West-pokot"
+ },
+ {
+  "school": "Baragoi girls",
+  "subcounty": "Samburu North",
+  "county": "Samburu"
+ },
+ {
+  "school": "UASO Boys High School",
+  "subcounty": "Samburu Central",
+  "county": "Samburu"
+ },
+ {
+  "school": "AIC Girls Secondary School",
+  "subcounty": "Samburu Central",
+  "county": "Samburu"
+ },
+ {
+  "school": "BWAKE BOYS",
+  "subcounty": "T/NZOIA EAST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "WIYETA GIRLS",
+  "subcounty": "T/NZOIA EAST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST MARKS BOYS",
+  "subcounty": "T/NZOIA EAST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "KAPSASRA",
+  "subcounty": "T/NZOIA EAST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST MARKS GIRLS",
+  "subcounty": "T/NZOIA EAST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "MUKUYU BOYS",
+  "subcounty": "T/NZOIA EAST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST FRANCIS SUWERWA",
+  "subcounty": "T/NZOIA EAST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST BRIGIDS GIRLS",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST. ANTHONY’S BOYS",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST COLUMBANS",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST JOSEPHS BOYS",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST JOSEPHS GIRLS",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST JOHNS GIRLS",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "BOMA BOYS",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "KITALE SCHOOL SEC",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "IMMACULATE SABOTI GIRLS",
+  "subcounty": "T/NZOIA WEST",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "ST MONICA GIRLS",
+  "subcounty": "KWANZA",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "GOSETA BOYS",
+  "subcounty": "KWANZA",
+  "county": "Transnzoia"
+ },
+ {
+  "school": "Turbo Girls",
+  "subcounty": "Eldoret West",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Uasin Gishu",
+  "subcounty": "Eldoret West",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Kipsangui Boys",
+  "subcounty": "Eldoret West",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Sugoi Girls",
+  "subcounty": "Eldoret West",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "RCEA Kuinet",
+  "subcounty": "Eldoret West",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Moi Barracks",
+  "subcounty": "Eldoret West",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Loreto High Matunda",
+  "subcounty": "Eldoret West",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Umoja",
+  "subcounty": "Eldoret West",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Moi Girls",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Kipkabus",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Abrar",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Hermann Gmeiner",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Arnesens",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Chebisaas Boys High School",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Tembelio",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Immaculate Heart Juniorate",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Seko Girls",
+  "subcounty": "Eldoret East",
+  "county": "Uasin Gishu"
+ },
+ {
+  "school": "Kipsoen Secondary school",
+  "subcounty": "Keiyo",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "St.Alphonsus Mutei Girls",
+  "subcounty": "Keiyo",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "Singo’re Girls Secondary",
+  "subcounty": "Keiyo",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "Simotwo Boys Secondary",
+  "subcounty": "Keiyo South",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "Kapkenda Girls Secondary",
+  "subcounty": "Keiyo South",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "Metkei Girls Secondary",
+  "subcounty": "Keiyo South",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "Kerio Valley Boys Sec.",
+  "subcounty": "Marakwet East",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "Sambirir Girls Secondary",
+  "subcounty": "Marakwet East",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "Chebara Boys Secondary",
+  "subcounty": "Marakwet West",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "Moi Kapsowar Girls Sec.",
+  "subcounty": "Marakwet West",
+  "county": "Elgeyomarakwet"
+ },
+ {
+  "school": "SAMOEI BOYS",
+  "subcounty": "NANDI EAST",
+  "county": "Nandi"
+ },
+ {
+  "school": "TAITO KTGA",
+  "subcounty": "NANDI EAST",
+  "county": "Nandi"
+ },
+ {
+  "school": "METEITEI BOYS",
+  "subcounty": "Tindiret",
+  "county": "Nandi"
+ },
+ {
+  "school": "HENRY KOSGEY KIBUKWO",
+  "subcounty": "Tindiret",
+  "county": "Nandi"
+ },
+ {
+  "school": "Kapkolei Girls",
+  "subcounty": "Nandi south",
+  "county": "Nandi"
+ },
+ {
+  "school": "Kapsengere High",
+  "subcounty": "Nandi south",
+  "county": "Nandi"
+ },
+ {
+  "school": "Aic chebisaas Girls",
+  "subcounty": "Nandi south",
+  "county": "Nandi"
+ },
+ {
+  "school": "KAPSABET BOYS",
+  "subcounty": "Nand Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "Got Ne Lel",
+  "subcounty": "Nandi North",
+  "county": "Nandi"
+ },
+ {
+  "school": "ST JOHNS TACHASIS",
+  "subcounty": "Tinderet",
+  "county": "Nandi"
+ },
+ {
+  "school": "KAPSABET GIRLS",
+  "subcounty": "NandI Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "KAMOBO",
+  "subcounty": "NandI Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "KIPSIGAK HIGH",
+  "subcounty": "NandI Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "FR. KUHN CHEPSONOI",
+  "subcounty": "NandI Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "MARBEN",
+  "subcounty": "NandI Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "KILIBWONI HIGH",
+  "subcounty": "NandI Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "KOSIRAI HIGH",
+  "subcounty": "NandI Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "KABIRISANG",
+  "subcounty": "NandI Central",
+  "county": "Nandi"
+ },
+ {
+  "school": "Moi High Sch. Sirgoi",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "Laboret Boys",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "St. Teresa Of Avilla G. Ndalat",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "St. Michaels Kabisaga",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "Ndalat Gaa Girls",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "Holy Trinity Girls Kaiboi",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "Itigo Girls",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "Kabiyet Boys",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "Ngechek Sec.",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "Lelmokwo H. School",
+  "subcounty": "NANDI North",
+  "county": "Nandi"
+ },
+ {
+  "school": "Sacho High School",
+  "subcounty": "Baringo Central",
+  "county": "Baringo"
+ },
+ {
+  "school": "Bartolimo Boys high school",
+  "subcounty": "Kabartonjo",
+  "county": "Baringo"
+ },
+ {
+  "school": "Kamelilo Secondary",
+  "subcounty": "Koibatek",
+  "county": "Baringo"
+ },
+ {
+  "school": "Solian High School",
+  "subcounty": "Koibatek",
+  "county": "Baringo"
+ },
+ {
+  "school": "Baringo High",
+  "subcounty": "Koibatek",
+  "county": "Baringo"
+ },
+ {
+  "school": "Poror High School",
+  "subcounty": "Koibatek",
+  "county": "Baringo"
+ },
+ {
+  "school": "Kabimoi High",
+  "subcounty": "Koibatek",
+  "county": "Baringo"
+ },
+ {
+  "school": "Toniok Girls",
+  "subcounty": "Koibatek",
+  "county": "Baringo"
+ },
+ {
+  "school": "Eldama Ravine Girls",
+  "subcounty": "Koibatek",
+  "county": "Baringo"
+ },
+ {
+  "school": "Sabatia Secondary",
+  "subcounty": "Koibatek",
+  "county": "Baringo"
+ },
+ {
+  "school": "NDURURI HIGH SCHOOL",
+  "subcounty": "NYAHURURU",
+  "county": "Laikipia"
+ },
+ {
+  "school": "GATERO GIRLS HIGH SCHOOL",
+  "subcounty": "NYAHURURU",
+  "county": "Laikipia"
+ },
+ {
+  "school": "NDURURUMO HIGH SCHOOL",
+  "subcounty": "NYAHURURU",
+  "county": "Laikipia"
+ },
+ {
+  "school": "MWENJE HIGH SCHOOL",
+  "subcounty": "NYAHURURU",
+  "county": "Laikipia"
+ },
+ {
+  "school": "NJORUA HIGH SCHOOL",
+  "subcounty": "NYAHURURU",
+  "county": "Laikipia"
+ },
+ {
+  "school": "THIRU SECONDARY SCHOOL",
+  "subcounty": "NYAHURURU",
+  "county": "Laikipia"
+ },
+ {
+  "school": "NGUMO BOYS SECONDARY SCHOOL",
+  "subcounty": "LAIKIPIA WEST",
+  "county": "Laikipia"
+ },
+ {
+  "school": "G.G. RUMURUTI",
+  "subcounty": "LAIKIPIA WEST",
+  "county": "Laikipia"
+ },
+ {
+  "school": "NANYUKI HIGH SCHOOL",
+  "subcounty": "LAIKIPIA EAST",
+  "county": "Laikipia"
+ },
+ {
+  "school": "WIYUMIRIRIE SECONDARY SCHOOL",
+  "subcounty": "LAIKIPIA CENTRAL",
+  "county": "Laikipia"
+ },
+ {
+  "school": "INORO SECONDARY SCHOOL",
+  "subcounty": "LAIKIPIA CENTRAL",
+  "county": "Laikipia"
+ },
+ {
+  "school": "AFRAHA",
+  "subcounty": "NAKURU",
+  "county": "Nakuru"
+ },
+ {
+  "school": "AIC MOROP",
+  "subcounty": "RONGAI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "BAHATI GIRLS SECONDARY",
+  "subcounty": "NAK. NORTH",
+  "county": "Nakuru"
+ },
+ {
+  "school": "CHEPTUECH",
+  "subcounty": "KURESOI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "CRATER SEC",
+  "subcounty": "NAKURU",
+  "county": "Nakuru"
+ },
+ {
+  "school": "EMITIK GIRLS",
+  "subcounty": "KURESOI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "JOMO KENYATTA HIGH SCH.",
+  "subcounty": "NAK.NORTH",
+  "county": "Nakuru"
+ },
+ {
+  "school": "KAMBALA SECONDARY",
+  "subcounty": "MOLO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "KILIMO",
+  "subcounty": "NJORO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "KIROBON",
+  "subcounty": "RONGAI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "KOELEL HIGH",
+  "subcounty": "GILGIL",
+  "county": "Nakuru"
+ },
+ {
+  "school": "LAMURDIAC HIGH",
+  "subcounty": "NJORO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "LANET",
+  "subcounty": "NAKURU",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MARY MOUNT GIRLS",
+  "subcounty": "MOLO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MAU SUMMIT",
+  "subcounty": "KURESOI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MEMA",
+  "subcounty": "RONGAI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MENENGAI",
+  "subcounty": "NAKURU",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MICHINDA SECONDARY",
+  "subcounty": "MOLO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MOI AMALO",
+  "subcounty": "KURESOI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MOI FORCES ACADEMY",
+  "subcounty": "NAK. NORTH",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MOI SECONDARY",
+  "subcounty": "NAKURU",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MOLO ACADEMY BOYS",
+  "subcounty": "MOLO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "MOLO SECONDARY",
+  "subcounty": "MOLO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "NAIVASHA GIRLS",
+  "subcounty": "NAIVASHA",
+  "county": "Nakuru"
+ },
+ {
+  "school": "NAIVASHA HIGH SCHOOL",
+  "subcounty": "NAIVASHA",
+  "county": "Nakuru"
+ },
+ {
+  "school": "NAKURU BOYS",
+  "subcounty": "NAKURU",
+  "county": "Nakuru"
+ },
+ {
+  "school": "NAKURU GIRLS",
+  "subcounty": "NAKURU",
+  "county": "Nakuru"
+ },
+ {
+  "school": "NAKURU WEST",
+  "subcounty": "NAKURU",
+  "county": "Nakuru"
+ },
+ {
+  "school": "NJENGA KARUME",
+  "subcounty": "MOLO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "NJORO BOYS",
+  "subcounty": "NJORO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "NJORO DAY",
+  "subcounty": "NJORO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "OLENGURUONE",
+  "subcounty": "KURESOI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "SOLAI",
+  "subcounty": "RONGAI",
+  "county": "Nakuru"
+ },
+ {
+  "school": "TAITA MAUCHE",
+  "subcounty": "NJORO",
+  "county": "Nakuru"
+ },
+ {
+  "school": "UTUMISHI ACADEMY",
+  "subcounty": "GILGIL",
+  "county": "Nakuru"
+ },
+ {
+  "school": "ST. MARYS GIRLS",
+  "subcounty": "NAROK NORTH",
+  "county": "Narok"
+ },
+ {
+  "school": "SR. MARY STEPHEN",
+  "subcounty": "NAROK NORTH",
+  "county": "Narok"
+ },
+ {
+  "school": "NAROK HIGH SCHOOL",
+  "subcounty": "NAROK NORTH",
+  "county": "Narok"
+ },
+ {
+  "school": "MAASAI GIRLS",
+  "subcounty": "NAROK NORTH",
+  "county": "Narok"
+ },
+ {
+  "school": "OLE TIPIS GIRLS",
+  "subcounty": "NAROK NORTH",
+  "county": "Narok"
+ },
+ {
+  "school": "OLOOMIRANI BOYS",
+  "subcounty": "NAROK SOUTH",
+  "county": "Narok"
+ },
+ {
+  "school": "OLCHUKUT SUPAT",
+  "subcounty": "NAROK SOUTH",
+  "county": "Narok"
+ },
+ {
+  "school": "BISHOP COLLINS DAVIES",
+  "subcounty": "NAROK SOUTH",
+  "county": "Narok"
+ },
+ {
+  "school": "KILGORIS BOYS HIGH SCHOOL",
+  "subcounty": "TRANSMARA WEST",
+  "county": "Narok"
+ },
+ {
+  "school": "SOSIO SECONDARY SCHOOL",
+  "subcounty": "TRANSMARA WEST",
+  "county": "Narok"
+ },
+ {
+  "school": "Oloitokitok Sec School",
+  "subcounty": "Loitokitok",
+  "county": "Kajiado"
+ },
+ {
+  "school": "Oloolaiser High School",
+  "subcounty": "Kajiado North",
+  "county": "Kajiado"
+ },
+ {
+  "school": "Sajiloni Girls’",
+  "subcounty": "Kajiado Central",
+  "county": "Kajiado"
+ },
+ {
+  "school": "Snr Chief Rissa Oloosuyian",
+  "subcounty": "Kajiado Central",
+  "county": "Kajiado"
+ },
+ {
+  "school": "Olkejuado High School",
+  "subcounty": "Kajiado Central",
+  "county": "Kajiado"
+ },
+ {
+  "school": "Najile Boys",
+  "subcounty": "Kajiado North",
+  "county": "Kajiado"
+ },
+ {
+  "school": "Kiluani",
+  "subcounty": "Kajiado Central",
+  "county": "Kajiado"
+ },
+ {
+  "school": "Ilbissil Girls",
+  "subcounty": "Kajiado Central",
+  "county": "Kajiado"
+ },
+ {
+  "school": "CHEBIGEN",
+  "subcounty": "KERICHO",
+  "county": "Kericho"
+ },
+ {
+  "school": "Chebwagan",
+  "subcounty": "Bureti",
+  "county": "Kericho"
+ },
+ {
+  "school": "Chemoiben",
+  "subcounty": "Bureti",
+  "county": "Kericho"
+ },
+ {
+  "school": "Cheplanget Boys",
+  "subcounty": "Bureti",
+  "county": "Kericho"
+ },
+ {
+  "school": "CHEPSEON GIRLS",
+  "subcounty": "LONDIANI",
+  "county": "Kericho"
+ },
+ {
+  "school": "CHEPTENYE",
+  "subcounty": "BELGUT",
+  "county": "Kericho"
+ },
+ {
+  "school": "Kapsogut Boys",
+  "subcounty": "Bureti",
+  "county": "Kericho"
+ },
+ {
+  "school": "KERICHO HIGH",
+  "subcounty": "KERICHO",
+  "county": "Kericho"
+ },
+ {
+  "school": "KERICHO TEA BOYS",
+  "subcounty": "KERICHO",
+  "county": "Kericho"
+ },
+ {
+  "school": "KIPCHIMCHIM",
+  "subcounty": "KERICHO",
+  "county": "Kericho"
+ },
+ {
+  "school": "KIPSIGIS GIRLS",
+  "subcounty": "KERICHO",
+  "county": "Kericho"
+ },
+ {
+  "school": "KOKWET",
+  "subcounty": "KIPKELION",
+  "county": "Kericho"
+ },
+ {
+  "school": "LILLOCH",
+  "subcounty": "KIPKELION",
+  "county": "Kericho"
+ },
+ {
+  "school": "LONDIANI BOYS",
+  "subcounty": "LONDIANI",
+  "county": "Kericho"
+ },
+ {
+  "school": "LONDIANI GIRLS",
+  "subcounty": "LONDIANI",
+  "county": "Kericho"
+ },
+ {
+  "school": "MOI TEA GIRLS",
+  "subcounty": "KERICHO",
+  "county": "Kericho"
+ },
+ {
+  "school": "POYWEK",
+  "subcounty": "KERICHO",
+  "county": "Kericho"
+ },
+ {
+  "school": "SOLIAT BOYS",
+  "subcounty": "KERICHO",
+  "county": "Kericho"
+ },
+ {
+  "school": "SOSIOT",
+  "subcounty": "BELGUT",
+  "county": "Kericho"
+ },
+ {
+  "school": "Tengecha Boys",
+  "subcounty": "Bureti",
+  "county": "Kericho"
+ },
+ {
+  "school": "Tengecha Girls",
+  "subcounty": "Bureti",
+  "county": "Kericho"
+ },
+ {
+  "school": "KAPKESOSIO",
+  "subcounty": "CHEPALUNGU",
+  "county": "Bomet"
+ },
+ {
+  "school": "MOGOR GIRLS",
+  "subcounty": "CHEPALUNGU",
+  "county": "Bomet"
+ },
+ {
+  "school": "SIGOR BOYS",
+  "subcounty": "CHEPALUNGU",
+  "county": "Bomet"
+ },
+ {
+  "school": "OLBUTYO BOYS",
+  "subcounty": "CHEPALUNGU",
+  "county": "Bomet"
+ },
+ {
+  "school": "LUGUMEK",
+  "subcounty": "CHEPALUNGU",
+  "county": "Bomet"
+ },
+ {
+  "school": "TUMOI",
+  "subcounty": "CHEPALUNGU",
+  "county": "Bomet"
+ },
+ {
+  "school": "ST.MICHAEL",
+  "subcounty": "CHEPALUNGU",
+  "county": "Bomet"
+ },
+ {
+  "school": "NDANAI GIRS SEC",
+  "subcounty": "SOTIK",
+  "county": "Bomet"
+ },
+ {
+  "school": "KAMUREITO SEC",
+  "subcounty": "SOTIK",
+  "county": "Bomet"
+ },
+ {
+  "school": "NGARIET SEC",
+  "subcounty": "SOTIK",
+  "county": "Bomet"
+ },
+ {
+  "school": "ACH. BISHOP NJENGA GIRLS",
+  "subcounty": "LUGARI",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ACK MILIMANI GIRLS",
+  "subcounty": "SOUTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "BOOKER ACADEMY",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "CHEBUYUSI BOYS",
+  "subcounty": "NAVAKHOLO EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "EKAMBULI SECONDARY",
+  "subcounty": "KHWISERO",
+  "county": "Kakamega"
+ },
+ {
+  "school": "EREGI GIRLS’",
+  "subcounty": "IKOLOMANI SOUTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ESHINUTSA SECONDARY",
+  "subcounty": "KHWISERO",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ESHISIRU SEC",
+  "subcounty": "LURAMBI SOUTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "F.S.S KONGONI",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "HANDOW SECONDARY",
+  "subcounty": "LUGARI",
+  "county": "Kakamega"
+ },
+ {
+  "school": "IMBALE SEC SCHOOL",
+  "subcounty": "IKOLOMANI NORTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "INGOTSE BOYS",
+  "subcounty": "LURAMBI NORTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "KAKAMEGA SCHOOL",
+  "subcounty": "KAKAMEGA CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "KAKUNGA GIRLS",
+  "subcounty": "SOUTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "KAMASHIA SEC",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "LIRHANDA G.H",
+  "subcounty": "WEST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "LIRHEMBE GIRLS’",
+  "subcounty": "IKOLOMANI EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "LUBINU BOYS",
+  "subcounty": "EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "LWANDA SEC.",
+  "subcounty": "WEST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MAKHOKHO SEC.",
+  "subcounty": "IKOLOMANI EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MALAVA BOYS",
+  "subcounty": "KAKAMEGA NORTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MATU NDA S.A",
+  "subcounty": "likuyani",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MOI GIRLS NANGILI",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MUKHONJE SEC.",
+  "subcounty": "KAKAMEGA EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MUKUMU B.H",
+  "subcounty": "SOUTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MUKUMU G.H",
+  "subcounty": "SOUTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MUMIAS MUSLIM BOYS",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MUSINGU HIGH",
+  "subcounty": "IKOLOMANI CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MUSLIM GIRLS SEC",
+  "subcounty": "MUMIAS CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MUSOLI GIRLS’",
+  "subcounty": "IKOLOMANI NORTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "MWIHILA BOYS HIGH SCHOOL",
+  "subcounty": "KHWISERO",
+  "county": "Kakamega"
+ },
+ {
+  "school": "NAMIRAMA GIRLS",
+  "subcounty": "NAVAKHOLO EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "REHEMA ACADEMY",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "SHANDEREMA",
+  "subcounty": "ILEHO",
+  "county": "Kakamega"
+ },
+ {
+  "school": "SHICHINJI SEC.",
+  "subcounty": "IKOLOMANI NORTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "SHIKOTI GIRLS",
+  "subcounty": "LURAMBI EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "SHIKUNGA SEC.",
+  "subcounty": "IKOLOMANI NORTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "SIDIKHO",
+  "subcounty": "NAVAKHOLO WEST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "SISOKHE",
+  "subcounty": "NAVAKHOLO WEST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. AGNES-SHIBUYE",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. ANGELA DEAF",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. BEDA’S BUKAYA",
+  "subcounty": "SOUTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. CECILIA GIRLS GIRLS",
+  "subcounty": "LUGARI",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. JOSEPH’S GIRLS KAKAMEGA",
+  "subcounty": "MUNICIPALITY",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. LUKES LUMAKANDA BOYS",
+  "subcounty": "LUGARI",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. MARTHA’S MWITOTI",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. MARY’S MUMIAS GIRLS",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. PAULSLUGARI BOYS",
+  "subcounty": "LUGARI",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. PETERS BOYS MUMIAS",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. PHILIPS M",
+  "subcounty": "ILEHO",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. ROMANO’S MATAWA",
+  "subcounty": "CENTRAL",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST. STEPHENS MARABA",
+  "subcounty": "EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST.ANNE’S NZOIA GIRLS",
+  "subcounty": "NORTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST.ANTONY KAKOYI",
+  "subcounty": "EAST",
+  "county": "Kakamega"
+ },
+ {
+  "school": "ST.PAUL EMULAKHA",
+  "subcounty": "LURAMBI NORTH",
+  "county": "Kakamega"
+ },
+ {
+  "school": "Bunyore Girls",
+  "subcounty": "Emuhaya",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Chavakali High School",
+  "subcounty": "Sabatia",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Ebunangwe Boys",
+  "subcounty": "Emuhaya",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Ebusiloli Secondary",
+  "subcounty": "Emuhaya",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Emusire Boys",
+  "subcounty": "Emuhaya",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Erusui Girls",
+  "subcounty": "Hamisi",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Goibei Girls",
+  "subcounty": "Hamisi",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Hobunaka Boys",
+  "subcounty": "Emuhaya",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Kaimosi Girls",
+  "subcounty": "Hamisi",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Kegoye Secondary",
+  "subcounty": "Vihiga",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Keveye Girls",
+  "subcounty": "Sabatia",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Kigama Secondary",
+  "subcounty": "Sabatia",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Magui Secondary",
+  "subcounty": "Vihiga",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Mbale High School",
+  "subcounty": "Sabatia",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Moi Girls Vokoli",
+  "subcounty": "Sabatia",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Mumboha Secondary",
+  "subcounty": "Emuhaya",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Senende Boys",
+  "subcounty": "Hamisi",
+  "county": "Vihiga"
+ },
+ {
+  "school": "ST. Clares Maragoli Girls",
+  "subcounty": "Vihiga",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Tigoi girls",
+  "subcounty": "Hamisi",
+  "county": "Vihiga"
+ },
+ {
+  "school": "Viyalo secondary",
+  "subcounty": "Sabatia",
+  "county": "Vihiga"
+ },
+ {
+  "school": "BPASS KAKAMWE",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "BUNAMBO",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "Bungoma Bapt. Girls",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "Bungoma High",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "Bungoma Muslim",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "BUSAKALA SEC.",
+  "subcounty": "BUNGOMA CENTRAL",
+  "county": "Bungoma"
+ },
+ {
+  "school": "BUTONGE BOYS",
+  "subcounty": "BUNGOMA WEST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "Cardinal Otunga Girls",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "CHEMOGE SEC",
+  "subcounty": "MT ELGON",
+  "county": "Bungoma"
+ },
+ {
+  "school": "CHESAMISI BOYS HIGH",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ELUUYA GIRLS",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "FRIENDS KAMASIELO SEC.",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "Friends Lwanda Girls",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "FRIENDS S.S BOKOLI",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "FRIENDS SCHOOL KAMUSINGA",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "KABULA BOYS HIGH",
+  "subcounty": "BUMULA",
+  "county": "Bungoma"
+ },
+ {
+  "school": "KAMUSINDE BOYS",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "KAPSOKWONY BOYS",
+  "subcounty": "MT ELGON",
+  "county": "Bungoma"
+ },
+ {
+  "school": "KIBUK GIRLS",
+  "subcounty": "MT ELGON",
+  "county": "Bungoma"
+ },
+ {
+  "school": "LUGULU GIRLS HIGH",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "LUUYA GIRLS",
+  "subcounty": "BUNGOMA CENTRAL",
+  "county": "Bungoma"
+ },
+ {
+  "school": "MABANGA GIRLS",
+  "subcounty": "BUNGOMA CENTRAL",
+  "county": "Bungoma"
+ },
+ {
+  "school": "MALIKI BOYS",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "MBAKALO BOYS",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "MILO BOYS",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "MISIKHU FRIENDS",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "MITUA GIRLS",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "MOI GIRLS HIGH KAMUSINGA",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "MOI KAPTAMA BOYS",
+  "subcounty": "MT ELGON",
+  "county": "Bungoma"
+ },
+ {
+  "school": "NALONDO BOYS",
+  "subcounty": "BUNGOMA CENTRAL",
+  "county": "Bungoma"
+ },
+ {
+  "school": "Namachanja High Sch.",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "NAMANG’OFULO",
+  "subcounty": "BUNGOMA WEST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "NAMAWANGA BAHAI",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "NDIVISI BOYS",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "NDIVISI GIRLS",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "Nzoia Sugar Girls",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "SIRAKARU S.A",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "SIRISIA BOYS",
+  "subcounty": "BUNGOMA WEST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. AUGUSTINE LUKHUNA GIRLS",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. CECILIA G. H MISIKHU",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. FRANCIS MAKEMO",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "St. Longinus Kongoli",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. LUKES BOYS KIMILILI",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "St. Mary’s Kibabii Boys",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. MATHEWS ACK",
+  "subcounty": "BUNGOMA EAST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. PATRICKS NAITIRI HIGH",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. PAUL’S MILUKI SEC",
+  "subcounty": "BUMULA",
+  "county": "Bungoma"
+ },
+ {
+  "school": "St. Peters Musikoma",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. PETERS NAKALIRA",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. PETERS NDALU",
+  "subcounty": "BUNGOMA NORTH",
+  "county": "Bungoma"
+ },
+ {
+  "school": "St. Peters Sang’alo",
+  "subcounty": "Bungoma South",
+  "county": "Bungoma"
+ },
+ {
+  "school": "ST. THERASA’S GIRLS",
+  "subcounty": "KIMILILI – BGM",
+  "county": "Bungoma"
+ },
+ {
+  "school": "TEREMI BOYS",
+  "subcounty": "BUNGOMA CENTRAL",
+  "county": "Bungoma"
+ },
+ {
+  "school": "TOLOSO FRIENDS",
+  "subcounty": "BUNGOMA WEST",
+  "county": "Bungoma"
+ },
+ {
+  "school": "BISHOP SULUMETI",
+  "subcounty": "TESO NORTH",
+  "county": "Busia"
+ },
+ {
+  "school": "BROTHER NICHOLAS",
+  "subcounty": "BUSIA",
+  "county": "Busia"
+ },
+ {
+  "school": "BUHUYI",
+  "subcounty": "BUTULA",
+  "county": "Busia"
+ },
+ {
+  "school": "BUJUMBA BOYS",
+  "subcounty": "BUTULA",
+  "county": "Busia"
+ },
+ {
+  "school": "BUSIADA GIRLS",
+  "subcounty": "BUTULA",
+  "county": "Busia"
+ },
+ {
+  "school": "BUTULA BOYS HIGH",
+  "subcounty": "BUTULA",
+  "county": "Busia"
+ },
+ {
+  "school": "JOHN OSOGO",
+  "subcounty": "BUNYALA",
+  "county": "Busia"
+ },
+ {
+  "school": "KAMURIAI",
+  "subcounty": "TESO NORTH",
+  "county": "Busia"
+ },
+ {
+  "school": "KISOKO GIRLS",
+  "subcounty": "NAMABLE",
+  "county": "Busia"
+ },
+ {
+  "school": "KOLANYA",
+  "subcounty": "TESO NORTH",
+  "county": "Busia"
+ },
+ {
+  "school": "KOLANYA GIRLS",
+  "subcounty": "TESO NORTH",
+  "county": "Busia"
+ },
+ {
+  "school": "MODING",
+  "subcounty": "TESO NORTH",
+  "county": "Busia"
+ },
+ {
+  "school": "NAMBALE BOYS",
+  "subcounty": "NAMABALE",
+  "county": "Busia"
+ },
+ {
+  "school": "NAMBOBOTO BOYS",
+  "subcounty": "SAMIA",
+  "county": "Busia"
+ },
+ {
+  "school": "NANGINA GIRLS",
+  "subcounty": "SAMIA",
+  "county": "Busia"
+ },
+ {
+  "school": "SIGALAME HIGH",
+  "subcounty": "SAMIA",
+  "county": "Busia"
+ },
+ {
+  "school": "SIKOMA",
+  "subcounty": "BUTULA",
+  "county": "Busia"
+ },
+ {
+  "school": "ST. PAUL’S AMUKURA BOYS",
+  "subcounty": "TESO SOUTH",
+  "county": "Busia"
+ },
+ {
+  "school": "ST. BENEDICTS H. SCH",
+  "subcounty": "BUNYALA",
+  "county": "Busia"
+ },
+ {
+  "school": "ST. MARY’S AMUKURA GIRLS",
+  "subcounty": "TESO SOUTH",
+  "county": "Busia"
+ },
+ {
+  "school": "ST. MARY’S MUNDIKA B.",
+  "subcounty": "BUSIA",
+  "county": "Busia"
+ },
+ {
+  "school": "ST. MONICA CHAKOL GIRLS",
+  "subcounty": "TESO SOUTH",
+  "county": "Busia"
+ },
+ {
+  "school": "ST. PETER’S BUDOKOMI",
+  "subcounty": "BUSIA",
+  "county": "Busia"
+ },
+ {
+  "school": "STL CECILIA NAMENYA G.",
+  "subcounty": "BUNYALA",
+  "county": "Busia"
+ },
+ {
+  "school": "AGORO OYOMBE SEC",
+  "subcounty": "SIAYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "ALUOR GIRLS",
+  "subcounty": "GEM",
+  "county": "Siaya"
+ },
+ {
+  "school": "AMBIRA HIGH SCH",
+  "subcounty": "UGUNJA",
+  "county": "Siaya"
+ },
+ {
+  "school": "BARDING BOYS",
+  "subcounty": "SIAYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "BISHOP OKOTH G.SEC",
+  "subcounty": "SIAYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "CHIANDA BOYS",
+  "subcounty": "RARIEDA",
+  "county": "Siaya"
+ },
+ {
+  "school": "LWAK GIRLS",
+  "subcounty": "RARIEDA",
+  "county": "Siaya"
+ },
+ {
+  "school": "MARANDA BOYS",
+  "subcounty": "BONDO",
+  "county": "Siaya"
+ },
+ {
+  "school": "NG’IYA G.H.S",
+  "subcounty": "SIAYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "NYAMIRA GIRLS",
+  "subcounty": "BONDO",
+  "county": "Siaya"
+ },
+ {
+  "school": "NYAMONYE GIRLS",
+  "subcounty": "BONDO",
+  "county": "Siaya"
+ },
+ {
+  "school": "RAMBA BOYS",
+  "subcounty": "RARIEDA",
+  "county": "Siaya"
+ },
+ {
+  "school": "RANG’ALA BOYS",
+  "subcounty": "UGUNJA",
+  "county": "Siaya"
+ },
+ {
+  "school": "RANG’ALA GIRLS",
+  "subcounty": "UGUNJA",
+  "county": "Siaya"
+ },
+ {
+  "school": "SAWAGONGO",
+  "subcounty": "GEM",
+  "county": "Siaya"
+ },
+ {
+  "school": "SEGA GIRLS",
+  "subcounty": "UGENYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "SEGA TOWNSHIP",
+  "subcounty": "UGENYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "SENATOR OBAMA",
+  "subcounty": "SIAYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "SIDINDI SEC",
+  "subcounty": "UGUNJA",
+  "county": "Siaya"
+ },
+ {
+  "school": "SIGOMRE SEC",
+  "subcounty": "UGUNJA",
+  "county": "Siaya"
+ },
+ {
+  "school": "ST. MARY’S YALA",
+  "subcounty": "GEM",
+  "county": "Siaya"
+ },
+ {
+  "school": "ST. SYLVESTERS",
+  "subcounty": "UGUNJA",
+  "county": "Siaya"
+ },
+ {
+  "school": "UKWALA",
+  "subcounty": "UGENYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "UYOME KOBARE",
+  "subcounty": "SIAYA",
+  "county": "Siaya"
+ },
+ {
+  "school": "Kisumu Girls",
+  "subcounty": "Kisumu Central",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Kisumu Boys",
+  "subcounty": "Kisumu Central",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Kisumu Day",
+  "subcounty": "Kisumu Central",
+  "county": "Kisumu"
+ },
+ {
+  "school": "St. Teresas Girls",
+  "subcounty": "Kisumu Central",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Joyland Special",
+  "subcounty": "Kisumu Central",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Maseno School",
+  "subcounty": "Kisumu West",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Ogada Secondary",
+  "subcounty": "Kisumu West",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Ojolla Girls",
+  "subcounty": "Kisumu West",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Sianda Secondary",
+  "subcounty": "Kisumu West",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Dr Aloo Gumbi",
+  "subcounty": "Kisumu East",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Achego",
+  "subcounty": "Muhoroni",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Koru Girls",
+  "subcounty": "Muhoroni",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Miwani Boys",
+  "subcounty": "Muhoroni",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Kandege",
+  "subcounty": "Muhoroni",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Agai Mixed Sec",
+  "subcounty": "Nyakach",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Nyabondo Boys High",
+  "subcounty": "Nyakach",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Nyakach Girls High",
+  "subcounty": "Nyakach",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Rae Girls",
+  "subcounty": "Nyakach",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Sigoti Complex",
+  "subcounty": "Nyakach",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Thurdibuoro Mixed Sec.",
+  "subcounty": "Nyakach",
+  "county": "Kisumu"
+ },
+ {
+  "school": "St. Barnabas Girls",
+  "subcounty": "Seme",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Onjiko Boys",
+  "subcounty": "Nyando",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Ahero Girls",
+  "subcounty": "Nyando",
+  "county": "Kisumu"
+ },
+ {
+  "school": "Asumbi Girls Sec.",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "Homa Bay High",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "KAKIIMBA",
+  "subcounty": "MBITA",
+  "county": "Homabay"
+ },
+ {
+  "school": "Kuoyo Kochia Sec.",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "Mawego Girls",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "MBITA HIGH SCHOOL",
+  "subcounty": "MBITA",
+  "county": "Homabay"
+ },
+ {
+  "school": "Mirogi Boys",
+  "subcounty": "SUBA",
+  "county": "Homabay"
+ },
+ {
+  "school": "MOI GIRLS",
+  "subcounty": "SUBA",
+  "county": "Homabay"
+ },
+ {
+  "school": "Nyangajo Girls",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "Ogande Girls Sec.",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "Orero Sec. School",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "Oriwo Boys High",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "Othoro Mixed",
+  "subcounty": "Rachuonyo South",
+  "county": "Homabay"
+ },
+ {
+  "school": "Samanga Lutheran",
+  "subcounty": "Homa Bay",
+  "county": "Homabay"
+ },
+ {
+  "school": "ST. JOSEPH’S SCHOOL RAPOGI",
+  "subcounty": "URIRI",
+  "county": "Migori"
+ },
+ {
+  "school": "ST.PIUS URIRI",
+  "subcounty": "URIRI",
+  "county": "Migori"
+ },
+ {
+  "school": "ST. MICHAEL’S NYANDEMA",
+  "subcounty": "NYATIKE",
+  "county": "Migori"
+ },
+ {
+  "school": "Kameji mixed",
+  "subcounty": "Rongo",
+  "county": "Migori"
+ },
+ {
+  "school": "Kamagambo high",
+  "subcounty": "Rongo",
+  "county": "Migori"
+ },
+ {
+  "school": "ISIBANIA BOYS",
+  "subcounty": "KURIA WEST",
+  "county": "Migori"
+ },
+ {
+  "school": "IKEREGE MIXED",
+  "subcounty": "KURIA WEST",
+  "county": "Migori"
+ },
+ {
+  "school": "ST. MARYS MABERA",
+  "subcounty": "KURIA WEST",
+  "county": "Migori"
+ },
+ {
+  "school": "KADIKA GIRLS SEC SCH",
+  "subcounty": "MIGORI",
+  "county": "Migori"
+ },
+ {
+  "school": "NYABISAWA GIRLS SEC SCH",
+  "subcounty": "MIGORI",
+  "county": "Migori"
+ },
+ {
+  "school": "MAGONGO RIBE MIXED SEC SCH",
+  "subcounty": "MIGORI",
+  "county": "Migori"
+ },
+ {
+  "school": "MAJIMAZURI",
+  "subcounty": "NYAMACHE",
+  "county": "Kisii"
+ },
+ {
+  "school": "NYACHOGOCHOGO",
+  "subcounty": "NYAMACHE",
+  "county": "Kisii"
+ },
+ {
+  "school": "NYAMAGESA DEB",
+  "subcounty": "MASABA SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "MOBAMBA COG",
+  "subcounty": "MASABA SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "ST. LWANGA ICHUNI",
+  "subcounty": "MASABA SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "MOI GESUSU",
+  "subcounty": "MASABA SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "NYANTURAGO",
+  "subcounty": "MASABA SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "IBACHO",
+  "subcounty": "MASABA SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "MATONGO SECONDARY",
+  "subcounty": "KISII SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "IRUMA SEC",
+  "subcounty": "KISII SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "RIANYABARO COE",
+  "subcounty": "KISII SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "ITIERIO BOYS",
+  "subcounty": "KISII SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "ST. PETERS SUNEKA",
+  "subcounty": "KISII SOUTH",
+  "county": "Kisii"
+ },
+ {
+  "school": "Bishop Mugendi Nakegogi",
+  "subcounty": "Sameta",
+  "county": "Kisii"
+ },
+ {
+  "school": "St. John’s Nyamagwa Boys’",
+  "subcounty": "Sameta",
+  "county": "Kisii"
+ },
+ {
+  "school": "Sameta Boys’ High School",
+  "subcounty": "Sameta",
+  "county": "Kisii"
+ },
+ {
+  "school": "St. Mary’s Nyamagwa Girls’",
+  "subcounty": "Sameta",
+  "county": "Kisii"
+ },
+ {
+  "school": "Nyabonge Mixed Secondary",
+  "subcounty": "Sameta",
+  "county": "Kisii"
+ },
+ {
+  "school": "MAGENA BOYS",
+  "subcounty": "KENYENYA",
+  "county": "Kisii"
+ },
+ {
+  "school": "MAGENA GIRLS",
+  "subcounty": "KENYENYA",
+  "county": "Kisii"
+ },
+ {
+  "school": "RIOKINDO BOYS",
+  "subcounty": "KENYENYA",
+  "county": "Kisii"
+ },
+ {
+  "school": "KENYENYA SEC",
+  "subcounty": "KENYENYA",
+  "county": "Kisii"
+ },
+ {
+  "school": "Itibo Girls",
+  "subcounty": "Marani",
+  "county": "Kisii"
+ },
+ {
+  "school": "Marani",
+  "subcounty": "Marani",
+  "county": "Kisii"
+ },
+ {
+  "school": "OMOYO GIRLS",
+  "subcounty": "MASABA NORTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "NYANSIONGO BOYS",
+  "subcounty": "BORABU",
+  "county": "Nyamira"
+ },
+ {
+  "school": "ST. GOZAGA GONZA ISOGE",
+  "subcounty": "BORABU",
+  "county": "Nyamira"
+ },
+ {
+  "school": "MWONGORI",
+  "subcounty": "BORABU",
+  "county": "Nyamira"
+ },
+ {
+  "school": "KIABONYORO",
+  "subcounty": "NYAMIRA NORTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "IKONGE GIRLS",
+  "subcounty": "NYAMIRA NORTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "MATONGO BOYS",
+  "subcounty": "NYAMIRA NORTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "NYAMIRANGA SDA",
+  "subcounty": "NYAMIRA NORTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "KEBABE GIRLS",
+  "subcounty": "NYAMIRA NORTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "NYAMUSI GIRLS",
+  "subcounty": "NYAMIRA NORTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "SIRONGA",
+  "subcounty": "NYAMIRA SOUTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "NYAMIRA BOYS",
+  "subcounty": "NYAMIRA SOUTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "KEBIRIGO BOYS",
+  "subcounty": "NYAMIRA SOUTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "EKERENYO",
+  "subcounty": "NYAMIRA SOUTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "NYAMAIYA",
+  "subcounty": "NYAMIRA SOUTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "NYANSABAKWA",
+  "subcounty": "NYAMIRA SOUTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "NYABISIMBA",
+  "subcounty": "NYAMIRA SOUTH",
+  "county": "Nyamira"
+ },
+ {
+  "school": "GESURE",
+  "subcounty": "Manga",
+  "county": "Nyamira"
+ },
+ {
+  "school": "TOMBE GIRLS",
+  "subcounty": "Manga",
+  "county": "Nyamira"
+ },
+ {
+  "school": "NYAIKURO",
+  "subcounty": "Manga",
+  "county": "Nyamira"
+ },
+ {
+  "school": "DAGORETTI HIGH",
+  "subcounty": "DAGORETTI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "NEMBU GIRLS",
+  "subcounty": "DAGORETTI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "PRECIOUS BLOOD",
+  "subcounty": "DAGORETTI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "KAYOLE SEC SCHOOL",
+  "subcounty": "EMBAKASI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "KOMAROCK SEC SCHOOL",
+  "subcounty": "EMBAKASI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "MWANGAZA SEC SCH",
+  "subcounty": "EMBAKASI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "EASTLEIGH HIGH SCHOOL",
+  "subcounty": "KAMUKUNII",
+  "county": "Nairobi"
+ },
+ {
+  "school": "KAHAWA GARISSON",
+  "subcounty": "KASARANI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "OUR LADY OF FATIMA",
+  "subcounty": "KASARANI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "RUARAKA HIGH",
+  "subcounty": "KASARANI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "AQUINAS HIGH",
+  "subcounty": "MAKADARA",
+  "county": "Nairobi"
+ },
+ {
+  "school": "BURUBURU GIRLS",
+  "subcounty": "MAKADARA",
+  "county": "Nairobi"
+ },
+ {
+  "school": "HURUMA GIRLS SEC",
+  "subcounty": "MAKADARA",
+  "county": "Nairobi"
+ },
+ {
+  "school": "OFAFA JERICHO",
+  "subcounty": "MAKADARA",
+  "county": "Nairobi"
+ },
+ {
+  "school": "DANDORA SEC SCHOOL",
+  "subcounty": "NJIRU",
+  "county": "Nairobi"
+ },
+ {
+  "school": "DR RIBEIRO PARCKLANDS",
+  "subcounty": "STAREHE",
+  "county": "Nairobi"
+ },
+ {
+  "school": "NGARA GIRLS",
+  "subcounty": "STAREHE",
+  "county": "Nairobi"
+ },
+ {
+  "school": "PANGANI GIRLS",
+  "subcounty": "STAREHE",
+  "county": "Nairobi"
+ },
+ {
+  "school": "PUMWANI BOYS",
+  "subcounty": "STAREHE",
+  "county": "Nairobi"
+ },
+ {
+  "school": "ST TERESA’S GIRLS",
+  "subcounty": "STAREHE",
+  "county": "Nairobi"
+ },
+ {
+  "school": "STAREHE BOYS CENTRE",
+  "subcounty": "STAREHE",
+  "county": "Nairobi"
+ },
+ {
+  "school": "KIANDA SCHOOL",
+  "subcounty": "WESTLANDS",
+  "county": "Nairobi"
+ },
+ {
+  "school": "Nairobi school",
+  "subcounty": "WESTLANDS",
+  "county": "Nairobi"
+ },
+ {
+  "school": "THE KENYA HIGH SCHOOL",
+  "subcounty": "WESTLANDS",
+  "county": "Nairobi"
+ },
+ {
+  "school": "EMBAKASI GIRLS",
+  "subcounty": "EMBAKASI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "HIGHWAY SECONDARY SCHOOL",
+  "subcounty": "MAKADARA",
+  "county": "Nairobi"
+ },
+ {
+  "school": "HOSPITAL HILL HIGH SCHOOL",
+  "subcounty": "WESTLANDS",
+  "county": "Nairobi"
+ },
+ {
+  "school": "LANGATA HIGH SCHOOL",
+  "subcounty": "LANGATA",
+  "county": "Nairobi"
+ },
+ {
+  "school": "LENANA SCHOOL",
+  "subcounty": "DAGORETTI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "MAINA WANJIGI",
+  "subcounty": "Kamukunji",
+  "county": "Nairobi"
+ },
+ {
+  "school": "MAKONGENI HIGH SCHOOL",
+  "subcounty": "MAKADARA",
+  "county": "Nairobi"
+ },
+ {
+  "school": "MOI FORCES ACADEMY",
+  "subcounty": "Kamukunji",
+  "county": "Nairobi"
+ },
+ {
+  "school": "MOI GIRLS SCHOOL NAIROBI",
+  "subcounty": "DAGORETTI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "NAIROBI MILIMANI SEC SCHOOL",
+  "subcounty": "WESTLANDS",
+  "county": "Nairobi"
+ },
+ {
+  "school": "NILE ROAD SECONDARY",
+  "subcounty": "MAKADARA",
+  "county": "Nairobi"
+ },
+ {
+  "school": "ST GEORGES GIRLS SECONDARY SCHOOL",
+  "subcounty": "WESTLANDS",
+  "county": "Nairobi"
+ },
+ {
+  "school": "STAREHE GIRLS CENTRE",
+  "subcounty": "WESTLANDS",
+  "county": "Nairobi"
+ },
+ {
+  "school": "STATEHOUSE GIRLS",
+  "subcounty": "KASARANI",
+  "county": "Nairobi"
+ },
+ {
+  "school": "UPPER HILL SCHOOL",
+  "subcounty": "DAGORETTI",
+  "county": "Nairobi"
+ }
+]

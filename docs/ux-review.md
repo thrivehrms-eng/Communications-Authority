@@ -219,3 +219,21 @@ Design decisions:
 - **Report covers.** Annual reports show their covers, so the right year is quick to spot.
 
 Skill guidance applied (ui-ux-pro-max): `progressive-disclosure` (directors added one at a time, long lists a page at a time), `deep-linking` (filtered views have their own address), `empty-states` and `empty-data-state` (no matches, no open tenders, no upcoming events, each with a next step), `touch-target-size` (file links and pills at least 44px tall) and `content-priority` (on phones, the list comes before the section navigation). Beyond the skill: result counts and director changes are announced in status messages, and "Show more" moves focus to the first new item's title.
+
+## v14 — Licensing & Industry
+
+Client request: build the Licensing & Industry section from the staging site.
+
+What was built: 39 pages — the 27 pages in the menu and the section overview, plus the ten universal access project pages they link to (including E-Justice, a homepage project tile) and Purpose of the Fund. All 187 documents link to their existing uploads.
+
+Design decisions:
+
+- **Long reference pages you can scan.** Market Structure, Licensing Procedures, Telecommunications Services (forms and fees), Compliance and Enforcement, and the project pages open with "On this page" links to their sections, instead of the accordions on the staging site, so nothing is hidden and in-page search finds everything.
+- **Steps, not paragraphs.** The licensing process (application fee, committee review, 30-day Gazette notice, Board decision, licence) is shown as numbered steps on the overview and on Licensing Procedures; the National Addressing System's milestones are a dated timeline.
+- **Forms and fees grouped by what you are applying for**, each document with its type and size, in two columns where there are many (licence terms, compliance returns).
+- **Tables that fit their content.** The postal licence categories have long text in every cell, so each category is a card with labelled values at every width; other tables scroll inside a labelled region on wide screens and stack on phones.
+- **Long lists searchable.** The 895 connected schools can be searched or filtered by county; guidelines and regulations have a search box.
+- **Type Approval made self-contained.** What needs approval, who may sell equipment, the documents to submit, fees and forms, technical specifications and the list of approved equipment are on one page.
+- **Universal access tied together.** The overview, Fund, projects index and each project link to one another; project pages sit under Universal Access Projects in the breadcrumb and section navigation, and E-Justice plays its documentary in the page.
+
+Skill guidance applied (ui-ux-pro-max): `progressive-disclosure` (sections reached from "On this page", long lists a page at a time), `content-priority` (the main point of each page first, as a lead), `deep-linking` (filtered school lists and section anchors have their own address), `touch-target-size` and `empty-states`.

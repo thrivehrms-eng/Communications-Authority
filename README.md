@@ -82,7 +82,7 @@ Every inner page shares one frame: the homepage header and menus (with the curre
 | Layout | Used for | What it adds |
 |---|---|---|
 | `page` (default) | Most pages | Section navigation beside the content (sticky on wide screens, an "In this section" disclosure on phones) built from the main menu, so both always match |
-| `landing` | Section overviews (About the Authority, Our Role in Your Protection, Procurement, Info Hub) | Full-width panels instead of the side navigation; ends with the section's pages as link cards grouped as in the menu (quick-link bands such as Portals become link pills) |
+| `landing` | Section overviews (About the Authority, Licensing & Industry, Our Role in Your Protection, Procurement, Info Hub) | Full-width panels instead of the side navigation; ends with the section's pages as link cards grouped as in the menu (quick-link bands such as Portals become link pills) |
 
 Content blocks, all in `pages.css`: prose, image beside text, document lists (a file icon with a coloured type tag, the type and size in text, a download icon; Kiswahili titles marked `lang="sw"`), people grid, profile, link cards, feature cards, icon list, numbered list, steps (vertical, or in a row on landing pages), FAQs (native `<details>`), callouts, office cards, vacancies, Director General's message, forms and the IMEI helper; for Procurement and the Info Hub also searchable listings, tender cards, a contracts table that stacks into cards on phones, report covers, story cards (the homepage news component), news articles, notices and link pills.
 
@@ -96,19 +96,25 @@ Shortcodes in `src/pages/*.html`, expanded by `tools/build.py`:
 | `<!--related:pages /a/,/b/-->` | Link cards for pages anywhere in the main menu (the build stops if a path is not in the menu) |
 | `<!--jobs:all-->` | Vacancies with Open/Closed status and deadline |
 | `<!--video:ID title="…" label="…" duration="m:ss"-->` | A link that plays the video in the same in-page player as the homepage |
-| `<!--library:TYPE-->` (add `years` to show the year) | Documents of one type from the WordPress document library (`src/data/library.json`), e.g. `speeches`, `press-statements`, `procurement-plans` |
+| `<!--library:TYPE-->` (add `years` to show the year, `search` for a search box) | Documents of one type from the WordPress document library (`src/data/library.json`), e.g. `speeches`, `press-statements`, `procurement-plans`, `sector-guidelines` |
 | `<!--covers:LIST-->` | Reports shown by their covers (annual reports) |
 | `<!--tenders:all-->` / `<!--tenders:notice-->` | Every tender (search, status, financial year), after a note on whether any are open; or the note alone |
 | `<!--contracts:all-->` | The awarded contracts table, with search |
 | `<!--publications:all-->` / `<!--documents:all-->` | Publications (search, year) / the document library (search, type) |
 | `<!--news:all-->` / `<!--latestnews:N-->` | The featured story and every story (search, year) / the N latest stories |
 | `<!--directors:N-->` | N director fieldsets for supplier registration |
+| `<!--toc:page-->` | "On this page" links to the page's `<h2 id>` headings, for long pages with several sections (Market Structure, Licensing Procedures) |
+| `<!--schools:all-->` | The schools connected under the Education Broadband Connectivity Project (`src/data/schools.json`), with search and a county filter |
+
+Pages that are not in the menu (the universal access project pages, Purpose of the Fund) name their parent in the front matter (`parent: Universal Access Projects|/universal-access-projects/`), which adds it to the breadcrumb and highlights it in the section navigation.
+
+Tables taken from WordPress get a caption, column labels for phones (`ca-table--stack`), and scroll inside a labelled region; a wide table with long text in its cells (the postal licence categories) uses `ca-table--cards`, one labelled card per row at every width.
 
 News articles are generated from `src/data/news.json` at `/<slug>/` (the WordPress post URLs), with the featured image, the post content, three more stories and a link back to News.
 
 ### Long lists
 
-Tenders (220), awarded contracts (336), publications (190), documents (115) and news (110) are long, so they share one listing pattern (`listing.js`). Every item is in the HTML: without JavaScript the whole list shows and the search tools stay hidden. With it, the list filters as you type (search matches every word, in titles and reference numbers) or choose a filter, shows a page at a time with a "Show N more" button that moves focus to the first new item, announces the count in a status message, and keeps the choices in the address (`?tender_status=closed&tender_fy=2024-25`), so a filtered view can be shared. The menu's Closed Tenders link uses this, and the section navigation highlights it when the address matches. Parameter names follow the WordPress archives (`tender_status`, `tender_fy`, `tender_q`, `contract_q`).
+Tenders (220), awarded contracts (336), publications (190), documents (114), news (110), connected schools (895), guidelines (31) and regulations (20) are long, so they share one listing pattern (`listing.js`). Every item is in the HTML: without JavaScript the whole list shows and the search tools stay hidden. With it, the list filters as you type (search matches every word, in titles and reference numbers) or choose a filter, shows a page at a time with a "Show N more" button that moves focus to the first new item, announces the count in a status message, and keeps the choices in the address (`?tender_status=closed&tender_fy=2024-25`), so a filtered view can be shared. The menu's Closed Tenders link uses this, and the section navigation highlights it when the address matches. Parameter names follow the WordPress archives (`tender_status`, `tender_fy`, `tender_q`, `contract_q`).
 
 Whether any tender is open is worked out from the closing dates when the pages are built, so rebuild (or render it in WordPress) for the note to stay current.
 

@@ -68,9 +68,27 @@ Content, images and documents come from the WordPress site (pages, posts and the
 | News | One post set its opening sentence as a heading; it is shown as a lead paragraph. The revenue-share table in "Kenyan Mobile Sector Records Growth in Revenue and Investments" had no caption; it now reads "Share of revenue by operator, year ended June 2023 (%)" | Make the same changes in WordPress |
 | Speeches, Press Statements | Three document titles corrected for display: "Difrector" → "Director", "Cockail" → "Cocktail", and the file name "Press-Statement-on-Forensic-Audit-on-SIM-Card-Registration1" → "Press Statement on Forensic Audit on SIM Card Registration" | Correct the titles in WordPress |
 | Publications | Two publications have no year and are filed under "Undated" | Years, if known |
-| Our Portals | Licensee Register links to `/licensee-register/`, in the Licensing section (not built yet; the preview opens it on the WordPress site) | — |
 | Forms | Supplier registration and staff verification keep the WordPress field names but are not connected in this static build: a completed form shows a notice that nothing was sent | Connect in the theme (README → Porting) |
 | Page summaries | Proposed where WordPress has no introduction: Tenders, Awarded Contracts, News, Publications, Documents, Our Portals, Info Hub and Procurement overviews | Confirm |
+
+## Licensing & Industry pages
+
+Content, images and documents come from the WordPress site; all 187 documents linked from these pages were checked (HTTP 200) and link to their uploads on ca.programmer.co.ke. Items to resolve there or confirm:
+
+| Page | Issue | Needed |
+|---|---|---|
+| All pages with documents | As in the other sections, WordPress links documents to `http://localhost/Projects/CA-website/…`; the new pages use the same files on ca.programmer.co.ke | Replace the localhost links in WordPress |
+| Telecommunications Services vs Market Structure | The two WordPress pages give different postal and courier licence terms and fees: Telecommunications Services says 25 years for the Public Postal Operator and 15 for courier operators, with no initial fee; Market Structure says 15 and 10 years, with initial fees, and adds the Courier Hailing Service Provider. Only the Market Structure table is shown; Telecommunications Services links to it | Confirm the current terms and fees |
+| Education Broadband Connectivity | The number of schools differs: 884 (Universal Access page), 887 (the project page and Universal Access Projects), "896" (the project page's own list introduction); the list itself has 895 schools. The pages show each figure as WordPress has it, and the list's count comes from the data | Confirm the figure and correct the WordPress pages |
+| Research and Development | "The findings of the National ICT Survey are available at:" has no link in WordPress. The page now points to the survey reports in Publications | The intended document |
+| Project pages | Captions for photos that are not in WordPress ("Garbatulla High School – Isiolo", "Dzitsoni Community Library – Kilifi", "Sabatia Community Telecentre – Koibatek") were removed. Voice Infrastructure, E-Justice and Education Broadband use CA's own project photos from the homepage; the other project pages have no photo | Project photos, if available |
+| Universal Access Projects | E-Justice added to the list (its own WordPress page says it is funded through the USF). Open Education Resources, E-Agriculture and the Mobile Cellular Infrastructure Project appear on the WordPress Projects page but are not in the menu and were not built | Confirm; content for those projects if they should have pages |
+| Licensee Register | WordPress has nine dated PDF registers (shown) and an empty `cak_licensee` content type | If a searchable register is planned, the licensee data |
+| Determinations, Sector Policy, Sector Regulations, Guidelines, Rulings, Codes of Practice, Broadband Strategy | Listed from the WordPress document library (the uploaded copies), not the www.ca.go.ke links on some WordPress pages, so Determinations shows 13 documents (the WordPress page lists 8) | Confirm |
+| Document titles | Tidied for display: "oftelecommunications", "Assesment", "(Numbering )", "Sim Cards Guidelines"; regulations listed as "(Broadcasting) Regulations, 2009" etc. now read "The Kenya Information and Communications (Broadcasting) Regulations, 2009"; "Download the 2025-2030 Strategy here" is "National Broadband Strategy 2025–2030"; a duplicate IoT guideline was removed | Make the same changes in WordPress |
+| National E-Commerce Strategy 2023 | Links to www.ca.go.ke; it is not uploaded to ca.programmer.co.ke | Upload it, or confirm the link |
+| Copy | British spelling and light copy-editing in the prose (e.g. licence/license, organisation, utilisation); "Higher Loans Board" is now "Higher Education Loans Board"; a reference to "5.10 below" (no such section) was removed from the numbering conditions. Proposed: the overview page's headings and panels, the market segment and universal access card lines, the summaries under page titles, and the Statutes & Regulations card lines. Type Approval combines its WordPress text with the requirements and documents from Market Structure and Telecommunications Services | Confirm |
+| Statutes & Regulations | The separate WordPress page "Statutes & Regulations Overview" is merged into Statutes & Regulations | — |
 
 ## Links / URLs to confirm
 

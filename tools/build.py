@@ -22,10 +22,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://ca.programmer.co.ke'  # canonical base and asset host (the WordPress site); switch at launch
 ORG = 'Communications Authority of Kenya'
-SECTIONS = {'about': 'dd-about', 'consumer': 'dd-consumer', 'procurement': 'dd-procurement', 'info': 'dd-info'}  # sections built so far
+SECTIONS = {'about': 'dd-about', 'licensing': 'dd-licensing', 'consumer': 'dd-consumer', 'procurement': 'dd-procurement', 'info': 'dd-info'}
 MENU_IDS = ['dd-about', 'dd-licensing', 'dd-consumer', 'dd-procurement', 'dd-info']
 DATA = {name: json.loads((ROOT / f'src/data/{name}.json').read_text())
-        for name in ('documents', 'people', 'jobs', 'tenders', 'contracts', 'publications', 'library', 'news')}
+        for name in ('documents', 'people', 'jobs', 'tenders', 'contracts', 'publications', 'library', 'news', 'schools')}
 GROUP_PAGES = {
     'board-of-directors': 'Board of Directors',
     'management-team': 'Management Team',
@@ -122,11 +122,15 @@ def docs(list_id, opts='', items=None):
 
 
 def library(category, opts=''):
-    """Documents of one type from the WordPress document library (e.g. speeches, press statements)."""
+    """Documents of one type from the WordPress document library (e.g. speeches, press statements); `search` adds a search box."""
     items = [d for d in DATA['library'] if slug(d['category']) == category]
     if not items:
         raise SystemExit(f'library: no documents of type {category}')
-    return docs(None, opts, items)
+    if 'search' not in opts:
+        return docs(None, opts, items)
+    lis = [doc_item(d, d['year'] if 'years' in opts else '', f' data-text="{text_of(d["title"], d["year"])}"') for d in items]
+    tools = search_field(f'{category}-q', 'q', f'Search {items[0]["category"].lower()}', 'Title or year')
+    return listing('document|documents', lis, tools, 12, '<ul class="ca-docs" role="list" data-listing-items>')
 
 
 def covers(list_id):
@@ -244,6 +248,26 @@ def library_listing():
     tools = (search_field('doc-q', 'q', 'Search documents', 'Title or subject')
              + select_field('doc-type', 'type', 'Document type', 'category', [(slug(k), f'{k} ({v})') for k, v in sorted(counts.items())], 'All types'))
     return listing('document|documents', items, tools, 15, '<ul class="ca-docs" role="list" data-listing-items>')
+
+
+def schools():
+    """Schools connected under the Education Broadband Connectivity Project, with search and a county filter."""
+    rows = [f'<tr data-county="{slug(r["county"])}" data-text="{text_of(r["school"], r["subcounty"], r["county"])}"><th scope="row" data-label="School">{esc(r["school"])}</th>'
+            f'<td data-label="Sub-county">{esc(r["subcounty"])}</td><td data-label="County">{esc(r["county"])}</td></tr>' for r in DATA['schools']]
+    counties = sorted({r['county'] for r in DATA['schools']})
+    tools = (search_field('school-q', 'q', 'Search schools', 'School or sub-county')
+             + select_field('school-county', 'county', 'County', 'county', [(slug(c), c) for c in counties], 'All 47 counties'))
+    table = ('<div class="ca-tablewrap" role="region" aria-labelledby="schools-caption" tabindex="0"><table class="ca-table ca-table--stack">'
+             '<caption id="schools-caption">Schools connected under the Education Broadband Connectivity Project</caption>'
+             '<thead><tr><th scope="col">School</th><th scope="col">Sub-county</th><th scope="col">County</th></tr></thead><tbody data-listing-items>')
+    return listing('school|schools', rows, tools, 25, table, '</tbody></table></div>')
+
+
+def toc(page):
+    """"On this page" links to the page's second-level headings that carry an id."""
+    heads = re.findall(r'<h2 id="([\w-]+)"[^>]*>(.*?)</h2>', page['body'])
+    links = ''.join(f'<li><a href="#{i}">{t}</a></li>' for i, t in heads)
+    return f'<nav class="ca-toc" aria-label="On this page"><p class="ca-toc__title">On this page</p><ul role="list">{links}</ul></nav>'
 
 
 def news_card(n, tag='h2', sizes='(min-width: 1100px) 360px, (min-width: 700px) 45vw, 92vw'):
@@ -426,6 +450,8 @@ SHORTCODES = {
     'news': lambda arg, opts, page: news(),
     'latestnews': lambda arg, opts, page: latest_news(arg),
     'directors': lambda arg, opts, page: directors(arg),
+    'schools': lambda arg, opts, page: schools(),
+    'toc': lambda arg, opts, page: toc(page),
 }
 
 
@@ -453,7 +479,7 @@ def section_nav(section, path, ancestor=None):
 def crumbs(page):
     trail = [('Home', '/')]
     if page.get('section') and MENUS[page['section']]['overview'] != page['path']:
-        trail.append((MENUS[page['section']]['title'], MENUS[page['section']]['overview']))
+        trail.append((html.unescape(MENUS[page['section']]['title']), MENUS[page['section']]['overview']))  # menu text is HTML
     trail += page.get('trail', [])
     items = ''.join(f'<li><a href="{h}">{esc(t)}</a></li>' for t, h in trail)
     nav = (f'<nav class="ca-breadcrumb" aria-label="Breadcrumb"><ol role="list">{items}'
@@ -555,6 +581,9 @@ def parse(path):
     meta['body'] = text[m.end():]
     meta['slug'] = path.stem
     meta['path'] = f'/{path.stem}/'
+    if 'parent' in meta:  # a page not in the menu, e.g. a project under Universal Access Projects
+        label, href = (x.strip() for x in meta['parent'].split('|'))
+        meta['ancestor'], meta['trail'] = href, [(label, href)]
     return meta
 
 

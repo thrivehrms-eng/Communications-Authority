@@ -59,7 +59,7 @@
 .ca-prose > :is(ul, ol):not([role]) li::marker { color: var(--primary); font-weight: 600; }
 .ca-prose > figure img { width: 100%; border-radius: var(--radius-media); }
 .ca-prose figcaption { margin-top: 10px; color: var(--text-muted); font-size: .875rem; }
-.ca-prose > :is(.ca-docs, .ca-people, .ca-linkcards, .ca-linkgroups, .ca-steps, .ca-faqs, .ca-callout, .ca-cards, .ca-offices, .ca-jobs, .ca-form, .ca-tool, .ca-video-cta, .ca-split-media, .ca-numbered, .ca-listing, .ca-covers, .ca-storygrid, .ca-story, .ca-notices, .ca-tablewrap, .ca-pills) { margin-top: 24px; }
+.ca-prose > :is(.ca-docs, .ca-people, .ca-linkcards, .ca-linkgroups, .ca-steps, .ca-faqs, .ca-callout, .ca-cards, .ca-offices, .ca-jobs, .ca-form, .ca-tool, .ca-video-cta, .ca-split-media, .ca-numbered, .ca-listing, .ca-covers, .ca-storygrid, .ca-story, .ca-notices, .ca-tablewrap, .ca-pills, .ca-toc, .ca-iconlist) { margin-top: 24px; }
 .ca-prose > h2 + :is(.ca-docs, .ca-people, .ca-linkcards, .ca-steps, .ca-faqs, .ca-cards, .ca-offices, .ca-jobs, .ca-numbered, .ca-listing, .ca-covers, .ca-storygrid, .ca-notices, .ca-tablewrap) { margin-top: 20px; }
 .ca-lead { max-width: 60ch; color: var(--text); font-size: clamp(1.125rem, 1.5vw, 1.3125rem); line-height: 1.6; }
 .ca-back { margin-top: 40px; }
@@ -476,3 +476,22 @@ select.ca-input { appearance: none; padding-right: 44px; background-image: linea
 .ca-on-dark .ca-cardx:has(.ca-cardx__link:hover) { background: rgb(255 255 255 / .14); }
 .ca-on-dark .ca-cardx:has(.ca-cardx__link:focus-visible) { outline: var(--focus-on-dark); }
 .ca-form--narrow { max-width: 560px; }
+
+/* ── On this page (long pages with several sections) ── */
+.ca-toc { padding: 18px 20px; border-radius: var(--radius-card); background: var(--surface-tint); }
+.ca-toc__title { margin-bottom: 8px; color: var(--text-muted); font-size: .8125rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.ca-toc ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 2px 20px; margin: 0; padding: 0; list-style: none; }
+.ca-toc a { display: flex; align-items: center; gap: 8px; min-height: 40px; color: var(--text); font-weight: 600; text-decoration: none; }
+.ca-toc a::before { content: ""; width: 6px; height: 6px; flex: none; border-radius: 50%; background: var(--primary); }
+.ca-toc a:hover { color: var(--primary); text-decoration: underline; text-decoration-thickness: 1px; }
+.ca-prose > h3 + :is(.ca-docs, .ca-tablewrap) { margin-top: 12px; }
+/* wide tables with long text (e.g. postal licence categories): one labelled card per row at every width */
+.ca-tablewrap:has(.ca-table--cards) { overflow: visible; border: 0; background: none; }
+.ca-table--cards caption { display: block; padding: 0 0 10px; }
+.ca-table--cards thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.ca-table--cards, .ca-table--cards tbody, .ca-table--cards tr, .ca-table--cards :is(th, td) { display: block; }
+.ca-table--cards tbody { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 12px; }
+.ca-table--cards tr { padding: 14px 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+.ca-table--cards tbody :is(th, td) { display: grid; grid-template-columns: 8.5em minmax(0, 1fr); gap: 12px; padding: 5px 0; border: 0; text-align: left; white-space: normal; }
+.ca-table--cards tbody :is(th, td)::before { content: attr(data-label); color: var(--text-muted); font-size: .8125rem; font-weight: 600; }
+.ca-table--cards tbody tr > :first-child { padding-bottom: 10px; margin-bottom: 4px; border-bottom: 1px solid var(--border); font-weight: 600; }
