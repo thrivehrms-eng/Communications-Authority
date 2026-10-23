@@ -75,6 +75,8 @@ Naming is BEM with a `ca-` prefix. Each section is self-contained markup (`<sect
 
 ## Inner pages
 
+Links in the section navigation open other pages, and every page opens at the top. That is normal in a browser tab; `main.js` also handles previews that show the site inside a frame as tall as the page (where the outer page would otherwise keep its scroll position) by bringing the frame back to the top when you arrive from another page of the site.
+
 Every inner page shares one frame: the homepage header and menus (with the current page marked `aria-current="page"` and its section underlined in the main menu), a page hero on the brand's light-curve panel with a breadcrumb, the page title and a one-line summary, then the content, and the homepage footer.
 
 | Layout | Used for | What it adds |
@@ -82,7 +84,7 @@ Every inner page shares one frame: the homepage header and menus (with the curre
 | `page` (default) | Most pages | Section navigation beside the content (sticky on wide screens, an "In this section" disclosure on phones) built from the main menu, so both always match |
 | `landing` | Section overviews (About the Authority, Our Role in Your Protection) | Full-width panels instead of the side navigation; ends with the section's pages as link cards grouped as in the menu |
 
-Content blocks, all in `pages.css`: prose, image beside text, document lists (type, size and a download icon, Kiswahili titles marked `lang="sw"`), people grid, profile, link cards, feature cards, icon list, numbered list, steps (vertical, or in a row on landing pages), FAQs (native `<details>`), callouts, office cards, vacancies, Director General's message, forms and the IMEI helper.
+Content blocks, all in `pages.css`: prose, image beside text, document lists (a file icon with a coloured type tag, the type and size in text, a download icon; Kiswahili titles marked `lang="sw"`), people grid, profile, link cards, feature cards, icon list, numbered list, steps (vertical, or in a row on landing pages), FAQs (native `<details>`), callouts, office cards, vacancies, Director General's message, forms and the IMEI helper.
 
 Shortcodes in `src/pages/*.html`, expanded by `tools/build.py`:
 
@@ -150,6 +152,7 @@ All motion lives in `assets/css/motion.css` and `assets/js/motion.js` (plus the 
 | Search | The placeholder cycles through example searches (IMEI, type approval, licence fees…) until you focus it |
 | Filter | Project tiles return one after another |
 | Help button | Pulses twice, once, 2.5s after load |
+| Between pages | A quick cross-fade (220ms) while the header stays in place, in browsers that support cross-document view transitions; off under reduced motion |
 | Videos | Stills zoom gently and the play button fills blue on hover; the player dialog rises in over a blurred backdrop |
 
 ## Accessibility notes

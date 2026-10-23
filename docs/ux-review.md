@@ -1,4 +1,4 @@
-# UX review — homepage v2 to v10, inner pages v11
+# UX review — homepage v2 to v10, inner pages v11–v12
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -194,3 +194,10 @@ Design decisions:
 - **An IMEI helper that cannot mislead.** It checks the number has 15 digits and a correct check digit, then prepares the free SMS to 1555. It states that only the 1555 reply says whether a phone is genuine.
 
 Skill guidance applied (ui-ux-pro-max): `nav-hierarchy` (the main menu and the section navigation are separate, with the section navigation clearly secondary), `progressive-disclosure` (it folds away on phones), `breadcrumb-web` (pages sit up to four levels deep, e.g. Home › About CA › Board of Directors › a profile), `inline-validation` (errors appear only once the person has finished and submits, and a flagged field clears as soon as it is fixed), `error-clarity` (each message says how to fix the problem, e.g. "Enter an email address in the right format, like name@example.com"), `focus-management` (summary and dialogs take focus and return it), `input-labels`, `autofill-support`, `touch-target-size`, and `content-priority` (on phones the content comes before the section navigation).
+
+## v12 — client feedback
+
+| Feedback | Change |
+|---|---|
+| Use a better-looking PDF icon | Documents now show a small page with a folded corner and a coloured tag: orange "PDF" (orange on a light backdrop only), blue "PNG" for the organisation chart. It tilts slightly on hover. The type and size stay in the text for screen readers |
+| The left-hand menu opens new pages, which open at the scroll position of the click rather than at the top | In a normal browser tab a new page already opens at the top (tested: scroll position 0). The preview viewer shows the site inside a frame as tall as the page, so the viewer's own scroll position stayed put and the new page appeared part-way down. When you arrive from another page of the site, the page now brings its frame back to the top (tested in a cross-origin frame: top of the page at the top of the screen after each click). Moving between pages also gets a quick cross-fade with the header held in place, so the change of page reads as deliberate |

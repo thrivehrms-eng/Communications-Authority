@@ -25,4 +25,15 @@ for (const [name, selector] of Object.entries(modules)) {
   if (roots.length) import(`./${name}.js`).then((m) => m.default(roots)).catch((err) => console.error(`[ca] ${name}`, err));
 }
 
+// A page opened from one of our links starts at the top. Browsers do this in a normal tab; this also covers
+// previews that show the site in a frame as tall as the page, where the outer page would keep its scroll.
+const arrival = performance.getEntriesByType('navigation')[0];
+const fromOurPage = document.referrer && new URL(document.referrer).origin === location.origin;
+if (window.self !== window.top && arrival?.type === 'navigate' && fromOurPage && !location.hash) {
+  const root = document.documentElement;
+  root.style.scrollPaddingTop = '0px'; // the header offset would otherwise push the page too far up
+  root.scrollIntoView({ block: 'start', behavior: 'instant' });
+  root.style.scrollPaddingTop = '';
+}
+
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });

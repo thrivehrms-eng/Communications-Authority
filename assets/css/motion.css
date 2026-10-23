@@ -79,6 +79,13 @@ html.js .reveal-run .ca-icon-badge { transition-delay: calc(var(--reveal-delay, 
 /* ── Project filter: tiles return one after another ── */
 .ca-projects > li { transition-delay: var(--filter-delay, 0ms); }
 
+/* ── Moving between pages: a quick cross-fade while the header stays put (browsers that support it) ── */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 220ms; animation-timing-function: var(--ease-std); }
+  .ca-header { view-transition-name: ca-header; }
+}
+
 /* ── Hover micro-interactions (pointer devices only) ── */
 @media (hover: hover) {
   /* buttons lift; filled ones get a light sweep */

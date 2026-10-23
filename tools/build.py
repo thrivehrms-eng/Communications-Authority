@@ -87,6 +87,15 @@ def mark_current(chrome, path, section):
 
 
 # ── Components rendered from data ──
+def file_icon(kind):
+    """A page with a folded corner and a coloured file-type tag (decorative: the type is also in the text)."""
+    return (f'<span class="ca-file ca-file--{kind.lower()}" aria-hidden="true"><svg viewBox="0 0 40 48" focusable="false">'
+            '<path class="ca-file__page" d="M8 1.5h18.6l11.9 11.9V43.5a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-39a3 3 0 0 1 3-3z"/>'
+            '<path class="ca-file__fold" d="M26.6 1.5v9a2.9 2.9 0 0 0 2.9 2.9h9"/>'
+            '<path class="ca-file__lines" d="M11.5 20h14M11.5 25.5h19"/></svg>'
+            f'<span class="ca-file__tag">{kind}</span></span>')
+
+
 def docs(list_id, opts=''):
     items = DATA['documents'][list_id]
     cols = ' ca-docs--2' if 'cols=2' in opts else ''
@@ -95,7 +104,7 @@ def docs(list_id, opts=''):
         lang = f' lang="{d["lang"]}"' if d.get('lang') else ''
         lis.append(
             f'<li><a class="ca-doc" href="{esc(d["url"])}">'
-            f'<span class="ca-doc__type" aria-hidden="true">{d["type"]}</span>'
+            f'{file_icon(d["type"])}'
             f'<span class="ca-doc__text"><span class="ca-doc__title"{lang}>{esc(d["title"])}</span>'
             f'<span class="ca-doc__meta">{d["type"]}, {file_size(d["bytes"])}</span></span>'
             f'{icon("download", "ca-icon ca-doc__icon")}</a></li>')
