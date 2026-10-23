@@ -14,16 +14,18 @@ Standard library only. Images and documents link to the files already uploaded t
 import html
 import json
 import re
+from collections import Counter
 import sys
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://ca.programmer.co.ke'  # canonical base and asset host (the WordPress site); switch at launch
 ORG = 'Communications Authority of Kenya'
-SECTIONS = {'about': 'dd-about', 'consumer': 'dd-consumer'}  # sections built so far
+SECTIONS = {'about': 'dd-about', 'consumer': 'dd-consumer', 'procurement': 'dd-procurement', 'info': 'dd-info'}  # sections built so far
 MENU_IDS = ['dd-about', 'dd-licensing', 'dd-consumer', 'dd-procurement', 'dd-info']
-DATA = {name: json.loads((ROOT / f'src/data/{name}.json').read_text()) for name in ('documents', 'people', 'jobs')}
+DATA = {name: json.loads((ROOT / f'src/data/{name}.json').read_text())
+        for name in ('documents', 'people', 'jobs', 'tenders', 'contracts', 'publications', 'library', 'news')}
 GROUP_PAGES = {
     'board-of-directors': 'Board of Directors',
     'management-team': 'Management Team',
@@ -69,7 +71,11 @@ def menu(menu_id):
     groups = []
     for g in re.finditer(r'<p class="ca-dropdown__heading"[^>]*>(.*?)</p>\s*<ul[^>]*>(.*?)</ul>', block, re.S):
         links = re.findall(r'<a class="ca-mega__link" href="([^"]+)">.*?#([\w-]+)".*?<span class="ca-mega__label">(.*?)</span><span class="ca-mega__desc">(.*?)</span>', g.group(2), re.S)
-        groups.append({'title': g.group(1), 'links': [{'href': h, 'icon': i, 'label': l, 'desc': d} for h, i, l, d in links]})
+        if links:
+            groups.append({'title': g.group(1), 'links': [{'href': h, 'icon': i, 'label': l, 'desc': d} for h, i, l, d in links]})
+        else:  # a quick-links band: plain links
+            quick = re.findall(r'<a href="([^"]+)">(.*?)</a>', g.group(2))
+            groups.append({'title': g.group(1), 'quick': True, 'links': [{'href': h, 'icon': 'arrow-right', 'label': l, 'desc': ''} for h, l in quick]})
     return {'title': title, 'summary': summary, 'overview': overview, 'groups': groups}
 
 
@@ -96,19 +102,188 @@ def file_icon(kind):
             f'<span class="ca-file__tag">{kind}</span></span>')
 
 
-def docs(list_id, opts=''):
-    items = DATA['documents'][list_id]
-    cols = ' ca-docs--2' if 'cols=2' in opts else ''
-    lis = []
-    for d in items:
-        lang = f' lang="{d["lang"]}"' if d.get('lang') else ''
-        lis.append(
-            f'<li><a class="ca-doc" href="{esc(d["url"])}">'
-            f'{file_icon(d["type"])}'
+def slug(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
+
+def doc_item(d, extra='', attrs=''):
+    """One document link: file icon, title, then type and size (plus any extra meta, e.g. category or year)."""
+    lang = f' lang="{d["lang"]}"' if d.get('lang') else ''
+    meta = ' · '.join(filter(None, [extra, f'{d["type"]}, {file_size(d["bytes"])}']))
+    return (f'<li{attrs}><a class="ca-doc" href="{esc(d["url"])}">{file_icon(d["type"])}'
             f'<span class="ca-doc__text"><span class="ca-doc__title"{lang}>{esc(d["title"])}</span>'
-            f'<span class="ca-doc__meta">{d["type"]}, {file_size(d["bytes"])}</span></span>'
-            f'{icon("download", "ca-icon ca-doc__icon")}</a></li>')
-    return f'<ul class="ca-docs{cols}" role="list">\n' + '\n'.join(lis) + '\n</ul>'
+            f'<span class="ca-doc__meta">{esc(meta)}</span></span>{icon("download", "ca-icon ca-doc__icon")}</a></li>')
+
+
+def docs(list_id, opts='', items=None):
+    items = DATA['documents'][list_id] if items is None else items
+    cols = ' ca-docs--2' if 'cols=2' in opts else ''
+    return f'<ul class="ca-docs{cols}" role="list">\n' + '\n'.join(doc_item(d, d.get('year', '') if 'years' in opts else '') for d in items) + '\n</ul>'
+
+
+def library(category, opts=''):
+    """Documents of one type from the WordPress document library (e.g. speeches, press statements)."""
+    items = [d for d in DATA['library'] if slug(d['category']) == category]
+    if not items:
+        raise SystemExit(f'library: no documents of type {category}')
+    return docs(None, opts, items)
+
+
+def covers(list_id):
+    """Reports shown by their covers (annual reports)."""
+    lis = [(f'<li class="ca-cover"><a href="{esc(d["url"])}"><span class="ca-cover__img"><img src="{esc(d["cover"])}" alt="" width="{d["cover_w"]}" height="{d["cover_h"]}" loading="lazy" decoding="async"></span>'
+            f'<span class="ca-cover__title">{esc(d["title"])}</span><span class="ca-cover__meta">{d["type"]}, {file_size(d["bytes"])}</span></a></li>')
+           for d in DATA['documents'][list_id]]
+    return '<ul class="ca-covers" role="list" data-reveal-stagger>\n' + '\n'.join(lis) + '\n</ul>'
+
+
+# ── Long lists: search and filters (listing.js), every item in the HTML so they work without JavaScript ──
+def listing(noun, items_html, tools, page_size, list_open, list_close='</ul>'):
+    """list_open is the element holding the items (marked data-listing-items); noun is 'singular|plural'."""
+    many = noun.split('|')[1]
+    return f'''<div class="ca-listing" data-listing data-page-size="{page_size}" data-noun="{noun}">
+<form class="ca-listing__tools" role="search" aria-label="Find {many}" data-js-only>
+{tools}
+</form>
+<p class="ca-listing__status" role="status" data-listing-status>{len(items_html)} {many}</p>
+{list_open}
+{chr(10).join(items_html)}
+{list_close}
+<div class="ca-listing__empty" data-listing-empty hidden><p>No {many} match your search.</p><button class="ca-btn ca-btn--outline ca-btn--sm" type="button" data-listing-reset>Clear search and filters</button></div>
+<div class="ca-listing__more" data-js-only><button class="ca-btn ca-btn--outline" type="button" data-listing-more>Show more</button></div>
+</div>'''
+
+
+def search_field(id_, name, label, placeholder):
+    return (f'<div class="ca-field ca-listing__search"><label for="{id_}">{label}</label>'
+            f'<input class="ca-input" type="search" id="{id_}" name="{name}" placeholder="{placeholder}" autocomplete="off" data-listing-q></div>')
+
+
+def select_field(id_, name, label, key, options, all_label):
+    opts = ''.join(f'<option value="{v}">{esc(t)}</option>' for v, t in options)
+    return (f'<div class="ca-field"><label for="{id_}">{label}</label><select class="ca-input" id="{id_}" name="{name}" data-listing-filter="{key}">'
+            f'<option value="">{all_label}</option>{opts}</select></div>')
+
+
+def text_of(*parts):
+    return esc(' '.join(p for p in parts if p).lower(), quote=True)
+
+
+def tender_open(t):
+    return bool(t['closing']) and date.fromisoformat(t['closing']) >= date.today()
+
+
+def tenders():
+    items = []
+    for t in DATA['tenders']:
+        state = 'open' if tender_open(t) else 'closed'
+        files = ''.join(
+            f'<li><a class="ca-filelink" href="{esc(f["url"])}"><span class="ca-filelink__tag ca-filelink__tag--{f["type"].lower()}">{f["type"]}</span>'
+            f'<span>{esc(f["label"])}<span class="ca-vh">: {esc(t["title"])}</span><span class="ca-filelink__size">{file_size(f["bytes"])}</span></span></a></li>' for f in t['files'])
+        dates = ''.join(f'<div><dt>{k}</dt><dd><time datetime="{v}">{long_date(v)}</time></dd></div>' for k, v in (('Opened', t['opening']), ('Closing date', t['closing'])) if v)
+        items.append(
+            f'<li class="ca-tender" data-status="{state}" data-fy="{t["fy"].replace("/", "-")}" data-text="{text_of(t["title"], t["number"])}">'
+            f'<h2 class="ca-tender__title">{esc(t["title"])}</h2>'
+            f'<dl class="ca-tender__facts"><div><dt>Tender number</dt><dd>{esc(t["number"])}</dd></div>'
+            f'<div><dt>Status</dt><dd><span class="ca-badge ca-badge--{state}">{state.title()}</span></dd></div>{dates}</dl>'
+            + (f'<ul class="ca-filelinks" role="list">{files}</ul>' if files else '') + '</li>')
+    years = sorted({t['fy'] for t in DATA['tenders'] if t['fy']}, reverse=True)
+    tools = (search_field('tender-q', 'tender_q', 'Search tenders', 'Title or tender number')
+             + select_field('tender-status', 'tender_status', 'Status', 'status', [('open', 'Open'), ('closed', 'Closed')], 'All tenders')
+             + select_field('tender-fy', 'tender_fy', 'Financial year', 'fy', [(y.replace('/', '-'), y) for y in years], 'All years'))
+    return listing('tender|tenders', items, tools, 10, '<ul class="ca-tenders" role="list" data-listing-items>')
+
+
+def open_tenders_notice(elsewhere=False):
+    n = sum(tender_open(t) for t in DATA['tenders'])
+    if n:
+        return f'<p class="ca-lead">There {"is" if n == 1 else "are"} {n} open tender{"" if n == 1 else "s"}.</p>'
+    return (f'<div class="ca-callout">{icon("info")}<p class="ca-callout__title">There are no open tenders at the moment</p>'
+            f'<p>Past tenders and their documents are listed {"on the Tenders page" if elsewhere else "below"}. To be considered for future opportunities, '
+            f'<a href="/supplier-registration/">register as a supplier</a>.</p></div>')
+
+
+def money(v):
+    return '<span class="ca-vh">Not published</span><span aria-hidden="true">—</span>' if v in ('', '—') else esc(v)
+
+
+def awarded_date(s):
+    try:
+        return long_date(datetime.strptime(s, '%d %b, %Y').date().isoformat())
+    except ValueError:
+        return s
+
+
+def contracts():
+    rows = []
+    for c in DATA['contracts']['contracts']:
+        when = awarded_date(c['awarded']) if c['awarded'] else ''
+        ref = c['ref'].strip('—')
+        rows.append(f'<tr data-text="{text_of(ref, c["description"], c["supplier"])}"><td data-label="Reference">{money(c["ref"])}</td>'
+                    f'<th scope="row" data-label="Description">{esc(c["description"])}</th><td data-label="Supplier">{esc(c["supplier"])}</td>'
+                    f'<td class="ca-num" data-label="Value (KES)">{money(c["value"])}</td><td data-label="Awarded">{money(when)}</td></tr>')
+    tools = search_field('contract-q', 'contract_q', 'Search awarded contracts', 'Description, supplier or reference')
+    table = ('<div class="ca-tablewrap" role="region" aria-labelledby="contracts-caption" tabindex="0"><table class="ca-table ca-table--stack">'
+             '<caption id="contracts-caption">Contracts awarded by the Authority</caption><thead><tr><th scope="col">Reference</th><th scope="col">Description</th>'
+             '<th scope="col">Supplier</th><th scope="col" class="ca-num">Value (KES)</th><th scope="col">Awarded</th></tr></thead><tbody data-listing-items>')
+    return listing('contract|contracts', rows, tools, 25, table, '</tbody></table></div>')
+
+
+def publications():
+    items = [doc_item(p, p['year'], f' data-pubyear="{p["year"] or "undated"}" data-text="{text_of(p["title"], p["year"])}"') for p in DATA['publications']]
+    years = sorted({p['year'] for p in DATA['publications'] if p['year']}, reverse=True)
+    tools = (search_field('pub-q', 'q', 'Search publications', 'Title, e.g. annual report')
+             + select_field('pub-year', 'year', 'Year', 'pubyear', [(y, y) for y in years] + [('undated', 'Undated')], 'All years'))
+    return listing('publication|publications', items, tools, 15, '<ul class="ca-docs" role="list" data-listing-items>')
+
+
+def library_listing():
+    counts = Counter(d['category'] for d in DATA['library'])
+    items = [doc_item(d, ' · '.join(filter(None, [d['category'], d['year']])), f' data-category="{slug(d["category"])}" data-text="{text_of(d["title"], d["category"], d["year"])}"')
+             for d in DATA['library']]
+    tools = (search_field('doc-q', 'q', 'Search documents', 'Title or subject')
+             + select_field('doc-type', 'type', 'Document type', 'category', [(slug(k), f'{k} ({v})') for k, v in sorted(counts.items())], 'All types'))
+    return listing('document|documents', items, tools, 15, '<ul class="ca-docs" role="list" data-listing-items>')
+
+
+def news_card(n, tag='h2', sizes='(min-width: 1100px) 360px, (min-width: 700px) 45vw, 92vw'):
+    """A story card (the homepage news component), with the image above the date and title."""
+    if n['image']:
+        i = n['image']
+        media = (f'<img src="{esc(i["card"])}" srcset="{esc(i["srcset"])}" sizes="{sizes}" alt="{esc(i["alt"])}" '
+                 f'width="{i["card_w"]}" height="{i["card_h"]}" loading="lazy" decoding="async">')
+    else:
+        media = f'<span class="ca-story__noimg">{icon("newspaper")}</span>'
+    return (f'<article class="ca-story ca-story--card"><div class="ca-story__media">{media}</div><div class="ca-story__body">'
+            f'<p class="ca-story__date"><time datetime="{n["date"]}">{long_date(n["date"])}</time></p>'
+            f'<{tag} class="ca-story__title"><a href="/{n["slug"]}/">{esc(n["title"])}</a></{tag}>'
+            f'<span class="ca-story__more" aria-hidden="true">Read more{icon("arrow-right")}</span></div></article>')
+
+
+def excerpt(text, limit=220):
+    return text if len(text) <= limit else text[:limit].rsplit(' ', 1)[0].rstrip(',;:') + '…'
+
+
+def news():
+    lead = next((n for n in DATA['news'] if n['sticky']), DATA['news'][0])
+    i = lead['image']
+    lead_html = (f'<article class="ca-story ca-story--feature"><div class="ca-story__media"><img src="{esc(i["src"])}" srcset="{esc(i["srcset"])}" '
+                 f'sizes="(min-width: 1100px) 520px, 92vw" alt="{esc(i["alt"])}" width="{i["width"]}" height="{i["height"]}" decoding="async"></div>'
+                 f'<div class="ca-story__body"><p class="ca-eyebrow">Featured</p><p class="ca-story__date"><time datetime="{lead["date"]}">{long_date(lead["date"])}</time></p>'
+                 f'<h2 class="ca-story__title"><a href="/{lead["slug"]}/">{esc(lead["title"])}</a></h2>'
+                 f'<p class="ca-story__summary">{esc(excerpt(lead["excerpt"]))}</p>'
+                 f'<span class="ca-story__more" aria-hidden="true">Read more{icon("arrow-right")}</span></div></article>')
+    items = [f'<li data-pubyear="{n["date"][:4]}" data-text="{text_of(n["title"], n["excerpt"])}">{news_card(n, "h3")}</li>' for n in DATA['news'] if n is not lead]
+    years = sorted({n['date'][:4] for n in DATA['news']}, reverse=True)
+    tools = (search_field('news-q', 'q', 'Search news', 'Search the news')
+             + select_field('news-year', 'year', 'Year', 'pubyear', [(y, y) for y in years], 'All years'))
+    return (lead_html + '\n<h2 id="all-news">All news</h2>\n'
+            + listing('story|stories', items, tools, 12, '<ul class="ca-storygrid" role="list" data-listing-items>'))
+
+
+def latest_news(count):
+    return '<ul class="ca-storygrid ca-storygrid--3" role="list">' + ''.join(f'<li>{news_card(n, "h3")}</li>' for n in DATA['news'][:int(count)]) + '</ul>'
+
 
 
 def people(group):
@@ -142,6 +317,10 @@ def subpages(section, current):
     """The section's pages as link cards, grouped as in the main menu."""
     out = []
     for g in MENUS[section]['groups']:
+        if g.get('quick'):
+            pills = ''.join(f'<li><a class="ca-pill" href="{l["href"]}">{l["label"]}{icon("arrow-right", "ca-icon ca-icon--sm")}</a></li>' for l in g['links'])
+            out.append(f'<div class="ca-linkgroup"><h3 class="ca-linkgroup__title">{g["title"]}</h3>\n<ul class="ca-pills" role="list">{pills}</ul></div>')
+            continue
         cards = [linkcard(l, 'h4') for l in g['links'] if l['href'] != current]
         if cards:
             out.append(f'<div class="ca-linkgroup"><h3 class="ca-linkgroup__title">{g["title"]}</h3>\n'
@@ -156,6 +335,48 @@ def related(paths):
         raise SystemExit(f'related: not in the main menu: {missing}')
     cards = [linkcard(ALL_LINKS[p]) for p in paths.split(',')]
     return '<ul class="ca-linkcards ca-linkcards--related" role="list">\n' + '\n'.join(cards) + '\n</ul>'
+
+
+DIRECTOR_FIELDS = [  # (key, label, type, error message for director 1)
+    ('name', 'Name', 'text', 'Enter the director’s name'),
+    ('pin', 'KRA PIN', 'text', 'Enter the director’s KRA PIN'),
+    ('gender', 'Gender', 'select', 'Select the director’s gender'),
+    ('nationality', 'Nationality', 'text', 'Enter the director’s nationality'),
+    ('phone', 'Phone number', 'tel', 'Enter the director’s phone number'),
+    ('email', 'Email address', 'email', 'Enter the director’s email address'),
+    ('share', 'Share (%)', 'number', 'Enter the director’s share as a percentage'),
+]
+UPLOAD_HINT = 'Accepted: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG. Maximum 10 MB.'
+UPLOAD_TYPES = '.pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png'
+
+
+def directors(count):
+    """Director fieldsets for supplier registration (field names as in the WordPress form); directors.js adds them one at a time."""
+    out = []
+    for n in range(1, int(count) + 1):
+        req = n == 1  # only the first director is required
+        star = ' <span class="ca-req" aria-hidden="true">*</span>' if req else ''
+        attrs = ' required' if req else ''
+        fields = []
+        for key, label, kind, error in DIRECTOR_FIELDS:
+            fid, name = f'sr-d{n}-{key}', f'cak_data[director_{n}_{key}]'
+            err = f' data-error="{error}"' if req else ''
+            if kind == 'select':
+                control = (f'<select class="ca-input" id="{fid}" name="{name}"{attrs}><option value="">Please choose</option><option value="female">Female</option>'
+                           '<option value="male">Male</option><option value="unspecified">Prefer not to say</option></select>')
+            else:
+                extra = ' min="0" max="100" step="0.01" inputmode="decimal"' if kind == 'number' else ''
+                control = f'<input class="ca-input" id="{fid}" name="{name}" type="{kind}"{extra}{attrs}>'
+            fields.append(f'<div class="ca-field"{err}><label for="{fid}">{label}{star}</label>{control}</div>')
+        fid = f'sr-d{n}-id'
+        err = ' data-error="Upload a copy of the director’s national ID"' if req else ''
+        upload = (f'<div class="ca-field"{err}><label for="{fid}">National ID copy{star}</label>'
+                  f'<p class="ca-hint" id="{fid}-hint">{UPLOAD_HINT}</p><input class="ca-input" id="{fid}" name="cak_file_director_{n}_id" type="file" accept="{UPLOAD_TYPES}" aria-describedby="{fid}-hint"{attrs}></div>')
+        legend = f'Director {n}' + ('' if req else ' <span class="ca-optional">(optional)</span>')
+        out.append(f'<fieldset class="ca-fieldset" data-director>\n<legend>{legend}</legend>\n<div class="ca-fields-2">\n' + '\n'.join(fields) + f'\n</div>\n{upload}\n</fieldset>')
+    return ('<div class="ca-directors" data-directors>\n' + '\n'.join(out)
+            + f'\n<button class="ca-btn ca-btn--outline ca-directors__add" type="button" data-director-add data-js-only>{icon("plus")}Add another director</button>'
+            + '\n<p class="ca-vh" role="status" data-director-status></p>\n</div>')
 
 
 def deadline(job):
@@ -196,6 +417,15 @@ SHORTCODES = {
     'subpages': lambda arg, opts, page: subpages(arg, page['path']),
     'related': lambda arg, opts, page: related(opts or arg),
     'jobs': lambda arg, opts, page: jobs(),
+    'library': lambda arg, opts, page: library(arg, opts),
+    'covers': lambda arg, opts, page: covers(arg),
+    'tenders': lambda arg, opts, page: open_tenders_notice(True) if arg == 'notice' else open_tenders_notice() + tenders(),
+    'contracts': lambda arg, opts, page: contracts(),
+    'publications': lambda arg, opts, page: publications(),
+    'documents': lambda arg, opts, page: library_listing(),
+    'news': lambda arg, opts, page: news(),
+    'latestnews': lambda arg, opts, page: latest_news(arg),
+    'directors': lambda arg, opts, page: directors(arg),
 }
 
 
@@ -258,9 +488,8 @@ def render(page):
     </div>
   </section>'''
     body = expand(page['body'], page)
-    updated = f'<p class="ca-page__updated">Page last updated <time datetime="{page["updated"]}">{long_date(page["updated"])}</time></p>' if page.get('updated') else ''
     if page.get('layout') == 'landing':
-        main = hero + '\n' + body + (f'\n  <div class="ca-container ca-page__foot">{updated}</div>' if updated else '')
+        main = hero + '\n' + body
     else:
         aside = f'<aside class="ca-page__aside">{section_nav(section, path, page.get("ancestor"))}</aside>' if section else ''
         main = f'''{hero}
@@ -269,7 +498,6 @@ def render(page):
       {aside}
       <div class="ca-page__content ca-prose">
 {body}
-      {updated}
       </div>
     </div>
   </div>'''
@@ -346,7 +574,7 @@ def person_pages():
                 f'<p class="ca-back"><a class="ca-link ca-link--back" href="/{g["group"]}/">{icon("arrow-left")}Back to {GROUP_PAGES[g["group"]]}</a></p>')
         pages.append({'title': p['name'], 'summary': esc(roles), 'description': f'{p["name"]}, {roles}, {ORG}.',
                       'section': 'about', 'path': f'/people/{p["slug"]}/', 'ancestor': f'/{g["group"]}/',
-                      'trail': [(GROUP_PAGES[g['group']], f'/{g["group"]}/')], 'updated': p['updated'], 'body': body})
+                      'trail': [(GROUP_PAGES[g['group']], f'/{g["group"]}/')], 'body': body})
     return pages
 
 
@@ -363,8 +591,38 @@ def job_pages():
     return pages
 
 
+def article_body(n):
+    """WordPress post content, tidied: a lead sentence set as a heading becomes a lead paragraph (no skipped levels), tables scroll in a labelled region."""
+    body = n['body']
+    if '<h2' not in body:
+        body = re.sub(r'<h3>(.*?)</h3>', r'<p class="ca-lead">\1</p>', body, flags=re.S)
+
+    def wrap(m):
+        cap = re.search(r'<caption>(.*?)</caption>', m.group(0), re.S)
+        label = f' aria-label="{esc(re.sub(r"<[^>]+>", "", cap.group(1)))}"' if cap else ' aria-label="Table"'
+        return f'<div class="ca-tablewrap" role="region"{label} tabindex="0">{m.group(0)}</div>'
+    return re.sub(r'<table>.*?</table>', wrap, body, flags=re.S)
+
+
+def news_pages():
+    pages = []
+    for n in DATA['news']:
+        fig = ''
+        if n['image']:
+            i = n['image']
+            fig = (f'<figure class="ca-article__figure"><img src="{esc(i["src"])}" srcset="{esc(i["srcset"])}" sizes="(min-width: 1100px) 800px, 92vw" '
+                   f'alt="{esc(i["alt"])}" width="{i["width"]}" height="{i["height"]}" decoding="async"></figure>')
+        more = [m for m in DATA['news'] if m is not n][:3]
+        body = (f'<article class="ca-article">{fig}\n<div class="ca-article__body">\n{article_body(n)}\n</div></article>\n'
+                f'<h2>More news</h2>\n<ul class="ca-storygrid ca-storygrid--3" role="list">' + ''.join(f'<li>{news_card(m, "h3")}</li>' for m in more) + '</ul>\n'
+                f'<p class="ca-back"><a class="ca-link ca-link--back" href="/news/">{icon("arrow-left")}All news</a></p>')
+        pages.append({'title': n['title'], 'summary': f'<time datetime="{n["date"]}">{long_date(n["date"])}</time>', 'description': n['excerpt'][:300],
+                      'section': 'info', 'path': f'/{n["slug"]}/', 'ancestor': '/news/', 'trail': [('News', '/news/')], 'body': body, 'kind': 'article'})
+    return pages
+
+
 def build():
-    pages = [parse(p) for p in sorted((ROOT / 'src/pages').glob('*.html'))] + person_pages() + job_pages()
+    pages = [parse(p) for p in sorted((ROOT / 'src/pages').glob('*.html'))] + person_pages() + job_pages() + news_pages()
     for page in pages:
         out = ROOT / page['path'].strip('/') / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)

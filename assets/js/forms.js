@@ -34,7 +34,8 @@ function check(field) {
     if (first.required && !first.checked) message = field.dataset.error || 'Tick the box to continue';
   } else if (first.type === 'file') {
     const file = first.files?.[0];
-    if (file && file.size > MAX_MB * 1048576) message = `The file must be smaller than ${MAX_MB} MB`;
+    if (first.required && !file) message = field.dataset.error || 'Choose a file to upload';
+    else if (file && file.size > MAX_MB * 1048576) message = `The file must be smaller than ${MAX_MB} MB`;
   } else {
     const value = first.value.trim();
     if (first.required && !value) message = field.dataset.error || 'Fill in this field';

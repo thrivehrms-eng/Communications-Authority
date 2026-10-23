@@ -49,6 +49,29 @@ Content, images and documents come from the WordPress site (ca.programmer.co.ke)
 | Forms | Consumer complaint, public complaints, customer feedback and contact forms keep the WordPress field names but are not connected in this static build: a completed form shows a notice that nothing was sent | Connect in the theme (README → Porting) |
 | Strategic Plan | WordPress text "spells out CA’s its purpose" corrected to "CA’s purpose" | — |
 
+## Procurement and Info Hub pages
+
+Content, images and documents come from the WordPress site (pages, posts and the tender, contract, publication and document archives). Items to resolve there or confirm:
+
+| Page | Issue | Needed |
+|---|---|---|
+| Tenders | All 220 tenders (financial years 2022/23 to 2025/26) have closed; the latest closed on 20 May 2026. The page and the Procurement overview say there are no open tenders at the moment, worked out from the closing dates when the pages are built | Rebuild when tenders open, or render the note in WordPress |
+| Procurement | The WordPress page links the two procurement plans on www.ca.go.ke. The new pages use the copies already uploaded to ca.programmer.co.ke (the "Procurement Plans" documents) | Confirm the uploaded copies are current |
+| Procurement | The four "How procurement works here" steps are proposed copy, written from the WordPress text on supplier registration, tenders and awards | Confirm with Supply Chain Management |
+| Awarded Contracts | Of 336 contracts, 180 have no published value, 30 no award date and 72 no reference number; the table shows a dash (read out as "Not published") | Fill the gaps in WordPress where the reports allow |
+| Info Hub | The overview's second paragraph and the three "Most requested" documents (latest annual report, latest sector statistics report, the 2024–2025 QoS report) are proposed | Confirm the picks with Corporate Communications |
+| Open Consultations | The WordPress page lists nine consultation titles without their papers; it says papers are published individually as they open | Consultation papers, comment templates and closing dates for each |
+| Closed Consultations, Published Findings | Titles only (13 and 10), no documents | The findings documents, where published |
+| Public Notices | One notice (dot KE domain names for critical information infrastructure), without a date | The notice date; further notices as issued |
+| Upcoming Events | WordPress has no events scheduled; the page says so and shows the latest news | — |
+| News | 111 posts (June 2022 to September 2026) at their WordPress URLs. Three have no featured image and show a placeholder tile. 15 posts link to reports on www.ca.go.ke, which may move at launch | Featured images for the three; check the ca.go.ke links at launch |
+| News | One post set its opening sentence as a heading; it is shown as a lead paragraph. The revenue-share table in "Kenyan Mobile Sector Records Growth in Revenue and Investments" had no caption; it now reads "Share of revenue by operator, year ended June 2023 (%)" | Make the same changes in WordPress |
+| Speeches, Press Statements | Three document titles corrected for display: "Difrector" → "Director", "Cockail" → "Cocktail", and the file name "Press-Statement-on-Forensic-Audit-on-SIM-Card-Registration1" → "Press Statement on Forensic Audit on SIM Card Registration" | Correct the titles in WordPress |
+| Publications | Two publications have no year and are filed under "Undated" | Years, if known |
+| Our Portals | Licensee Register links to `/licensee-register/`, in the Licensing section (not built yet; the preview opens it on the WordPress site) | — |
+| Forms | Supplier registration and staff verification keep the WordPress field names but are not connected in this static build: a completed form shows a notice that nothing was sent | Connect in the theme (README → Porting) |
+| Page summaries | Proposed where WordPress has no introduction: Tenders, Awarded Contracts, News, Publications, Documents, Our Portals, Info Hub and Procurement overviews | Confirm |
+
 ## Links / URLs to confirm
 
 | Where | Current value | Needed |

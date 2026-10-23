@@ -236,5 +236,181 @@
    "bytes": 2023073,
    "type": "PNG"
   }
+ ],
+ "annual-reports": [
+  {
+   "title": "Annual Report Financial Year 2024–2025",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-fy-2024-2025-239adf82.pdf",
+   "bytes": 4822660,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2024-2025.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  },
+  {
+   "title": "Annual Report Financial Year 2023–2024",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-2023-2024-final-ba1a86fb.pdf",
+   "bytes": 7628547,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2023-2024.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  },
+  {
+   "title": "Annual Report Financial Year 2022–2023",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-financial-year-2022-2023-2765f76a.pdf",
+   "bytes": 8733638,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2022-2023.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  },
+  {
+   "title": "Annual Report Financial Year 2021–2022",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/ca-annual-report-2021-2022-final-version-86048396.pdf",
+   "bytes": 11681606,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2021-2022.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  },
+  {
+   "title": "Annual Report Financial Year 2020–2021",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-for-financial-year-2020-2021-ca5442fc.pdf",
+   "bytes": 2405543,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2020-2021.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  },
+  {
+   "title": "Annual Report Financial Year 2018–2019",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-for-financial-year-2018-2019-8e79fa03.pdf",
+   "bytes": 7697737,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2018-2019.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  },
+  {
+   "title": "Annual Report Financial Year 2017–2018",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-for-the-financial-year-2017-2018-e6b85257.pdf",
+   "bytes": 18051135,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2017-2018.webp",
+   "cover_w": 640,
+   "cover_h": 829
+  },
+  {
+   "title": "Annual Report Financial Year 2015–2016",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-for-the-financial-year-2015-2016-edcf58a3.pdf",
+   "bytes": 8876075,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2015-2016.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  },
+  {
+   "title": "Annual Report Financial Year 2014–2015",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-for-the-financial-year-2014-2015-700cacce.pdf",
+   "bytes": 3731724,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2014-2015.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  },
+  {
+   "title": "Annual Report Financial Year 2013–2014",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-for-the-financial-year-2013-2014-335b0619.pdf",
+   "bytes": 4699814,
+   "type": "PDF",
+   "cover": "https://ca.programmer.co.ke/wp-content/uploads/pages/design/annual-report-cover-2013-2014.webp",
+   "cover_w": 640,
+   "cover_h": 640
+  }
+ ],
+ "reports-studies": [
+  {
+   "title": "Sector Statistics Report Q4 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/reports-and-studies/sector-statistics-report-q4-2025-2026-5757825d.pdf",
+   "bytes": 1322861,
+   "type": "PDF"
+  },
+  {
+   "title": "Audience Measurement and Industry Trends Report Q4 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/reports-and-studies/audience-measurement-and-industry-trends-report-quarter-4-2025-2026-a6fff924.pdf",
+   "bytes": 986069,
+   "type": "PDF"
+  },
+  {
+   "title": "Consumer Complaints Statistics for Q4 FY 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/reports-and-studies/consumer-complaints-statistics-for-q4-fy-2025-2026-6e8a8401.docx",
+   "bytes": 79544,
+   "type": "DOCX"
+  },
+  {
+   "title": "Cyber Security Report Q4 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/reports-and-studies/cyber-security-report-q4-2025-2026-1-ac5b8344.pdf",
+   "bytes": 2653535,
+   "type": "PDF"
+  },
+  {
+   "title": "Quality of Service (QoS) Performance by Mobile Network Operators, FY 2024–2025",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/reports-and-studies/quality-of-service-qos-performance-by-mobile-network-operators-report-fy-2024-2025-ba8d83ab.pdf",
+   "bytes": 489923,
+   "type": "PDF"
+  }
+ ],
+ "statistics": [
+  {
+   "title": "Sector Statistics Report Q4 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/reports-and-studies/sector-statistics-report-q4-2025-2026-5757825d.pdf",
+   "bytes": 1322861,
+   "type": "PDF"
+  },
+  {
+   "title": "Sector Statistics Report Q3 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/statistics/sector-statistics-report-q3-2025-2026-25b745f2.pdf",
+   "bytes": 959129,
+   "type": "PDF"
+  },
+  {
+   "title": "Sector Statistics Report Q2 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/statistics/sector-statistics-report-q2-2025-2026-66d15be3.pdf",
+   "bytes": 805934,
+   "type": "PDF"
+  },
+  {
+   "title": "Sector Statistics Report Q1 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/statistics/sector-statistics-report-q1-2025-2026-0-6cf499a7.pdf",
+   "bytes": 744443,
+   "type": "PDF"
+  },
+  {
+   "title": "Sector Statistics Report Q4 2024–2025",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/statistics/sector-statistics-report-q4-2024-2025-1-346ef9d5.pdf",
+   "bytes": 884976,
+   "type": "PDF"
+  }
+ ],
+ "info-highlights": [
+  {
+   "title": "Annual Report Financial Year 2024–2025",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/about/annual-reports/annual-report-fy-2024-2025-239adf82.pdf",
+   "bytes": 4822660,
+   "type": "PDF"
+  },
+  {
+   "title": "Sector Statistics Report Q4 2025–2026",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/reports-and-studies/sector-statistics-report-q4-2025-2026-5757825d.pdf",
+   "bytes": 1322861,
+   "type": "PDF"
+  },
+  {
+   "title": "Quality of Service (QoS) Performance by Mobile Network Operators, FY 2024–2025",
+   "url": "https://ca.programmer.co.ke/wp-content/uploads/media-centre/reports-and-studies/quality-of-service-qos-performance-by-mobile-network-operators-report-fy-2024-2025-ba8d83ab.pdf",
+   "bytes": 489923,
+   "type": "PDF"
+  }
  ]
 }

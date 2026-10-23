@@ -201,3 +201,21 @@ Skill guidance applied (ui-ux-pro-max): `nav-hierarchy` (the main menu and the s
 |---|---|
 | Use a better-looking PDF icon | Documents now show a small page with a folded corner and a coloured tag: orange "PDF" (orange on a light backdrop only), blue "PNG" for the organisation chart. It tilts slightly on hover. The type and size stay in the text for screen readers |
 | The left-hand menu opens new pages, which open at the scroll position of the click rather than at the top | In a normal browser tab a new page already opens at the top (tested: scroll position 0). The preview viewer shows the site inside a frame as tall as the page, so the viewer's own scroll position stayed put and the new page appeared part-way down. When you arrive from another page of the site, the page now brings its frame back to the top (tested in a cross-origin frame: top of the page at the top of the screen after each click). Moving between pages also gets a quick cross-fade with the header held in place, so the change of page reads as deliberate |
+
+## v13 — client feedback, Procurement and Info Hub
+
+| Feedback | Change |
+|---|---|
+| Remove "Page last updated …" from every page | Removed from all inner pages, with its styles and the `updated` setting in the page sources |
+| Build the Procurement and Info Hub sections from the staging site | 22 section pages (5 Procurement, 17 Info Hub) and 111 news articles, using the content, images and documents already on ca.programmer.co.ke |
+
+Design decisions:
+
+- **Long lists you can narrow down.** Tenders (220), awarded contracts (336), publications (190), documents (115) and news (110) share one pattern: a search box plus one or two filters (status and financial year; year; document type), results that update as you type, a count announced to screen readers, ten to twenty-five items at a time with "Show N more", and the choices kept in the address so a filtered view can be shared. Without JavaScript every item is listed.
+- **Honest tender status.** Each tender is a card with its number, status, opening and closing dates and its documents (advert, tender document, addenda) with their sizes. Status comes from the closing date, and a note at the top says plainly when nothing is open, with the route to supplier registration.
+- **Tables that work on phones.** The awarded contracts table scrolls inside its own labelled region on wide screens and turns each row into a labelled card on phones. Missing values show a dash that screen readers hear as "Not published".
+- **News that matches the homepage.** Story cards reuse the homepage news component (image, date, title, "Read more"). The featured story leads the News page; each article ends with three more stories and a way back.
+- **A long form made shorter.** Supplier registration asks for up to ten directors. Only the first shows at the start; "Add another director" adds the next and moves focus to it, and each added director can be removed. Required file uploads are now checked too.
+- **Report covers.** Annual reports show their covers, so the right year is quick to spot.
+
+Skill guidance applied (ui-ux-pro-max): `progressive-disclosure` (directors added one at a time, long lists a page at a time), `deep-linking` (filtered views have their own address), `empty-states` and `empty-data-state` (no matches, no open tenders, no upcoming events, each with a next step), `touch-target-size` (file links and pills at least 44px tall) and `content-priority` (on phones, the list comes before the section navigation). Beyond the skill: result counts and director changes are announced in status messages, and "Show more" moves focus to the first new item's title.

@@ -60,7 +60,7 @@ assets/fonts/               Inter variable + Maitree 700 (Latin, WOFF2)
 assets/img/                 CA logos, favicons, AVIF/WebP images
 assets/img/logos/           affiliation logos (official files from each organisation)
 assets/icons/sprite.svg     24px line icons, 1.75 stroke, round caps
-src/pages/<slug>.html       inner-page content: a front-matter comment (title, section, summary, layout, actions, updated) + HTML
+src/pages/<slug>.html       inner-page content: a front-matter comment (title, section, summary, layout, actions) + HTML
 src/data/documents.json     document lists (title, URL on the WordPress site, size, language)
 src/data/people.json        Board, Management and USAC: names, roles, order, photos and biographies (from the WordPress site)
 src/data/jobs.json          vacancies with deadlines (status is worked out at build time)
@@ -82,9 +82,9 @@ Every inner page shares one frame: the homepage header and menus (with the curre
 | Layout | Used for | What it adds |
 |---|---|---|
 | `page` (default) | Most pages | Section navigation beside the content (sticky on wide screens, an "In this section" disclosure on phones) built from the main menu, so both always match |
-| `landing` | Section overviews (About the Authority, Our Role in Your Protection) | Full-width panels instead of the side navigation; ends with the section's pages as link cards grouped as in the menu |
+| `landing` | Section overviews (About the Authority, Our Role in Your Protection, Procurement, Info Hub) | Full-width panels instead of the side navigation; ends with the section's pages as link cards grouped as in the menu (quick-link bands such as Portals become link pills) |
 
-Content blocks, all in `pages.css`: prose, image beside text, document lists (a file icon with a coloured type tag, the type and size in text, a download icon; Kiswahili titles marked `lang="sw"`), people grid, profile, link cards, feature cards, icon list, numbered list, steps (vertical, or in a row on landing pages), FAQs (native `<details>`), callouts, office cards, vacancies, Director General's message, forms and the IMEI helper.
+Content blocks, all in `pages.css`: prose, image beside text, document lists (a file icon with a coloured type tag, the type and size in text, a download icon; Kiswahili titles marked `lang="sw"`), people grid, profile, link cards, feature cards, icon list, numbered list, steps (vertical, or in a row on landing pages), FAQs (native `<details>`), callouts, office cards, vacancies, Director General's message, forms and the IMEI helper; for Procurement and the Info Hub also searchable listings, tender cards, a contracts table that stacks into cards on phones, report covers, story cards (the homepage news component), news articles, notices and link pills.
 
 Shortcodes in `src/pages/*.html`, expanded by `tools/build.py`:
 
@@ -96,6 +96,21 @@ Shortcodes in `src/pages/*.html`, expanded by `tools/build.py`:
 | `<!--related:pages /a/,/b/-->` | Link cards for pages anywhere in the main menu (the build stops if a path is not in the menu) |
 | `<!--jobs:all-->` | Vacancies with Open/Closed status and deadline |
 | `<!--video:ID title="…" label="…" duration="m:ss"-->` | A link that plays the video in the same in-page player as the homepage |
+| `<!--library:TYPE-->` (add `years` to show the year) | Documents of one type from the WordPress document library (`src/data/library.json`), e.g. `speeches`, `press-statements`, `procurement-plans` |
+| `<!--covers:LIST-->` | Reports shown by their covers (annual reports) |
+| `<!--tenders:all-->` / `<!--tenders:notice-->` | Every tender (search, status, financial year), after a note on whether any are open; or the note alone |
+| `<!--contracts:all-->` | The awarded contracts table, with search |
+| `<!--publications:all-->` / `<!--documents:all-->` | Publications (search, year) / the document library (search, type) |
+| `<!--news:all-->` / `<!--latestnews:N-->` | The featured story and every story (search, year) / the N latest stories |
+| `<!--directors:N-->` | N director fieldsets for supplier registration |
+
+News articles are generated from `src/data/news.json` at `/<slug>/` (the WordPress post URLs), with the featured image, the post content, three more stories and a link back to News.
+
+### Long lists
+
+Tenders (220), awarded contracts (336), publications (190), documents (115) and news (110) are long, so they share one listing pattern (`listing.js`). Every item is in the HTML: without JavaScript the whole list shows and the search tools stay hidden. With it, the list filters as you type (search matches every word, in titles and reference numbers) or choose a filter, shows a page at a time with a "Show N more" button that moves focus to the first new item, announces the count in a status message, and keeps the choices in the address (`?tender_status=closed&tender_fy=2024-25`), so a filtered view can be shared. The menu's Closed Tenders link uses this, and the section navigation highlights it when the address matches. Parameter names follow the WordPress archives (`tender_status`, `tender_fy`, `tender_q`, `contract_q`).
+
+Whether any tender is open is worked out from the closing dates when the pages are built, so rebuild (or render it in WordPress) for the note to stay current.
 
 ## Porting to WordPress
 
@@ -105,13 +120,13 @@ Shortcodes in `src/pages/*.html`, expanded by `tools/build.py`:
 - Videos: the row shows the channel's four latest videos (CA Kenya, channel ID `UCxg8WbhFIxqBqnWT9BaUDhQ`). In WordPress, fill it from the channel's public feed (`https://www.youtube.com/feeds/videos.xml?channel_id=UCxg8WbhFIxqBqnWT9BaUDhQ`) or the YouTube Data API on a schedule, cache the result, and copy each thumbnail into the media library so the page makes no requests to YouTube until someone presses play. Each card is a plain link to the video on YouTube; `videos.js` turns it into the in-page player.
 - In WordPress, a custom `Walker_Nav_Menu` can output this markup: use the menu item's built-in **Description** field for the one-liner and a CSS class (e.g. `icon-licence`) or a custom field for the sprite icon name; top-level items carry the section intro, and second-level items marked as groups become headings.
 - Inner pages: each generated page maps to one WordPress page with the same slug. Images and documents already link to the files uploaded to the WordPress site (`https://ca.programmer.co.ke/wp-content/uploads/…`), so nothing needs re-uploading; change `SITE` in `tools/build.py` if the domain changes before launch.
-- Forms keep the WordPress field names (`cak_data[…]`, `cak_file_evidence`) and post to `/wp-admin/admin-post.php`. In the theme, add the hidden `action`, `cak_form`, nonce and anti-spam fields where the comment marks them and remove `data-form-preview` (that attribute makes this static build show a notice instead of sending).
+- Forms keep the WordPress field names (`cak_data[…]`, `cak_file_evidence`; supplier registration uses `cak_data[director_N_…]` and `cak_file_director_N_id` for up to ten directors; staff verification posts `staff_no` and `surname`) and post to `/wp-admin/admin-post.php`. In the theme, add the hidden `action`, `cak_form`, nonce and anti-spam fields where the comment marks them and remove `data-form-preview` (that attribute makes this static build show a notice instead of sending).
 - People cards link to `/people/<slug>/`, the WordPress profile URLs; only people with a biography get a link. Vacancy cards link to `/careers/<slug>/`.
 - Character limits: news titles 80 (featured 100), summaries 140. In WordPress, enforce them server-side (e.g. `wp_html_excerpt()` / a word-boundary `mb_substr()`) and keep the full title in a visually hidden span, as `truncate.js` does.
 
 ## Behaviour without JavaScript
 
-All content is visible: footer sub-lists expanded, every project tile shown (filter chips hidden), ticker as a scrollable row, and desktop menu sections open on hover or keyboard focus (each with its own white background). The hero search works (plain `GET /?s=`). Burger, header search, FAB, cookie banner and the pause buttons are hidden.
+All content is visible: footer sub-lists expanded, every project tile shown (filter chips hidden), every tender, contract, publication, document and story listed (search tools and "Show more" hidden), all ten director fieldsets on supplier registration, ticker as a scrollable row, and desktop menu sections open on hover or keyboard focus (each with its own white background). The hero search works (plain `GET /?s=`). Burger, header search, FAB, cookie banner and the pause buttons are hidden.
 
 ## Hero sizing
 

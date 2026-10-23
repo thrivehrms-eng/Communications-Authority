@@ -8,6 +8,8 @@ const modules = {
   accordion: '[data-disclosure]',
   ticker: '[data-ticker]',
   filter: '[data-filter]',
+  listing: '[data-listing]',
+  directors: '[data-directors]',
   videos: '[data-videos]',
   subnav: '[data-subnav]',
   profiles: '[data-profiles]',
