@@ -1,0 +1,30 @@
+<!--
+title: Public Complaints
+section: consumer
+summary: Report corruption or misconduct connected with the Authority, its staff, or a licensed operator.
+-->
+<p class="ca-lead">All reports are treated as confidential. No personal information is collected and your identity remains anonymous unless you choose to leave contact details for follow-up.</p>
+<p>For a complaint about a specific communications, broadcasting or postal/courier service instead, use the <a href="/consumer-complaint/">consumer complaint form</a>.</p>
+<form class="ca-form" action="/wp-admin/admin-post.php" method="post" enctype="multipart/form-data" data-form data-form-preview>
+  <!-- WordPress adds the cak_form action (public-complaint), nonce and anti-spam fields here -->
+  <p class="ca-form__note">Fields marked <span class="ca-req">*</span> are required.</p>
+  <fieldset class="ca-fieldset">
+    <legend>Your report</legend>
+    <div class="ca-field" data-error="Enter the subject of your report"><label for="pc-subject">Subject of the report <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="pc-subject" name="cak_data[subject]" type="text" required></div>
+    <div class="ca-field" data-error="Tell us what happened"><label for="pc-details">What happened? <span class="ca-req" aria-hidden="true">*</span></label><textarea class="ca-input" id="pc-details" name="cak_data[details]" rows="8" required></textarea></div>
+    <div class="ca-field ca-field--date"><label for="pc-date">When did this happen?</label><input class="ca-input" id="pc-date" name="cak_data[occurred]" type="date"></div>
+    <div class="ca-field"><label for="pc-evidence">Evidence</label><p class="ca-hint" id="pc-evidence-hint">Accepted: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG. Maximum 10 MB.</p><input class="ca-input" id="pc-evidence" name="cak_file_evidence" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" aria-describedby="pc-evidence-hint"></div>
+  </fieldset>
+  <fieldset class="ca-fieldset">
+    <legend>Your details (optional)</legend>
+    <p>Reports may be made anonymously. If you would like to be contacted about your report, please leave your details.</p>
+    <div class="ca-fields-2">
+      <div class="ca-field"><label for="pc-name">Name</label><input class="ca-input" id="pc-name" name="cak_data[full_name]" type="text" autocomplete="name"></div>
+      <div class="ca-field"><label for="pc-email">Email address</label><input class="ca-input" id="pc-email" name="cak_data[email]" type="email" autocomplete="email"></div>
+      <div class="ca-field"><label for="pc-phone">Phone number</label><input class="ca-input" id="pc-phone" name="cak_data[phone]" type="tel" autocomplete="tel"></div>
+    </div>
+  </fieldset>
+  <div class="ca-form__actions"><button class="ca-btn ca-btn--primary" type="submit">Submit report<svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-right"/></svg></button></div>
+</form>
+<h2>Related</h2>
+<!--related:pages /whistle-blowing-policy/,/consumer-complaint/-->

@@ -1,0 +1,18 @@
+<!--
+title: Staff Verification Portal
+section: info
+summary: Confirm whether a person claiming to represent the Authority is a member of staff.
+description: Check whether a person claiming to represent the Communications Authority of Kenya is a genuine member of staff, using their staff number and surname.
+-->
+<p class="ca-lead">Use this service to confirm whether a person claiming to represent the Authority is a member of staff.</p>
+<form class="ca-form ca-form--narrow" action="/staff-verification-portal/" method="post" data-form data-form-preview>
+  <!-- WordPress adds the cak_verify_staff and nonce fields here and shows the result on the same page -->
+  <fieldset class="ca-fieldset">
+    <legend>Verify a CA officer</legend>
+    <p class="ca-hint" id="sv-hint">Ask the officer for their staff number and surname. Both are required.</p>
+    <div class="ca-field" data-error="Enter the officer’s staff number"><label for="sv-staff-no">Staff number <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sv-staff-no" name="staff_no" type="text" maxlength="64" autocomplete="off" aria-describedby="sv-hint" required></div>
+    <div class="ca-field" data-error="Enter the officer’s surname"><label for="sv-surname">Surname <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sv-surname" name="surname" type="text" minlength="2" maxlength="100" autocomplete="off" aria-describedby="sv-hint" required></div>
+  </fieldset>
+  <div class="ca-form__actions"><button class="ca-btn ca-btn--accent" type="submit">Verify<svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-right"/></svg></button></div>
+</form>
+<p>To report suspected impersonation, corruption or misconduct, use the <a href="/public-complaints/">confidential reporting form</a>.</p>

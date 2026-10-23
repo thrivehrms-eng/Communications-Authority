@@ -1,0 +1,141 @@
+/* Motion: entrances, scroll reveals and micro-interactions.
+   Transform/opacity/clip-path only; hover effects only on hover-capable pointers;
+   prefers-reduced-motion collapses all of it (base.css + JS checks). */
+:root {
+  --ease-expo: cubic-bezier(.16, 1, .3, 1);      /* arrivals */
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1); /* small pops */
+}
+
+@keyframes ca-rise-in { from { opacity: 0; transform: translateY(18px); } }
+@keyframes ca-slide-in { from { opacity: 0; transform: translateY(6px); } }
+@keyframes ca-fade-in { from { opacity: 0; } }
+@keyframes ca-kenburns { from { transform: scale(1.08); } }
+@keyframes ca-pulse-ring { from { transform: scale(1); opacity: .6; } to { transform: scale(1.75); opacity: 0; } }
+@keyframes ca-bob { 50% { transform: translateY(-3px); } }
+
+/* ── Hero: the welcome line, then each slide's lines in sequence; a slow zoom on the photo ── */
+.ca-hero__welcome { animation: ca-rise-in 700ms var(--ease-expo) both; }
+.ca-slide.is-active > * { animation: ca-rise-in 700ms var(--ease-expo) both; }
+.ca-slide.is-active .ca-slide__title { animation-delay: 80ms; }
+.ca-slide.is-active .ca-slide__title .ca-hl { animation: ca-rise-in 700ms var(--ease-expo) 200ms both; }
+.ca-slide.is-active .ca-slide__text { animation-delay: 300ms; }
+.ca-slide.is-active .ca-btn { animation-delay: 400ms; }
+.ca-hero__controls { animation: ca-fade-in 600ms var(--ease-std) 600ms both; }
+.ca-hero__bg { inset: -80px 0 0; will-change: transform; } /* room for the scroll parallax (motion.js) */
+.ca-hero__img.is-active img { animation: ca-kenburns 9s var(--ease-out) both; }
+.is-held .ca-hero__img.is-active img, .is-paused .ca-hero__img.is-active img { animation-play-state: paused; }
+
+/* ── Header scroll progress (orange on the white bar) ── */
+.ca-header__progress {
+  position: absolute; left: 20px; right: 20px; bottom: 0; height: 2px; border-radius: 2px;
+  background: var(--signature); transform: scaleX(var(--progress, 0)); transform-origin: left; pointer-events: none;
+}
+
+/* ── Scroll reveals: longer, softer arrivals and variants ── */
+html.js .reveal-run[data-reveal], html.js .reveal-run[data-reveal-stagger] > * { transition-duration: 800ms; transition-timing-function: var(--ease-expo); }
+html.js .reveal-pending[data-reveal="left"] { transform: translateX(-32px); }
+html.js .reveal-pending[data-reveal="right"] { transform: translateX(32px); }
+/* images open like a curtain while the photo settles. The clip sits on the inner <picture>:
+   a clip-path on the observed element itself would make it count as off-screen. */
+html.js .reveal-pending[data-reveal="curtain"] { opacity: 1; transform: none; }
+html.js [data-reveal="curtain"] > picture { display: block; clip-path: inset(0 0 0 0); transition: clip-path 1.1s var(--ease-expo); }
+html.js .reveal-pending[data-reveal="curtain"] > picture { clip-path: inset(0 0 100% 0); }
+html.js [data-reveal="curtain"] img { transition: transform 1.6s var(--ease-expo); }
+html.js .reveal-pending[data-reveal="curtain"] img { transform: scale(1.15); }
+html.js [data-reveal="curtain"] .ca-highlight__badge { transition: opacity 500ms var(--ease-std) 700ms, transform 700ms var(--ease-expo) 700ms; }
+html.js .reveal-pending[data-reveal="curtain"] .ca-highlight__badge { opacity: 0; transform: translateY(14px); }
+/* eyebrow bars draw in */
+.ca-eyebrow::before { transform-origin: left; transition: transform 700ms var(--ease-expo) 250ms; }
+html.js .reveal-pending .ca-eyebrow::before { transform: scaleX(0); }
+/* icon badges pop in after their card */
+.ca-icon-badge { transition: transform 450ms var(--ease-spring), background-color var(--dur-1) var(--ease-std); }
+html.js .reveal-pending .ca-icon-badge { transform: scale(.4) rotate(-20deg); }
+html.js .reveal-run .ca-icon-badge { transition-delay: calc(var(--reveal-delay, 0ms) + 220ms); }
+
+/* ── Menus open with a quick stagger ── */
+.ca-dropdown.is-open :is(.ca-mega__intro > *, .ca-dropdown__group, .ca-mega__quick) { animation: ca-slide-in 420ms var(--ease-expo) both; }
+.ca-dropdown.is-open .ca-mega__intro > :nth-child(2), .ca-dropdown.is-open .ca-dropdown__group:nth-child(2) { animation-delay: 40ms; }
+.ca-dropdown.is-open .ca-mega__intro > :nth-child(3), .ca-dropdown.is-open .ca-dropdown__group:nth-child(3) { animation-delay: 80ms; }
+.ca-dropdown.is-open .ca-mega__quick { animation-delay: 120ms; }
+.ca-overlay:not([hidden]) .ca-latest > li, .ca-search-panel:not([hidden]) .ca-faq > li, .ca-fab__card:not([hidden]) .ca-fab__list > li { animation: ca-slide-in 360ms var(--ease-expo) both; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(2) { animation-delay: 25ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(3) { animation-delay: 50ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(4) { animation-delay: 75ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(5) { animation-delay: 100ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(6) { animation-delay: 125ms; }
+:is(.ca-latest, .ca-faq, .ca-fab__list) li:nth-child(n+7) { animation-delay: 150ms; }
+
+/* ── Search: rotating hints fade between examples ── */
+.ca-find-search input::placeholder { transition: opacity 180ms var(--ease-std); }
+.ca-find-search input.is-swapping::placeholder { opacity: 0; }
+.ca-find-search__box:focus-within { box-shadow: 0 8px 24px rgb(29 81 163 / .14); }
+.ca-find-search__box > .ca-icon { transition: transform 300ms var(--ease-spring); }
+.ca-find-search__box:focus-within > .ca-icon { transform: scale(1.12) rotate(-8deg); }
+
+/* ── Help button says hello once ── */
+.ca-fab__btn::after { content: ""; position: absolute; inset: -1px; border-radius: 50%; border: 2px solid var(--primary); opacity: 0; pointer-events: none; }
+.ca-fab.is-hello .ca-fab__btn::after { animation: ca-pulse-ring 1.4s var(--ease-out) 2; }
+
+/* ── Project filter: tiles return one after another ── */
+.ca-projects > li { transition-delay: var(--filter-delay, 0ms); }
+
+/* ── Moving between pages: a quick cross-fade while the header stays put (browsers that support it) ── */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 220ms; animation-timing-function: var(--ease-std); }
+  .ca-header { view-transition-name: ca-header; }
+}
+
+/* ── Hover micro-interactions (pointer devices only) ── */
+@media (hover: hover) {
+  /* buttons lift; filled ones get a light sweep */
+  .ca-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgb(4 33 79 / .18); }
+  .ca-btn:active { transform: scale(.97); box-shadow: none; }
+  .ca-btn--primary, .ca-btn--accent { position: relative; overflow: hidden; }
+  .ca-btn--primary::after, .ca-btn--accent::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / .28) 50%, transparent 65%);
+    transform: translateX(-120%); transition: transform 0s;
+  }
+  .ca-btn--primary:hover::after, .ca-btn--accent:hover::after { transform: translateX(120%); transition: transform 750ms var(--ease-out); }
+
+  /* a soft light follows the pointer across dark cards and photo tiles */
+  [data-spotlight]::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; border-radius: inherit; pointer-events: none;
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / .14), transparent 65%);
+    opacity: 0; transition: opacity var(--dur-2) var(--ease-std);
+  }
+  [data-spotlight]:hover::before { opacity: 1; }
+
+  .ca-card:hover .ca-icon-badge, .ca-action:hover .ca-icon-badge { transform: scale(1.1) rotate(-6deg); background: rgb(255 255 255 / .2); }
+  .ca-dropdown .ca-mega__link:hover .ca-mega__icon { transform: scale(1.08) rotate(-6deg); }
+  .ca-task__icon { transition: transform 300ms var(--ease-spring); }
+  .ca-task:hover .ca-task__icon { transform: translateY(-2px) scale(1.15); }
+
+  .ca-tile__media { transition: transform 900ms var(--ease-expo); }
+  .ca-tile:hover .ca-tile__media { transform: scale(1.06); }
+  .ca-tile__title, .ca-tile__tags { transition: transform 500ms var(--ease-expo); }
+  .ca-tile:hover .ca-tile__title { transform: translateY(-6px); }
+  .ca-tile:hover .ca-tile__tags { transform: translateY(2px); }
+
+  /* videos: the still zooms gently and the play button fills blue */
+  .ca-video__thumb img { transition: transform 900ms var(--ease-expo); }
+  .ca-video:hover .ca-video__thumb img { transform: scale(1.05); }
+  .ca-video:hover .ca-video__play { transform: scale(1.12); background: var(--primary); color: var(--text-on-dark); }
+
+  /* news titles underline from left to right */
+  .ca-story__title a { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 450ms var(--ease-expo), color var(--dur-1) var(--ease-std); }
+  .ca-story:hover .ca-story__title a { background-size: 100% 1px; text-decoration: none; }
+  .ca-story__media img { transition: transform 900ms var(--ease-expo); }
+  .ca-story:hover .ca-story__media img { transform: scale(1.05); }
+
+  .ca-logo-tile { transition: transform var(--dur-2) var(--ease-expo), box-shadow var(--dur-2) var(--ease-std), color var(--dur-1) var(--ease-std), border-color var(--dur-1) var(--ease-std), filter var(--dur-1); }
+  .ca-logo-tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-header); }
+  .ca-social a { transition: transform 300ms var(--ease-spring), background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std); }
+  .ca-social a:hover { transform: translateY(-3px); }
+  .ca-hero__ctrl { transition: transform 250ms var(--ease-spring), background-color var(--dur-1) var(--ease-std); }
+  .ca-hero__ctrl:hover { transform: scale(1.08); }
+  .ca-footer__top:hover .ca-icon { animation: ca-bob 600ms var(--ease-spring); }
+  .ca-latest__card { transition: background-color var(--dur-1) var(--ease-std), transform var(--dur-2) var(--ease-expo); }
+  .ca-latest__card:hover { transform: translateY(-3px); }
+}

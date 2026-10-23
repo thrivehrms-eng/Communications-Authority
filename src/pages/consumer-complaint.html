@@ -1,0 +1,84 @@
+<!--
+title: File a Consumer Complaint
+section: consumer
+summary: Use this form once you have already raised the issue with your service provider and it remains unresolved.
+description: File a complaint with the Communications Authority of Kenya about a licensed communications, broadcasting or postal/courier service that your provider has not resolved.
+-->
+<div class="ca-callout">
+  <svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#info"/></svg>
+  <p class="ca-callout__title">Before you start</p>
+  <p>Please contact your service provider first: the Authority handles complaints that the provider has not resolved. Include your contact details, a description of the issue, relevant dates, and any reference number your provider gave you, so the Consumer Protection and Advocacy Department can follow up.</p>
+  <p>Filing a complaint is free of charge. <a href="/our-role-in-your-protection/">How complaints are handled</a></p>
+</div>
+<form class="ca-form" action="/wp-admin/admin-post.php" method="post" enctype="multipart/form-data" data-form data-form-preview>
+  <!-- WordPress adds the cak_form action (consumer-complaint), nonce and anti-spam fields here -->
+  <p class="ca-form__note">Fields marked <span class="ca-req">*</span> are required.</p>
+  <fieldset class="ca-fieldset">
+    <legend>Your details</legend>
+    <div class="ca-field" data-error="Enter your full name"><label for="cc-name">Full name <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="cc-name" name="cak_data[full_name]" type="text" autocomplete="name" required></div>
+    <div class="ca-fields-2">
+      <div class="ca-field"><label for="cc-id">ID / Passport number</label><input class="ca-input" id="cc-id" name="cak_data[id_number]" type="text"></div>
+      <div class="ca-field" data-error="Enter your email address"><label for="cc-email">Email address <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="cc-email" name="cak_data[email]" type="email" autocomplete="email" required></div>
+      <div class="ca-field" data-error="Enter your phone number"><label for="cc-phone">Phone number <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="cc-phone" name="cak_data[phone]" type="tel" autocomplete="tel" required></div>
+      <div class="ca-field"><label for="cc-phone2">Alternative telephone</label><input class="ca-input" id="cc-phone2" name="cak_data[alternative_phone]" type="tel"></div>
+      <div class="ca-field"><label for="cc-address">Address (P.O. Box)</label><input class="ca-input" id="cc-address" name="cak_data[address]" type="text" autocomplete="address-line1"></div>
+      <div class="ca-field"><label for="cc-postcode">Postcode</label><input class="ca-input" id="cc-postcode" name="cak_data[postcode]" type="text" autocomplete="postal-code"></div>
+      <div class="ca-field"><label for="cc-city">City / town</label><input class="ca-input" id="cc-city" name="cak_data[city]" type="text" autocomplete="address-level2"></div>
+      <div class="ca-field"><label for="cc-business">Nature of business</label><input class="ca-input" id="cc-business" name="cak_data[business]" type="text"></div>
+    </div>
+  </fieldset>
+  <fieldset class="ca-fieldset">
+    <legend>Service provider details</legend>
+    <p>Provide details of the service provider you are complaining about.</p>
+    <div class="ca-field" data-error="Enter the name of the service provider"><label for="cc-provider">Service provider complained against <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="cc-provider" name="cak_data[provider]" type="text" required></div>
+    <div class="ca-fields-2">
+      <div class="ca-field"><label for="cc-p-email">Service provider email address</label><input class="ca-input" id="cc-p-email" name="cak_data[provider_email]" type="email"></div>
+      <div class="ca-field"><label for="cc-p-mobile">Service provider mobile number</label><input class="ca-input" id="cc-p-mobile" name="cak_data[provider_phone]" type="tel"></div>
+      <div class="ca-field"><label for="cc-p-tel">Service provider telephone</label><input class="ca-input" id="cc-p-tel" name="cak_data[provider_telephone]" type="tel"></div>
+      <div class="ca-field"><label for="cc-p-address">Service provider address (P.O. Box)</label><input class="ca-input" id="cc-p-address" name="cak_data[provider_address]" type="text"></div>
+      <div class="ca-field"><label for="cc-p-postcode">Service provider postcode</label><input class="ca-input" id="cc-p-postcode" name="cak_data[provider_postcode]" type="text"></div>
+      <div class="ca-field"><label for="cc-p-city">Service provider city / town</label><input class="ca-input" id="cc-p-city" name="cak_data[provider_city]" type="text"></div>
+      <div class="ca-field"><label for="cc-p-business">Service provider nature of business</label><input class="ca-input" id="cc-p-business" name="cak_data[provider_business]" type="text"></div>
+    </div>
+  </fieldset>
+  <fieldset class="ca-fieldset">
+    <legend>Your complaint</legend>
+    <div class="ca-field" data-error="Select the type of service"><label for="cc-category">Type of service <span class="ca-req" aria-hidden="true">*</span></label>
+      <select class="ca-input" id="cc-category" name="cak_data[category]" required>
+        <option value="">Please choose</option>
+        <option value="mobile">Mobile / telephone</option>
+        <option value="internet">Internet</option>
+        <option value="broadcasting">Broadcasting</option>
+        <option value="postal">Postal / courier</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <fieldset class="ca-group" data-required data-error="Select at least one type of complaint">
+      <legend>Type of complaint <span class="ca-req" aria-hidden="true">*</span></legend>
+      <p class="ca-hint">Select all that apply.</p>
+      <div class="ca-choices">
+        <label class="ca-choice"><input type="checkbox" id="cc-type-tariffs" name="cak_data[complaint_type][]" value="tariffs">High tariffs</label>
+        <label class="ca-choice"><input type="checkbox" id="cc-type-quality" name="cak_data[complaint_type][]" value="quality">Poor quality of service</label>
+        <label class="ca-choice"><input type="checkbox" id="cc-type-telephone" name="cak_data[complaint_type][]" value="telephone">Faulty telephone lines</label>
+        <label class="ca-choice"><input type="checkbox" id="cc-type-billing" name="cak_data[complaint_type][]" value="billing">Billing inaccuracy</label>
+        <label class="ca-choice"><input type="checkbox" id="cc-type-advertising" name="cak_data[complaint_type][]" value="advertising">False and misleading advertisements</label>
+        <label class="ca-choice"><input type="checkbox" id="cc-type-privacy" name="cak_data[complaint_type][]" value="privacy">Intrusion of privacy</label>
+        <label class="ca-choice"><input type="checkbox" id="cc-type-safety" name="cak_data[complaint_type][]" value="safety">Health and safety</label>
+        <label class="ca-choice"><input type="checkbox" id="cc-type-service" name="cak_data[complaint_type][]" value="customer-service">Poor customer service</label>
+        <label class="ca-choice"><input type="checkbox" id="cc-type-other" name="cak_data[complaint_type][]" value="other">Other</label>
+      </div>
+    </fieldset>
+    <div class="ca-field"><label for="cc-ref">Reference given by your provider</label><p class="ca-hint" id="cc-ref-hint">If you have already reported this to them.</p><input class="ca-input" id="cc-ref" name="cak_data[provider_ref]" type="text" aria-describedby="cc-ref-hint"></div>
+    <div class="ca-field" data-error="Describe the problem"><label for="cc-details">Describe the problem <span class="ca-req" aria-hidden="true">*</span></label><textarea class="ca-input" id="cc-details" name="cak_data[details]" rows="8" required></textarea></div>
+    <fieldset class="ca-group" data-required data-error="Select yes or no">
+      <legend>Have you exhausted the complaints mechanism provided by the service provider? <span class="ca-req" aria-hidden="true">*</span></legend>
+      <div class="ca-choices ca-choices--inline">
+        <label class="ca-choice"><input type="radio" id="cc-escalated-yes" name="cak_data[escalated]" value="yes" required>Yes</label>
+        <label class="ca-choice"><input type="radio" id="cc-escalated-no" name="cak_data[escalated]" value="no">No</label>
+      </div>
+    </fieldset>
+    <div class="ca-field"><label for="cc-evidence">Supporting documents</label><p class="ca-hint" id="cc-evidence-hint">Accepted: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG. Maximum 10 MB.</p><input class="ca-input" id="cc-evidence" name="cak_file_evidence" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" aria-describedby="cc-evidence-hint"></div>
+    <div class="ca-field" data-error="Confirm the declaration to submit your complaint"><label class="ca-choice ca-choice--consent" for="cc-consent"><input type="checkbox" id="cc-consent" name="cak_data[consent]" value="1" required><span>I confirm the information given is true, and I consent to the Authority sharing it with the service provider in order to resolve this complaint. <span class="ca-req" aria-hidden="true">*</span></span></label></div>
+  </fieldset>
+  <div class="ca-form__actions"><button class="ca-btn ca-btn--accent" type="submit">Submit complaint<svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-right"/></svg></button></div>
+</form>

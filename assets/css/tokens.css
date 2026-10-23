@@ -1,0 +1,105 @@
+/* Design tokens: CA brand (verbatim from the current theme) mapped onto the concept layout. Do not add colours. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2-variations"), url("../fonts/inter-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Maitree";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("../fonts/maitree-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ── CA palette (verbatim from the current theme; do not add colours) ── */
+  --ca-primary-50:  #F2F7FF;
+  --ca-primary-500: #1D51A3;
+  --ca-primary-600: #0B4191;
+  --ca-primary-700: #00327C;
+  --ca-primary-900: #04214F;
+  --ca-secondary-500: #EC5B13;
+  --ca-secondary-600: #BD4400;
+  --ca-accent-500:  #38C3FF;
+  --ca-accent-600:  #008CBC;
+  --ca-neutral-50:  #FAFAFA;
+  --ca-neutral-200: #E4E5E6;
+  --ca-neutral-500: #7D8184;
+  --ca-neutral-700: #3D4043;
+  --ca-neutral-900: #131415;
+  --ca-success-500: #22A06B;
+  --ca-danger-500:  #DC262F;
+  --ca-warning-500: #E5A000;
+  --ca-info-500:    #2563EB;
+  --ca-surface-background: #FAFAFA;
+  --ca-surface-card: #FFFFFF;
+  --ca-text-strong:  #131415;
+  --ca-text-medium:  #737779;
+  --ca-border-default: #E4E5E6;
+
+  /* ── Semantic roles (concept layout → CA colours) ── */
+  --canvas:         var(--ca-neutral-200);
+  --surface:        var(--ca-surface-card);
+  --surface-tint:   var(--ca-primary-50);
+  --border:         var(--ca-border-default);
+  --primary:        var(--ca-primary-500);
+  --primary-hover:  var(--ca-primary-600);
+  --dark:           var(--ca-primary-900);
+  --dark-2:         var(--ca-primary-700);
+  --accent:         var(--ca-accent-500);
+  --signature:      var(--ca-secondary-500);  /* decorative orange: bars, dots, icon badges, progress; never text on white */
+  --action:         var(--ca-secondary-600);  /* orange actions + orange text: white on it 5.3:1, it on white 5.3:1 */
+  --text:           var(--ca-text-strong);
+  --text-muted:     var(--ca-neutral-700);
+  --text-meta:      var(--ca-text-medium);
+  --text-on-dark:   #FFFFFF;
+  --text-on-dark-muted: rgb(255 255 255 / .86);  /* ≥ 9:1 on --dark-2/--dark; use full white on --primary */
+  --line-on-dark:   rgb(255 255 255 / .12);
+
+  /* Shape */
+  --radius-panel: 28px;
+  --radius-card:  20px;
+  --radius-media: 16px;
+  --radius-pill:  100px;
+
+  /* Space */
+  --gutter:       clamp(10px, 1.2vw, 22px);
+  --panel-pad-y:  clamp(56px, 7vw, 96px);
+  --content-max:  1200px;
+  --content-pad:  clamp(20px, 5vw, 72px);
+  --header-h:     76px;
+
+  /* Elevation (tinted with CA navy) */
+  --shadow-header: 0 6px 24px rgb(4 33 79 / .08);
+  --shadow-card:   0 10px 30px rgb(4 33 79 / .12);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0, 0, .36, 1);
+  --ease-std: cubic-bezier(.4, 0, .2, 1);
+  --dur-1: 160ms; --dur-2: 280ms; --dur-3: 600ms;
+
+  /* Layers (z-index scale) */
+  --z-fab: 30; --z-overlay: 40; --z-header: 50; --z-skip: 100;
+
+  /* Focus */
+  --focus: 3px solid var(--ca-secondary-600);
+  --focus-on-dark: 3px solid var(--ca-accent-500);
+
+  /* Type */
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: "Maitree", Georgia, "Times New Roman", serif;
+  --fs-h1:    clamp(2.4rem, 5.5vw, 4.25rem);
+  --fs-h2:    clamp(1.9rem, 3.4vw, 2.75rem);
+  --fs-title: clamp(1.15rem, 1.8vw, 1.6rem);
+  --fs-h3:    clamp(1.1rem, 1.5vw, 1.25rem);
+
+  color-scheme: light;
+}
+
+@media (max-width: 1099px) { :root { --header-h: 68px; } }
+@media (max-width: 767px)  { :root { --gutter: 10px; } }

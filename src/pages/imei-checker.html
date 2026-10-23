@@ -1,0 +1,35 @@
+<!--
+title: IMEI Checker
+section: consumer
+summary: Check that a mobile phone is genuine before you buy it, using its 15-digit IMEI number. The check is free.
+-->
+<h2>How to verify your IMEI number</h2>
+<ol class="ca-steps" role="list">
+  <li class="ca-step"><p class="ca-step__title">Dial <strong>*#06#</strong> on the phone</p><p>The phone shows its 15-digit IMEI number.</p></li>
+  <li class="ca-step"><p class="ca-step__title">Text the 15-digit number to <strong>1555</strong></p><p>This service is free.</p></li>
+  <li class="ca-step"><p class="ca-step__title">Read the reply</p><p>You will get a response on whether the IMEI number is valid, including the model of the mobile phone.</p></li>
+</ol>
+<div class="ca-tool" data-imei>
+  <h2>Prepare your SMS</h2>
+  <p>Type the number to check it is entered correctly before you send it.</p>
+  <form class="ca-tool__form" novalidate>
+    <div class="ca-tool__row">
+      <div class="ca-field"><label for="imei-number">IMEI number</label><input class="ca-input" id="imei-number" type="text" inputmode="numeric" autocomplete="off" maxlength="20" aria-describedby="imei-count"></div>
+      <button class="ca-btn ca-btn--primary" type="submit">Check the number</button>
+    </div>
+    <p class="ca-tool__count" id="imei-count" data-imei-count>0 of 15 digits</p>
+  </form>
+  <div class="ca-tool__result" data-imei-result aria-live="polite" hidden></div>
+  <p class="ca-hint">This only checks the number is typed correctly. Only the reply from 1555 tells you whether a phone is genuine.</p>
+</div>
+<h2>Knowing your mobile phone IMEI number</h2>
+<p>The IMEI (International Mobile Equipment Identity) number is a unique 15-digit serial number identifying a mobile phone device, stored in the Equipment Identity Register (EIR), a database containing information about valid mobile phones worldwide.</p>
+<p>All genuine mobile devices have valid IMEI numbers and meet international technical standards of manufacture and safety. Counterfeit devices do not have valid IMEI numbers, do not meet these standards, and can have an adverse impact on consumer health, as their quality cannot be ascertained.</p>
+<p>As part of its consumer protection mandate, the Authority is responsible for ensuring consumers access ICT goods and services of the highest quality, and type approves or authorises the sale of mobile devices and other equipment in the country. Consumers are encouraged to purchase such devices from authorised vendors, who are required to display a Vendor Licence from the Authority.</p>
+<div class="ca-callout">
+  <svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#help"/></svg>
+  <p class="ca-callout__title">Need help?</p>
+  <p>For clarification, call <a href="tel:+254204242000">+254 (20) 4242000</a>, <a href="tel:+254703042000">+254 703 042 000</a> or <a href="tel:+254730172000">+254 730 172 000</a>, or email <a href="mailto:info@ca.go.ke">info@ca.go.ke</a>.</p>
+</div>
+<h2>Related</h2>
+<!--related:pages /type-approval/,/consumer-complaint/,/consumer-education-and-outreach/-->

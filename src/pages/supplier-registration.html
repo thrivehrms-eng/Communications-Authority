@@ -1,0 +1,83 @@
+<!--
+title: Supplier Registration
+section: procurement
+summary: Register your business to be considered for pre-qualification and future tender opportunities.
+description: Register your business with the Communications Authority of Kenya for consideration in pre-qualification and future procurement opportunities.
+-->
+<div class="ca-callout">
+  <svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#info"/></svg>
+  <p class="ca-callout__title">Before you start</p>
+  <p>The Authority procures goods, works and services under the Public Procurement and Asset Disposal Act, 2015. See the current <a href="/procurement/">procurement plans</a> and <a href="/tenders/">tenders</a> for what is being procured.</p>
+  <p>You will need your business registration details, each director’s details and a copy of their national ID, a power of attorney for the contact person, and your certificate of incorporation and tax compliance certificate.</p>
+</div>
+<form class="ca-form" action="/wp-admin/admin-post.php" method="post" enctype="multipart/form-data" data-form data-form-preview>
+  <!-- WordPress adds the cak_form action (supplier-registration), nonce and anti-spam fields here -->
+  <p class="ca-form__note">Fields marked <span class="ca-req">*</span> are required.</p>
+  <fieldset class="ca-fieldset">
+    <legend>Business details</legend>
+    <div class="ca-field" data-error="Enter the registered business name"><label for="sr-company">Registered business name <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-company" name="cak_data[company_name]" type="text" autocomplete="organization" required></div>
+    <div class="ca-fields-2">
+      <div class="ca-field" data-error="Enter the certificate of incorporation number"><label for="sr-reg">Certificate of incorporation number <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-reg" name="cak_data[reg_number]" type="text" required></div>
+      <div class="ca-field" data-error="Enter the business’s KRA PIN"><label for="sr-pin">KRA PIN <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-pin" name="cak_data[kra_pin]" type="text" required></div>
+      <div class="ca-field" data-error="Enter the country of incorporation"><label for="sr-country">Country of incorporation <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-country" name="cak_data[country]" type="text" autocomplete="country-name" required></div>
+      <div class="ca-field" data-error="Enter the county where the business is located"><label for="sr-county">County located <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-county" name="cak_data[county]" type="text" required></div>
+      <div class="ca-field" data-error="Enter the e-GP registration number"><label for="sr-egp">e-GP registration number <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-egp" name="cak_data[egp_number]" type="text" required></div>
+      <div class="ca-field" data-error="Select the type of ownership"><label for="sr-ownership">Ownership type <span class="ca-req" aria-hidden="true">*</span></label>
+        <select class="ca-input" id="sr-ownership" name="cak_data[ownership]" required>
+          <option value="">Please choose</option>
+          <option value="company">Limited company</option>
+          <option value="sole-proprietor">Sole proprietor</option>
+          <option value="partnership">Partnership</option>
+          <option value="cooperative">Co-operative society</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="ca-field" data-error="Enter the company email address"><label for="sr-email">Company email address <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-email" name="cak_data[company_email]" type="email" autocomplete="email" required></div>
+      <div class="ca-field" data-error="Enter the company mobile number"><label for="sr-phone">Company mobile number <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-phone" name="cak_data[company_phone]" type="tel" autocomplete="tel" required></div>
+      <div class="ca-field"><label for="sr-phone2">Alternative telephone</label><input class="ca-input" id="sr-phone2" name="cak_data[alternative_phone]" type="tel"></div>
+      <div class="ca-field"><label for="sr-business">Nature of business</label><input class="ca-input" id="sr-business" name="cak_data[business]" type="text"></div>
+    </div>
+    <div class="ca-field"><label for="sr-address">Postal address</label><textarea class="ca-input ca-input--short" id="sr-address" name="cak_data[address]" rows="3" autocomplete="street-address"></textarea></div>
+    <div class="ca-fields-2">
+      <div class="ca-field"><label for="sr-postcode">Postcode</label><input class="ca-input" id="sr-postcode" name="cak_data[postcode]" type="text" autocomplete="postal-code"></div>
+      <div class="ca-field"><label for="sr-city">City / town</label><input class="ca-input" id="sr-city" name="cak_data[city]" type="text" autocomplete="address-level2"></div>
+    </div>
+  </fieldset>
+  <!--directors:10-->
+  <fieldset class="ca-fieldset">
+    <legend>Contact person</legend>
+    <div class="ca-fields-2">
+      <div class="ca-field" data-error="Enter the contact person’s name"><label for="sr-contact">Name <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-contact" name="cak_data[contact_name]" type="text" autocomplete="name" required></div>
+      <div class="ca-field" data-error="Enter the contact person’s job title"><label for="sr-designation">Job title / designation <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-designation" name="cak_data[designation]" type="text" autocomplete="organization-title" required></div>
+      <div class="ca-field" data-error="Enter the contact person’s phone number"><label for="sr-c-phone">Phone number <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-c-phone" name="cak_data[phone]" type="tel" required></div>
+      <div class="ca-field" data-error="Enter the contact person’s email address"><label for="sr-c-email">Email address <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-c-email" name="cak_data[email]" type="email" required></div>
+    </div>
+    <div class="ca-field" data-error="Upload the power of attorney"><label for="sr-attorney">Power of attorney <span class="ca-req" aria-hidden="true">*</span></label><p class="ca-hint" id="sr-attorney-hint">Accepted: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG. Maximum 10 MB.</p><input class="ca-input" id="sr-attorney" name="cak_file_power_attorney" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" aria-describedby="sr-attorney-hint" required></div>
+  </fieldset>
+  <fieldset class="ca-fieldset">
+    <legend>Supplier category</legend>
+    <div class="ca-field" data-error="Select the category of supply"><label for="sr-category">Category of supply <span class="ca-req" aria-hidden="true">*</span></label>
+      <select class="ca-input" id="sr-category" name="cak_data[category]" required>
+        <option value="">Please choose</option>
+        <option value="goods">Goods</option>
+        <option value="works">Works</option>
+        <option value="services">Services</option>
+        <option value="consultancy">Consultancy</option>
+      </select>
+    </div>
+  </fieldset>
+  <fieldset class="ca-fieldset">
+    <legend>Documents</legend>
+    <p class="ca-hint">Accepted: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG. Maximum 10 MB each.</p>
+    <div class="ca-field" data-error="Upload the certificate of incorporation"><label for="sr-cert">Certificate of incorporation <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-cert" name="cak_file_cert_incorp" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" required></div>
+    <div class="ca-field" data-error="Upload the tax compliance certificate"><label for="sr-tax">Tax compliance certificate <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="sr-tax" name="cak_file_tax_compliance" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" required></div>
+    <div class="ca-field"><label for="sr-agpo">AGPO certificate (where applicable)</label><input class="ca-input" id="sr-agpo" name="cak_file_agpo_certificate" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png"></div>
+  </fieldset>
+  <fieldset class="ca-fieldset">
+    <legend>Application forms</legend>
+    <p>Download the relevant application forms from the current tender notice, complete them and upload them with the supporting documents required for your selected category.</p>
+    <div class="ca-field" data-error="Upload the completed application form"><label for="sr-template">Completed application form <span class="ca-req" aria-hidden="true">*</span></label><p class="ca-hint" id="sr-template-hint">Accepted: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG. Maximum 10 MB.</p><input class="ca-input" id="sr-template" name="cak_file_filled_template" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" aria-describedby="sr-template-hint" required></div>
+    <div class="ca-field" data-error="Confirm the declaration to submit your registration"><label class="ca-choice ca-choice--consent" for="sr-consent"><input type="checkbox" id="sr-consent" name="cak_data[consent]" value="1" required><span>I confirm that the information and documents provided are true and accurate. <span class="ca-req" aria-hidden="true">*</span></span></label></div>
+  </fieldset>
+  <div class="ca-form__actions"><button class="ca-btn ca-btn--accent" type="submit">Submit registration<svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-right"/></svg></button></div>
+</form>

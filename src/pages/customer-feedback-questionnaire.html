@@ -1,0 +1,40 @@
+<!--
+title: Customer Feedback Questionnaire
+section: consumer
+summary: Share general feedback on the Authority’s services, communication or public engagement.
+-->
+<p class="ca-lead">Tell us about your experience of dealing with the Authority.</p>
+<p>This questionnaire is separate from a formal complaint: use the <a href="/consumer-complaint/">consumer complaint</a> or <a href="/public-complaints/">public complaints</a> forms for those.</p>
+<form class="ca-form" action="/wp-admin/admin-post.php" method="post" enctype="multipart/form-data" data-form data-form-preview>
+  <!-- WordPress adds the cak_form action (feedback), nonce and anti-spam fields here -->
+  <p class="ca-form__note">Fields marked <span class="ca-req">*</span> are required.</p>
+  <fieldset class="ca-fieldset">
+    <legend>Your feedback</legend>
+    <div class="ca-fields-2">
+      <div class="ca-field"><label for="fb-name">Full name</label><input class="ca-input" id="fb-name" name="cak_data[full_name]" type="text" autocomplete="name"></div>
+      <div class="ca-field"><label for="fb-email">Email address</label><input class="ca-input" id="fb-email" name="cak_data[email]" type="email" autocomplete="email"></div>
+    </div>
+    <div class="ca-field" data-error="Select the service you used"><label for="fb-service">Which service did you use? <span class="ca-req" aria-hidden="true">*</span></label>
+      <select class="ca-input" id="fb-service" name="cak_data[service]" required>
+        <option value="">Please choose</option>
+        <option value="licensing">Licensing</option>
+        <option value="complaints">Complaints handling</option>
+        <option value="type_appr">Type approval</option>
+        <option value="info">Information request</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <fieldset class="ca-group" data-required data-error="Select how satisfied you were">
+      <legend>How satisfied were you? <span class="ca-req" aria-hidden="true">*</span></legend>
+      <div class="ca-choices ca-choices--rating">
+        <label class="ca-choice"><input type="radio" id="fb-rating-5" name="cak_data[rating]" value="5" required>Very satisfied</label>
+        <label class="ca-choice"><input type="radio" id="fb-rating-4" name="cak_data[rating]" value="4">Satisfied</label>
+        <label class="ca-choice"><input type="radio" id="fb-rating-3" name="cak_data[rating]" value="3">Neutral</label>
+        <label class="ca-choice"><input type="radio" id="fb-rating-2" name="cak_data[rating]" value="2">Dissatisfied</label>
+        <label class="ca-choice"><input type="radio" id="fb-rating-1" name="cak_data[rating]" value="1">Very dissatisfied</label>
+      </div>
+    </fieldset>
+    <div class="ca-field"><label for="fb-comments">Comments</label><textarea class="ca-input" id="fb-comments" name="cak_data[comments]" rows="6"></textarea></div>
+  </fieldset>
+  <div class="ca-form__actions"><button class="ca-btn ca-btn--primary" type="submit">Send feedback<svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-right"/></svg></button></div>
+</form>

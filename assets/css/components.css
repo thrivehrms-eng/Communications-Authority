@@ -1,0 +1,165 @@
+/* Components: buttons, links, cards, accordion, tiles, chips, social, logo tiles */
+
+/* 1. Pill buttons */
+.ca-btn {
+  --btn-bg: var(--primary); --btn-fg: var(--text-on-dark); --btn-bd: var(--primary);
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 54px; padding: 0 28px;
+  border: 1.5px solid var(--btn-bd); border-radius: var(--radius-pill);
+  background: var(--btn-bg); color: var(--btn-fg);
+  font-size: 1.0625rem; font-weight: 600; line-height: 1.2; text-decoration: none; text-align: center;
+  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std), border-color var(--dur-1) var(--ease-std), transform var(--dur-1) var(--ease-std), filter var(--dur-1) var(--ease-std);
+}
+.ca-btn:active { transform: scale(.98); }
+.ca-btn .ca-icon { width: 20px; height: 20px; transition: transform var(--dur-1) var(--ease-std); }
+.ca-btn:hover .ca-icon, .ca-btn:focus-visible .ca-icon, .ca-link:hover .ca-icon, .ca-link:focus-visible .ca-icon { transform: translateX(3px); }
+.ca-btn--primary:hover { --btn-bg: var(--primary-hover); --btn-bd: var(--primary-hover); }
+.ca-btn--white { --btn-bg: var(--surface); --btn-fg: var(--primary); --btn-bd: var(--surface); }
+.ca-btn--white:hover { --btn-bg: var(--surface-tint); --btn-fg: var(--primary-hover); --btn-bd: var(--surface-tint); }
+.ca-btn--outline-light { --btn-bg: transparent; --btn-fg: var(--text-on-dark); --btn-bd: var(--text-on-dark); }
+.ca-btn--outline-light:hover { --btn-bg: var(--surface); --btn-fg: var(--primary); }
+.ca-btn--outline { --btn-bg: transparent; --btn-fg: var(--primary); --btn-bd: var(--primary); }
+.ca-btn--outline:hover { --btn-bg: var(--primary); --btn-fg: var(--text-on-dark); }
+.ca-btn--sm { min-height: 44px; padding: 0 20px; font-size: .9375rem; }
+/* orange action: "File a complaint" everywhere */
+.ca-btn--accent { --btn-bg: var(--action); --btn-fg: var(--text-on-dark); --btn-bd: var(--action); }
+.ca-btn--accent:hover { filter: brightness(.88); }
+
+/* 2. Text link with arrow */
+.ca-link {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+  color: var(--primary); font-weight: 600; text-decoration: none;
+}
+.ca-link:hover { text-decoration: underline; }
+.ca-link .ca-icon { width: 20px; height: 20px; color: var(--action); transition: transform var(--dur-1) var(--ease-std); }
+.ca-on-dark .ca-link .ca-icon { color: currentColor; }
+.ca-on-dark .ca-link { color: var(--text-on-dark); }
+.ca-ext { display: inline-block; width: 1em; height: 1em; margin-left: .25em; vertical-align: -.1em; }
+
+/* 3. Service card */
+.ca-card {
+  --text-on-dark-muted: var(--text-on-dark);
+  position: relative; display: flex; flex-direction: column; gap: 12px;
+  padding: clamp(24px, 2.2vw, 28px); border-radius: var(--radius-card);
+  background: var(--primary); color: var(--text-on-dark);
+  transition: background-color var(--dur-2) var(--ease-std), transform var(--dur-2) var(--ease-std);
+}
+.ca-card:hover, .ca-card:focus-within { background: var(--primary-hover); transform: translateY(-2px); }
+.ca-card:active { transform: scale(.99); }
+/* icon badge (service cards, commitments, stay safe) */
+/* used on dark surfaces: a glass chip with a cyan icon (orange is kept for light backdrops) */
+.ca-icon-badge { display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 14px; background: rgb(255 255 255 / .12); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .16); color: var(--accent); }
+.ca-icon-badge .ca-icon { width: 22px; height: 22px; }
+@media (max-width: 639px) { .ca-icon-badge { width: 40px; height: 40px; border-radius: 12px; } .ca-icon-badge .ca-icon { width: 20px; height: 20px; } }
+.ca-card__icon { margin-bottom: 4px; }
+.ca-card h3 a { color: inherit; text-decoration: none; }
+.ca-card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.ca-card h3 a:focus-visible { outline: none; }
+.ca-card:has(h3 a:focus-visible) { outline: var(--focus); outline-offset: 3px; }
+.ca-card p { color: var(--text-on-dark-muted); }
+.ca-card__more { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.ca-card:hover .ca-card__more .ca-icon { transform: translateX(3px); }
+.ca-card__more .ca-icon { width: 20px; height: 20px; transition: transform var(--dur-1) var(--ease-std); }
+
+/* 5. Project tile */
+.ca-tile {
+  position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; overflow: hidden;
+  border-radius: var(--radius-card); color: var(--text-on-dark); text-decoration: none; isolation: isolate;
+  transition: opacity var(--dur-2) var(--ease-std), transform var(--dur-2) var(--ease-std);
+}
+.ca-tile__media {
+  position: absolute; inset: 0; z-index: -2; display: grid; place-items: center; padding: 120px 16px 0;
+  background: linear-gradient(160deg, var(--primary), var(--dark-2) 55%, var(--dark));
+  font-size: .8125rem; color: var(--text-on-dark-muted); transition: transform var(--dur-3) var(--ease-out);
+}
+.ca-tile__media picture, .ca-tile__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ca-tile__media > span { visibility: hidden; }
+.show-placeholders .ca-tile__media > span { visibility: visible; }
+.ca-tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(4 33 79 / .92), rgb(4 33 79 / .15) 60%, transparent); }
+.ca-tile:hover .ca-tile__media, .ca-tile:focus-visible .ca-tile__media { transform: scale(1.04); }
+.ca-tile__tags { position: absolute; top: 16px; left: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.ca-tag { padding: 4px 12px; border-radius: var(--radius-pill); background: rgb(4 33 79 / .55); border: 1px solid rgb(255 255 255 / .28); font-size: .875rem; font-weight: 500; line-height: 1.4; }
+.ca-tile__icon { width: 64px; height: 64px; stroke-width: 1.25; opacity: .95; }
+.ca-tile__title { position: absolute; left: 24px; right: 24px; bottom: 22px; text-align: center; font-size: var(--fs-title); }
+
+/* 6. News stories (flat, editorial): lead story + list rows */
+.ca-story { position: relative; }
+.ca-story__media { overflow: hidden; border-radius: var(--radius-media); background: var(--surface-tint); }
+.ca-story__media picture, .ca-story__media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-3) var(--ease-out); }
+.ca-story__media { box-shadow: inset 0 0 0 1px rgb(4 33 79 / .08); }
+.ca-story__media img { mix-blend-mode: multiply; } /* lets the hairline show on white graphics */
+.ca-story:hover .ca-story__media img { transform: scale(1.03); }
+.ca-story__body { display: grid; gap: 6px; align-content: start; }
+.ca-story__date { font-size: .875rem; font-weight: 600; line-height: 1.4; color: var(--action); }
+.ca-story__title { font-family: var(--font-heading); font-weight: 700; line-height: 1.3; letter-spacing: 0; }
+.ca-story__title a { color: var(--text); text-decoration: none; }
+.ca-story__title a::after { content: ""; position: absolute; inset: 0; }
+.ca-story:hover .ca-story__title a { color: var(--primary); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.ca-story__title a:focus-visible { outline: none; }
+.ca-story:has(.ca-story__title a:focus-visible) { outline: var(--focus); outline-offset: 6px; border-radius: 10px; }
+.ca-story__more { display: inline-flex; align-items: center; gap: 6px; justify-self: start; margin-top: 2px; color: var(--action); font-size: .875rem; font-weight: 600; line-height: 1.4; }
+.ca-story__more .ca-icon { width: 18px; height: 18px; transition: transform var(--dur-2) var(--ease-std); }
+.ca-story:hover .ca-story__more .ca-icon, .ca-story:has(.ca-story__title a:focus-visible) .ca-story__more .ca-icon { transform: translateX(4px); }
+.ca-story__summary { color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ca-story--lead { display: grid; gap: 18px; align-content: start; }
+.ca-story--lead .ca-story__media { aspect-ratio: 16 / 9; }
+.ca-story--lead .ca-story__body { gap: 8px; }
+.ca-story--lead .ca-story__title { font-size: clamp(1.25rem, 2vw, 1.625rem); }
+.ca-story-list { display: grid; align-content: start; margin: 0; padding: 0; list-style: none; }
+.ca-story-list > li + li { border-top: 1px solid var(--border); }
+.ca-story--row { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 18px; align-items: center; padding-block: 18px; }
+.ca-story-list > li:first-child .ca-story--row { padding-top: 0; }
+.ca-story--row .ca-story__media { aspect-ratio: 4 / 3; border-radius: 12px; }
+.ca-story--row .ca-story__title { font-size: 1.0625rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 767px) {
+  .ca-story--row { grid-template-columns: 104px minmax(0, 1fr); gap: 14px; padding-block: 14px; }
+  .ca-story--row .ca-story__title { font-size: 1rem; -webkit-line-clamp: 4; }
+}
+
+/* 7. Filter chips */
+.ca-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px; }
+.ca-chip {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 20px; border: 1px solid var(--primary); border-radius: var(--radius-pill);
+  background: transparent; color: var(--primary); font-size: .9375rem; font-weight: 600;
+  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std);
+}
+.ca-chip:hover { background: var(--surface-tint); }
+.ca-chip:active { transform: scale(.98); }
+.ca-chip__check { display: none; width: 16px; height: 16px; stroke-width: 2.25; }
+.ca-chip[aria-pressed="true"] .ca-chip__check { display: block; }
+.ca-chip[aria-pressed="true"] { background: var(--primary); color: var(--text-on-dark); }
+
+/* 8. Social circle */
+.ca-social { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+.ca-social a {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--primary); color: var(--primary);
+  transition: background-color var(--dur-1) var(--ease-std), color var(--dur-1) var(--ease-std);
+}
+.ca-social a:hover { background: var(--primary); color: var(--text-on-dark); }
+.ca-on-dark .ca-social a { border-color: transparent; background: rgb(255 255 255 / .12); color: var(--text-on-dark); }
+.ca-on-dark .ca-social a:hover { background: var(--surface); color: var(--primary); }
+.ca-social .ca-icon { width: 20px; height: 20px; }
+
+/* 9. Logo tile (ticker item) */
+.ca-logo-tile {
+  display: grid; place-items: center; width: 200px; height: 84px; padding: 10px 18px;
+  border: 1px solid var(--border); border-radius: var(--radius-media);
+  color: var(--ca-neutral-700); text-decoration: none; text-align: center;
+  font-weight: 700; font-size: 1.25rem; line-height: 1.2; letter-spacing: .02em;
+  filter: grayscale(1); transition: color var(--dur-1) var(--ease-std), border-color var(--dur-1) var(--ease-std), filter var(--dur-1);
+}
+.ca-logo-tile--long { font-size: .75rem; font-weight: 600; letter-spacing: 0; }
+.ca-logo-tile--img { filter: grayscale(1) brightness(.8) contrast(1.15); }
+.ca-logo-tile--img img { max-width: 150px; max-height: 52px; width: auto; height: auto; object-fit: contain; }
+.ca-logo-tile--img:hover, .ca-logo-tile--img:focus-visible { filter: none; }
+.ca-logo-tile:hover, .ca-logo-tile:focus-visible { filter: none; color: var(--primary); border-color: var(--signature); }
+
+
+/* Compact mobile cards: everything stays visible, less scrolling */
+@media (max-width: 767px) {
+  .ca-card { display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: 16px; row-gap: 6px; padding: 20px; }
+  .ca-card > * { grid-column: 2; }
+  .ca-card > .ca-card__icon { grid-column: 1; grid-row: 1 / span 3; margin: 0; }
+  .ca-card__more { padding-top: 4px; }
+}
