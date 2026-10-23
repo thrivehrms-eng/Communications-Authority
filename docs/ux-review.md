@@ -1,4 +1,4 @@
-# UX review — homepage v2 to v8
+# UX review — homepage v2 to v9
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -153,3 +153,20 @@ Details:
 - **Laptop-height screens** (≤ 820px tall, e.g. 1366×768) get less padding around the slides.
 
 Skill guidance applied (ui-ux-pro-max): `mobile-first` and `viewport-units` (`svh` so mobile browser toolbars don't push content off screen), `content-priority` (the task strip, the page's main job, is now in the first view), `color-accessible-pairs` (contrast re-measured against the photos, not assumed), and `touch-target-size` (all controls stay 44px).
+
+## v9 — client feedback
+
+| Feedback | Change |
+|---|---|
+| "Who we are" should come after our services | Moved: Services → Who we are → Stay safe online → News. The page dots follow the new order |
+| Add a section of YouTube videos below the news instead of sending visitors to YouTube, one row high | New **Videos** panel after News: one row of the channel's four newest videos (date, title, duration on each still). They play in a player dialog on the page; the "Watch our videos on YouTube" link under News is gone, and a smaller channel link sits in the panel's heading for people who want more. On screens under 1000px the row scrolls sideways with the next video peeking in, so it stays one row instead of stacking |
+
+How the player works:
+
+- **Fast and private by default.** The stills are served from the site; nothing loads from YouTube until a video is opened, and the player comes from `youtube-nocookie.com`.
+- **Respects the cookie settings.** The cookie banner already offers an "Embedded media" choice. Without it, the dialog first says that playing loads YouTube, with a one-off **Play video** and an **Always play YouTube videos on this site** option (which switches on only that setting). With it, the video starts straight away.
+- **Keyboard and screen readers.** Native modal `<dialog>`: focus moves in, Tab stays in, Esc or Close shuts it, the video stops and focus returns to the card. After Play, focus stays on Close, because inside YouTube's frame Esc is swallowed. Without JavaScript the cards are ordinary links to YouTube.
+
+Heights: the panel is 492px at 1440px (heading plus one row of 16:9 stills), 408px at 1024px and 482px on a 390px phone.
+
+Skill guidance applied (ui-ux-pro-max): `content-priority` (secondary content folded: the videos sit below News and take one row on every screen), `horizontal-scroll` (the page itself never scrolls sideways, checked at 320–1440px; only the video row does, inside its panel), `modal-motion` (the player rises in from below over a dimmed, blurred backdrop), `focus-management` (focus moves in, is held, and returns to the opener), and `lazy-loading` (`videos.js` is imported only when the section exists, and the player itself only when someone presses play).

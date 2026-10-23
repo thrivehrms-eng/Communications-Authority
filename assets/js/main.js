@@ -8,6 +8,7 @@ const modules = {
   accordion: '[data-disclosure]',
   ticker: '[data-ticker]',
   filter: '[data-filter]',
+  videos: '[data-videos]',
   truncate: '[data-max-chars]',
   reveal: '[data-reveal], [data-reveal-stagger]',
   'hero-fx': '[data-fx]',

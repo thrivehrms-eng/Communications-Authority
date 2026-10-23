@@ -111,6 +111,11 @@ html.js .reveal-run .ca-icon-badge { transition-delay: calc(var(--reveal-delay, 
   .ca-tile:hover .ca-tile__title { transform: translateY(-6px); }
   .ca-tile:hover .ca-tile__tags { transform: translateY(2px); }
 
+  /* videos: the still zooms gently and the play button fills blue */
+  .ca-video__thumb img { transition: transform 900ms var(--ease-expo); }
+  .ca-video:hover .ca-video__thumb img { transform: scale(1.05); }
+  .ca-video:hover .ca-video__play { transform: scale(1.12); background: var(--primary); color: var(--text-on-dark); }
+
   /* news titles underline from left to right */
   .ca-story__title a { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 450ms var(--ease-expo), color var(--dur-1) var(--ease-std); }
   .ca-story:hover .ca-story__title a { background-size: 100% 1px; text-decoration: none; }

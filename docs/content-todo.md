@@ -27,6 +27,7 @@ Open the page with `?placeholders` in the URL to outline them all with a dashed 
 | 7.6 Highlight | Second paragraph: `[One-paragraph USF highlight — e.g. latest digital skilling programme — to be supplied]` | 1 paragraph, ≤ 60 words |
 | 7.1 Hero slider | Four slides (Welcome · Licensing online · Complaints · Universal access): titles, one-line texts and buttons are proposed copy. Titles follow a two-line rhythm: a short statement + a highlighted phrase (≤ 24 characters each) | Confirm wording; confirm `https://lms.ca.go.ke/` (taken from the current ca.go.ke banner) |
 | 7.1 Hero slider images | Slides use CA's dish photo, the ca.go.ke "network globe" banner image, the staging tower-at-sunset image and the USF base station photo | Purpose-shot photography at ≥ 2880×1140 would sharpen slides 2–3 (sources are 1200–1600px wide) |
+| 7.9b Videos | The heading "See our work in action." is proposed. The four videos are the newest distinct ones on the CA Kenya channel (checked 23 October 2026): the Judiciary LAN Project documentary (2 Feb 2026), the CA and Meta online safety campaign (24 Oct 2025), the Quality of Service exercise in Turkana County (11 Oct 2025) and Kenya's re-election to the UPU Postal Operations Council (17 Sep 2025). Titles are YouTube's own, with hashtags removed and typographic apostrophes/dashes | Confirm the choice, or switch to the automatic feed (README → Porting) |
 | 7.1 Hero | Popular tasks (6) and the search label are proposed; they mirror the search FAQ | Confirm the six against contact-centre or site-search data |
 | 6.2 Main menu | Each section's one-line summary, the group names (e.g. "Policies & commitments", "Market & compliance", "Public participation") and the one-line description under every link are **proposed functional copy**; the links and their order are unchanged from the brief | Confirm wording with Corporate Communications; keep descriptions to about 30 characters so most stay on one line at 1440px |
 
@@ -52,6 +53,7 @@ All requested CA assets downloaded with HTTP 200 and were optimised into `assets
 - `ca-about-1-optimized-625x420.webp` → `ca-centre-625.{avif,webp}`
 - The four homepage news images → `news-*-320/640.{avif,webp}`
 - Favicons (32, 180, 192) from the current site
+- Video stills for the four videos from CA Kenya's own YouTube channel (`i.ytimg.com/vi/<id>/maxresdefault.jpg`, or `sddefault.jpg` where no HD still exists, cropped to 16:9) → `video-*-320/640.{avif,webp}`. Channel identity checked against its page title ("CA Kenya") and description; dates from each video page
 - Fonts: identical files from Fontsource (`@fontsource-variable/inter` 5.3.0, `@fontsource/maitree` 5.3.0, Latin subset); both return HTTP 200 locally
 
 ## Image credits (CC0, credit not required)

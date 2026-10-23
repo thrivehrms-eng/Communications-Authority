@@ -38,11 +38,12 @@ assets/js/
   accordion.js              disclosures (footer expanders)
   ticker.js                 logo marquee (duplicated list, pause/play)
   filter.js                 project filter chips + live status
+  videos.js                 video row: plays each video here in a dialog (youtube-nocookie, only when asked; asks first without "Embedded media" consent)
   truncate.js               character limits (data-max-chars): word-boundary cut + ellipsis, full text kept for screen readers
   reveal.js                 scroll reveal (only below-the-fold content starts hidden)
   motion.js                 header scroll progress, hero parallax, pointer spotlights, rotating search hints, help-button hello
   hero-fx.js                canvas light curves + dots (≤30fps, pausable, < 4 KB); data-fx-static draws one still frame
-  consent.js                cookie banner; exposes window.caConsent.get('analytics')
+  consent.js                cookie banner; exposes window.caConsent.get('media') and .set('media', true)
   dot-nav.js                page section dots (≥1280px)
 assets/fonts/               Inter variable + Maitree 700 (Latin, WOFF2)
 assets/img/                 CA logos, favicons, AVIF/WebP images
@@ -59,6 +60,7 @@ Naming is BEM with a `ca-` prefix. Each section is self-contained markup (`<sect
 - Asset paths are relative (`assets/...`). In a theme, prefix them with `get_template_directory_uri()`.
 - Internal links are root-relative (`/tenders/`) and the search form is `GET /?s=`, so both work as-is.
 - The main menu is rendered once. Each section is a `.ca-nav__item` holding an intro (title, one-line summary, overview link), groups of links (icon, name and a one-line description) and, where a section has a long tail, a quick-links band of plain links. The mobile menu is cloned from the same markup at runtime and drops the summaries, icons and descriptions.
+- Videos: the row shows the channel's four latest videos (CA Kenya, channel ID `UCxg8WbhFIxqBqnWT9BaUDhQ`). In WordPress, fill it from the channel's public feed (`https://www.youtube.com/feeds/videos.xml?channel_id=UCxg8WbhFIxqBqnWT9BaUDhQ`) or the YouTube Data API on a schedule, cache the result, and copy each thumbnail into the media library so the page makes no requests to YouTube until someone presses play. Each card is a plain link to the video on YouTube; `videos.js` turns it into the in-page player.
 - In WordPress, a custom `Walker_Nav_Menu` can output this markup: use the menu item's built-in **Description** field for the one-liner and a CSS class (e.g. `icon-licence`) or a custom field for the sprite icon name; top-level items carry the section intro, and second-level items marked as groups become headings.
 - Character limits: news titles 80 (featured 100), summaries 140. In WordPress, enforce them server-side (e.g. `wp_html_excerpt()` / a word-boundary `mb_substr()`) and keep the full title in a visually hidden span, as `truncate.js` does.
 
@@ -105,6 +107,7 @@ All motion lives in `assets/css/motion.css` and `assets/js/motion.js` (plus the 
 | Search | The placeholder cycles through example searches (IMEI, type approval, licence fees…) until you focus it |
 | Filter | Project tiles return one after another |
 | Help button | Pulses twice, once, 2.5s after load |
+| Videos | Stills zoom gently and the play button fills blue on hover; the player dialog rises in over a blurred backdrop |
 
 ## Accessibility notes
 
@@ -113,6 +116,8 @@ All motion lives in `assets/css/motion.css` and `assets/js/motion.js` (plus the 
 - Only the hero slider and the ticker move; both have a visible pause control, stop on hover/focus and do not auto-play under `prefers-reduced-motion`. The slider's live region is silent while it auto-plays and polite once the user takes control.
 - Text contrast targets 7:1 where the CA palette allows (body on white 10.4:1, white on primary 7.6:1, muted white on navy ≥ 9:1).
 - Main menu: each section is a disclosure button (`aria-expanded`/`aria-controls`) followed by its links in DOM order, so Tab moves straight from a section into its links and on to the next section (which closes the previous one). ArrowDown opens a section and moves into it, Left/Right move between sections, Esc closes and returns focus to the section button. Hover opens after a 140ms pause (80ms when switching sections) and closes 280ms after the pointer leaves, so the gap down to the menu can be crossed. Closing sections stop taking pointer events at once, so a fading section never steals a click.
+- Videos: each card is one link (its title, `aria-haspopup="dialog"`). The player is a native modal `<dialog>`: focus moves to Close, Tab stays inside, Esc, Close or a click on the backdrop shut it, the video stops and focus returns to the card. The player frame has a title. After "Play video" focus stays on Close rather than inside the YouTube frame, which would otherwise swallow Esc. Without JavaScript, or in browsers without `<dialog>`, the links open the video on YouTube; Ctrl/Cmd-click still opens YouTube in a new tab.
+- Videos and consent: nothing is loaded from YouTube until a video is opened, and then only from `youtube-nocookie.com`. Unless "Embedded media" is allowed in the cookie settings, the player first explains that playing loads YouTube, with a one-off "Play video" and an "Always play YouTube videos on this site" option that switches on that one setting.
 - News "Read more" cues are decorative (`aria-hidden`): each story is one link (its title) whose click area covers the whole card, so screen readers hear the title once rather than a list of identical "Read more" links.
 - External links carry an icon plus visually hidden "(external site)".
 - Under 380px wide the language links shrink to 36px wide so the header fits at 320px (still above the WCAG 2.2 AA 24px minimum).
@@ -122,5 +127,5 @@ All motion lives in `assets/css/motion.css` and `assets/js/motion.js` (plus the 
 - axe-core 4.10: 0 violations at 1440, 390 and 320px (reduced motion), and with a mega-menu section, the menu overlay and the mobile menu open.
 - Mega menu checked at 1100, 1440 and 1920px for hover, switching, travelling from a section button down into its links, keyboard (ArrowDown/Left/Right, Tab through and out, Esc) and click outside; without JavaScript sections open on hover and keyboard focus.
 - No console errors; no horizontal scroll or clipped content at 320 / 390 / 768 / 1024 / 1100 / 1280 / 1440; works with JS disabled and with reduced motion.
-- Size (esbuild minified): CSS 61.8 KB, JS 17.6 KB. The original 50 KB CSS budget was lifted by the client in v6 in favour of richer motion.
+- Size (esbuild minified): CSS 66.5 KB, JS 19.3 KB. The original 50 KB CSS budget was lifted by the client in v6 in favour of richer motion.
 - Lighthouse was not run in this environment.
