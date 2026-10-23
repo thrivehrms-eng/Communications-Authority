@@ -25,6 +25,8 @@
 .ca-nav__trigger .ca-icon { transition: transform var(--dur-2) var(--ease-std); }
 .ca-nav__trigger[aria-expanded="true"] .ca-icon { transform: rotate(180deg); }
 html:not(.js) .ca-nav__trigger:hover { background: var(--surface-tint); }
+/* inner pages: the section you are in carries a short orange underline */
+.ca-nav__item.is-current > .ca-nav__trigger::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: 5px; height: 2px; border-radius: 2px; background: var(--signature); }
 /* a soft pill glides behind the section under the pointer (header.js) */
 .ca-nav__pill {
   position: absolute; z-index: 0; top: calc((var(--header-h) - 40px) / 2); left: 0; width: var(--pill-w, 0); height: 40px;

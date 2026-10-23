@@ -1,0 +1,66 @@
+<!--
+title: Contact Us
+section: about
+summary: Call, email or visit the Authority’s head office in Nairobi or one of its regional offices, or write to us using the form below.
+updated: 2026-09-22
+-->
+<h2>Our offices</h2>
+<ul class="ca-offices" role="list">
+  <li class="ca-office ca-office--main">
+    <h3>Head Office</h3>
+    <address>CA Centre, Waiyaki Way, Westlands<br>P.O. Box 14448-00800, Nairobi</address>
+    <ul class="ca-office__lines" role="list">
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#phone"/></svg><span><span class="ca-vh">Phone: </span><a href="tel:+254703042000">0703 042000</a>, <a href="tel:+254730172000">0730 172000</a></span></li>
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"/></svg><span><span class="ca-vh">Email: </span><a href="mailto:info@ca.go.ke">info@ca.go.ke</a></span></li>
+    </ul>
+  </li>
+  <li class="ca-office">
+    <h3>Coast Region</h3>
+    <address>3rd Floor, NSSF Building, Mombasa<br>P.O. Box 8041-80100, Mombasa</address>
+    <ul class="ca-office__lines" role="list">
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#phone"/></svg><span><span class="ca-vh">Phone: </span><a href="tel:+254703042152">0703 042152</a></span></li>
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"/></svg><span><span class="ca-vh">Email: </span><a href="mailto:cro@ca.go.ke">cro@ca.go.ke</a></span></li>
+    </ul>
+  </li>
+  <li class="ca-office">
+    <h3>Western Region</h3>
+    <address>1st Floor, KVDA Plaza, Eldoret<br>P.O. Box 2346, Eldoret 30100</address>
+    <ul class="ca-office__lines" role="list">
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#phone"/></svg><span><span class="ca-vh">Phone: </span><a href="tel:+254703042105">0703 042105</a></span></li>
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"/></svg><span><span class="ca-vh">Email: </span><a href="mailto:wro@ca.go.ke">wro@ca.go.ke</a></span></li>
+    </ul>
+  </li>
+  <li class="ca-office">
+    <h3>Central Region</h3>
+    <address>Ground Floor, Advocates Plaza<br>P.O. Box 134, Nyeri 10100</address>
+    <ul class="ca-office__lines" role="list">
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#phone"/></svg><span><span class="ca-vh">Phone: </span><a href="tel:+254703042181">0703 042181</a></span></li>
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"/></svg><span><span class="ca-vh">Email: </span><a href="mailto:cero@ca.go.ke">cero@ca.go.ke</a></span></li>
+    </ul>
+  </li>
+  <li class="ca-office">
+    <h3>Nyanza Region</h3>
+    <address>2nd Floor, Lake Basin Mall<br>P.O. Box 2016, Kisumu 40100</address>
+    <ul class="ca-office__lines" role="list">
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#phone"/></svg><span><span class="ca-vh">Phone: </span><a href="tel:+254703042130">0703 042130</a></span></li>
+      <li><svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"/></svg><span><span class="ca-vh">Email: </span><a href="mailto:nro@ca.go.ke">nro@ca.go.ke</a></span></li>
+    </ul>
+  </li>
+</ul>
+<h2 id="write">Write to us</h2>
+<p>Send us your enquiry or feedback. Leave your name and email if you would like a reply.</p>
+<form class="ca-form" action="/wp-admin/admin-post.php" method="post" enctype="multipart/form-data" data-form data-form-preview>
+  <!-- WordPress adds the cak_form action (contact), nonce and anti-spam fields here -->
+  <p class="ca-form__note">Fields marked <span class="ca-req">*</span> are required.</p>
+  <div class="ca-fieldset">
+    <div class="ca-fields-2">
+      <div class="ca-field"><label for="contact-name">Your name</label><input class="ca-input" id="contact-name" name="cak_data[full_name]" type="text" autocomplete="name"></div>
+      <div class="ca-field"><label for="contact-email">Your email</label><input class="ca-input" id="contact-email" name="cak_data[email]" type="email" autocomplete="email"></div>
+    </div>
+    <div class="ca-field" data-error="Enter a subject"><label for="contact-subject">Subject <span class="ca-req" aria-hidden="true">*</span></label><input class="ca-input" id="contact-subject" name="cak_data[subject]" type="text" required></div>
+    <div class="ca-field" data-error="Enter your message"><label for="contact-message">Message <span class="ca-req" aria-hidden="true">*</span></label><textarea class="ca-input" id="contact-message" name="cak_data[message]" rows="7" required></textarea></div>
+  </div>
+  <div class="ca-form__actions"><button class="ca-btn ca-btn--primary" type="submit">Send message<svg class="ca-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#arrow-right"/></svg></button></div>
+</form>
+<h2>Other ways to reach us</h2>
+<!--related:pages /consumer-complaint/,/public-complaints/,/access-to-information/-->

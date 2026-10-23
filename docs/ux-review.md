@@ -1,4 +1,4 @@
-# UX review — homepage v2 to v10
+# UX review — homepage v2 to v10, inner pages v11
 
 A review of the first homepage build using the **UI/UX Pro Max** skill (v2.15.0, local design/UX database), followed by the changes made.
 Rule IDs in backticks are the skill's own guideline names; items marked *(judgement)* had no database match after one retry and are general practice.
@@ -176,3 +176,21 @@ Skill guidance applied (ui-ux-pro-max): `content-priority` (secondary content fo
 | Feedback | Change |
 |---|---|
 | Remove the floating navigation for page sections | The page dots on the right (shown from 1280px) are gone: markup, styles, `dot-nav.js` and the `--z-dots` layer token. The header menu, the skip link and the footer still cover navigation, and the right edge of every panel is clear again |
+
+## v11 — About CA and Consumer Protection
+
+Client request: build the About CA and Consumer Protection sections, reusing the images, documents and other assets already uploaded to the WordPress site (ca.programmer.co.ke).
+
+What was built: 22 section pages (14 About CA, 8 Consumer Protection), 24 profile pages and 2 vacancy pages, generated from content taken from the WordPress site through its public REST API (pages, people, vacancies). Every image and document links to its existing upload, so nothing has to be re-uploaded at launch.
+
+Design decisions:
+
+- **One frame for every inner page.** The homepage header, menus and footer, then a compact page hero on the same light-curve panel as "Stay safe online", with a breadcrumb, the title and one summary line. The section is underlined in the main menu and the page is marked current there and in the section navigation.
+- **Section navigation from the menu.** The side navigation is generated from the mega menu, with the same group headings, so the two can never disagree. It stays in view on wide screens and folds into "In this section" on phones, so content comes first.
+- **Overview pages as landing pages.** About the Authority and Our Role in Your Protection use full-width panels: who we are, vision/mission/values and the mandate; how to complain as four steps, public complaints and misconduct side by side, FAQs with the downloadable guides beside them. Both end with the section's pages as link cards grouped as in the menu.
+- **Documents you can judge before opening.** Each download shows its type and real size (e.g. "PDF, 8.4 MB" for the full Strategic Plan), checked against the files on the WordPress site; Kiswahili brochures are marked as Kiswahili for screen readers.
+- **People without page-hopping.** Selecting a name opens the profile in a dialog, loaded from the profile page and prefetched on hover, so all 16 Board members can be read from one page. The profile pages still exist for sharing and search.
+- **Forms that help people finish.** The complaint, public complaint, feedback and contact forms keep their WordPress field names, group fields into short sections, mark required fields, check answers on submit with an error summary that links to each field, and use large tappable choices.
+- **An IMEI helper that cannot mislead.** It checks the number has 15 digits and a correct check digit, then prepares the free SMS to 1555. It states that only the 1555 reply says whether a phone is genuine.
+
+Skill guidance applied (ui-ux-pro-max): `nav-hierarchy` (the main menu and the section navigation are separate, with the section navigation clearly secondary), `progressive-disclosure` (it folds away on phones), `breadcrumb-web` (pages sit up to four levels deep, e.g. Home › About CA › Board of Directors › a profile), `inline-validation` (errors appear only once the person has finished and submits, and a flagged field clears as soon as it is fixed), `error-clarity` (each message says how to fix the problem, e.g. "Enter an email address in the right format, like name@example.com"), `focus-management` (summary and dialogs take focus and return it), `input-labels`, `autofill-support`, `touch-target-size`, and `content-priority` (on phones the content comes before the section navigation).

@@ -31,9 +31,9 @@ export default function ([section]) {
     if (window.caConsent?.get('media')) {
       play(link.dataset.video);
     } else {
-      const still = link.closest('.ca-video').querySelector('picture').cloneNode(true);
-      still.querySelector('img').loading = 'eager';
-      frame.replaceChildren(still);
+      const still = link.closest('.ca-video')?.querySelector('picture')?.cloneNode(true);
+      if (still) still.querySelector('img').loading = 'eager';
+      frame.replaceChildren(...(still ? [still] : []));
       remember.checked = false;
       consent.hidden = false;
     }

@@ -153,6 +153,20 @@ html:has(.ca-video-dialog[open]) { overflow: hidden; }
   .ca-video-dialog__stage:has(.ca-video-dialog__consent:not([hidden])) .ca-video-dialog__frame { display: none; }
 }
 
+/* ── Profile dialog (profiles.js): a person's profile over the listing ── */
+.ca-profile-dialog {
+  width: min(920px, 100vw - 32px); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow: auto;
+  border: 0; border-radius: var(--radius-card); background: var(--surface); color: var(--text); box-shadow: 0 24px 60px rgb(4 33 79 / .35);
+}
+.ca-profile-dialog::backdrop { background: rgb(4 33 79 / .7); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.ca-profile-dialog[open] { animation: ca-dialog-in 420ms var(--ease-expo, ease-out); }
+.ca-profile-dialog[open]::backdrop { animation: ca-fade 300ms var(--ease-std); }
+.ca-profile-dialog__bar { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 14px 14px clamp(20px, 3vw, 32px); border-bottom: 1px solid var(--border); background: var(--surface); }
+.ca-profile-dialog__title { font-size: clamp(1.25rem, 2.2vw, 1.625rem); }
+.ca-profile-dialog__body { padding: clamp(20px, 3vw, 32px); }
+html:has(.ca-profile-dialog[open]) { overflow: hidden; }
+@media (max-width: 599px) { .ca-profile-dialog { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); } }
+
 /* ── Cookie consent ── */
 .ca-consent {
   display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title actions" "text actions" "settings settings";

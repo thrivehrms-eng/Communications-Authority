@@ -31,6 +31,24 @@ Open the page with `?placeholders` in the URL to outline them all with a dashed 
 | 7.1 Hero | Popular tasks (6) and the search label are proposed; they mirror the search FAQ | Confirm the six against contact-centre or site-search data |
 | 6.2 Main menu | Each section's one-line summary, the group names (e.g. "Policies & commitments", "Market & compliance", "Public participation") and the one-line description under every link are **proposed functional copy**; the links and their order are unchanged from the brief | Confirm wording with Corporate Communications; keep descriptions to about 30 characters so most stay on one line at 1440px |
 
+## About CA and Consumer Protection pages
+
+Content, images and documents come from the WordPress site (ca.programmer.co.ke). Items to resolve there or confirm:
+
+| Page | Issue | Needed |
+|---|---|---|
+| All pages with documents | In the WordPress page content, every document link points to `http://localhost/Projects/CA-website/wp-content/uploads/…` (a development address). The same files exist on ca.programmer.co.ke, which is what the new pages use (all 30 checked, HTTP 200) | Replace the localhost links in the WordPress content before launch |
+| About the Authority vs Vision, Mission & Core Values | The WordPress About page gives the vision as "A globally competitive ICT sector that transforms lives", the mission as "To facilitate transformation of lives through progressive regulation of the ICT sector" and the values as Integrity, Professionalism, Innovation, Teamwork, Customer focus. The Vision page (citing ca.go.ke/vision-mission) gives "Digital access for all", "Enabling a sustainable digital society through responsive regulation" and Integrity, Innovation, Excellence, Agility, Inclusion | The new pages use the Vision page's wording on both pages, as it matches the 2023–2027 Strategic Plan ("#DigitalAccess4All"). Confirm, and update the WordPress About page |
+| Our Role in Your Protection | "Constitution of Kenya, 2010 (sections 46 and 47)": the Constitution numbers these as Articles | Confirm wording ("Articles 46 and 47") |
+| Page summaries | Where the WordPress page has no introduction, the line under the title is proposed: About the Authority, Board of Directors, Management Team, Universal Service Advisory Council, Organisation Structure, Vision, Mission & Core Values, Access to Information, Contact Us, IMEI Checker, Our Role in Your Protection. Elsewhere it is the page's own first sentence | Confirm the proposed lines |
+| Board, Management, USAC | 12 people have no biography in WordPress, so their cards do not link to a profile: Waweru Kimani, Eng. Dennis Chepkwony, Eng. Leo Boruett, CHRP (K) Reginah Kemboi, Mohamed Haji, Martin Mirero, Peter Mwangi, FCPA Rosalind Murithi, Dr. Vincent Ngundi, Dr. Priscilla Njako, CPA Joseph Kimanga, CPA Matilda Wakere | Biographies, or confirm they stay as cards only |
+| Finance and Accounts | Bank transfer, M-PESA/PayBill, payment reference, receipts and verification time are marked "to be confirmed" in WordPress and shown as such | Details from Finance and Accounts |
+| Careers | Both adverts in WordPress have closed (18 September and 5 October 2026); they are listed as Closed. Status is worked out when the pages are built | Remove or archive closed adverts as appropriate |
+| Contact Us | The head office card adds "Waiyaki Way, Westlands" (from the homepage footer) to the WordPress address "CA Centre, P.O. Box 14448-00800, Nairobi" | Confirm |
+| Strategic Plan, Service Charter | Each page now plays a video from CA's YouTube channel: "CA’s 5th Strategic Plan 2023–2027 Highlights" and "CA Service Charter Video 2023" (the latter linked from the WordPress page) | Confirm |
+| Forms | Consumer complaint, public complaints, customer feedback and contact forms keep the WordPress field names but are not connected in this static build: a completed form shows a notice that nothing was sent | Connect in the theme (README → Porting) |
+| Strategic Plan | WordPress text "spells out CA’s its purpose" corrected to "CA’s purpose" | — |
+
 ## Links / URLs to confirm
 
 | Where | Current value | Needed |
